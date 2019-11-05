@@ -1,307 +1,387 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Dashboard</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/font-awesome/css/font-awesome.min.css')}}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/Ionicons/css/ionicons.min.css')}}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('admin/assets/dist/css/AdminLTE.min.css')}}">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{asset('admin/assets/dist/css/skins/_all-skins.min.css')}}">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/morris.js')}}/morris.css')}}">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/jvectormap/jquery-jvectormap.css')}}">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{asset('admin/assets/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{asset('admin/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
-    <style>
-        .content-wrapper{
-            min-height: calc(100vh - 101px)!important;
-        }
-    </style>
-    <!-- HTML5 Shim and Respond.js')}} IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js')}} doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')}}"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script>
-    <![endif]-->
-
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="Responsive Admin Template" />
+    <meta name="author" content="SmartUniversity" />
+    <title>Smart University | Bootstrap Responsive Admin Template</title>
+    <!-- google font -->
+   @include('layouts.assets._styles')
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<!-- END HEAD -->
 
-@include('layouts.assets._top_bar')
-    <!-- Left side column. contains the logo and sidebar -->
-@include('layouts.assets._side_bar')
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        @include('layouts.assets._header_msg')
-
-        <!-- Main content -->
-        <section class="content">
-            @yield('content')
-
-        </section>
-        <!-- /.content -->
+<body
+    class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
+<div class="page-wrapper">
+    <!-- start header -->
+    @include('layouts.assets._top_bar')
+    <!-- end header -->
+    <!-- start color quick setting -->
+    <div class="quick-setting-main">
+        <button class="control-sidebar-btn btn" data-toggle="control-sidebar"><i
+                class="fa fa-cog fa-spin"></i></button>
+        <div class="quick-setting display-none">
+            <ul id="themecolors">
+                <li>
+                    <p class="selector-title">Main Layouts</p>
+                </li>
+                <li class="complete">
+                    <div class="theme-color layout-theme">
+                        <a href="#" data-theme="light"><span class="head"></span><span class="cont"></span></a>
+                        <a href="http://radixtouch.in/templates/admin/smart/source/dark/index.html" data-theme="dark"><span class="head"></span><span
+                                class="cont"></span></a>
+                    </div>
+                </li>
+                <li>
+                    <p class="selector-title">Sidebar Color</p>
+                </li>
+                <li class="complete">
+                    <div class="theme-color sidebar-theme">
+                        <a href="#" data-theme="white"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="dark"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="blue"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="indigo"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="cyan"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="green"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="red"><span class="head"></span><span class="cont"></span></a>
+                    </div>
+                </li>
+                <li>
+                    <p class="selector-title">Header Brand color</p>
+                </li>
+                <li class="theme-option">
+                    <div class="theme-color logo-theme">
+                        <a href="#" data-theme="logo-white"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="logo-dark"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="logo-blue"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="logo-indigo"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="logo-cyan"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="logo-green"><span class="head"></span><span class="cont"></span></a>
+                        <a href="#" data-theme="logo-red"><span class="head"></span><span class="cont"></span></a>
+                    </div>
+                </li>
+                <li>
+                    <p class="selector-title">Header color</p>
+                </li>
+                <li class="theme-option">
+                    <div class="theme-color header-theme">
+                        <a href="#" data-theme="header-white"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="header-dark"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="header-blue"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="header-indigo"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="header-cyan"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="header-green"><span class="head"></span><span
+                                class="cont"></span></a>
+                        <a href="#" data-theme="header-red"><span class="head"></span><span class="cont"></span></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.18
+    <!-- end color quick setting -->
+    <!-- start page container -->
+    <div class="page-container">
+        <!-- start sidebar menu -->
+        @include('layouts.assets._side_bar')
+        <!-- end sidebar menu -->
+        <!-- start page content -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+              @yield('content')
+            </div>
         </div>
-        <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-        reserved.
-    </footer>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark" style="display: none;">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                <p>Will be 23 on April 24th</p>
-                            </div>
+        <!-- end page content -->
+        <!-- start chat sidebar -->
+        <div class="chat-sidebar-container" data-close-on-body-click="false">
+            <div class="chat-sidebar">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_1" class="nav-link active tab-icon" data-toggle="tab"> <i
+                                class="material-icons">chat</i>Chat
+                            <span class="badge badge-danger">4</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-user bg-yellow"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                                <p>New phone +1(800)555-1234</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                                <p>nora@example.com</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                                <p>Execution time 5 seconds</p>
-                            </div>
+                    <li class="nav-item">
+                        <a href="#quick_sidebar_tab_3" class="nav-link tab-icon" data-toggle="tab"> <i
+                                class="material-icons">settings</i>
+                            Settings
                         </a>
                     </li>
                 </ul>
-                <!-- /.control-sidebar-menu -->
-
-                <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Custom Template Design
-                                <span class="label label-danger pull-right">70%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                <div class="tab-content">
+                    <!-- Start Doctor Chat -->
+                    <div class="tab-pane active chat-sidebar-chat in active show" role="tabpanel"
+                         id="quick_sidebar_tab_1">
+                        <div class="chat-sidebar-list">
+                            <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd"
+                                 data-wrapper-class="chat-sidebar-list">
+                                <div class="chat-header">
+                                    <h5 class="list-heading">Online</h5>
+                                </div>
+                                <ul class="media-list list-items">
+                                    <li class="media"><img class="media-object" src="{{asset('admin/assets/img/prof/prof3.jpg')}}"
+                                                           width="35" height="35" alt="...">
+                                        <i class="online dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">John Deo</h5>
+                                            <div class="media-heading-sub">Spine Surgeon</div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-success">5</span>
+                                        </div> <img class="media-object" src="{{asset('admin/assets/img/prof/prof1.jpg')}}"
+                                                    width="35" height="35" alt="...">
+                                        <i class="busy dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Rajesh</h5>
+                                            <div class="media-heading-sub">Director</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="{{asset('admin/assets/img/prof/prof5.jpg')}}"
+                                                           width="35" height="35" alt="...">
+                                        <i class="away dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jacob Ryan</h5>
+                                            <div class="media-heading-sub">Ortho Surgeon</div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-danger">8</span>
+                                        </div> <img class="media-object" src="{{asset('admin/assets/img/prof/prof4.jpg')}}"
+                                                    width="35" height="35" alt="...">
+                                        <i class="online dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Kehn Anderson</h5>
+                                            <div class="media-heading-sub">CEO</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="{{asset('admin/assets/img/prof/prof2.jpg')}}"
+                                                           width="35" height="35" alt="...">
+                                        <i class="busy dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Sarah Smith</h5>
+                                            <div class="media-heading-sub">Anaesthetics</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="{{asset('admin/assets/img/prof/prof7.jpg')}}"
+                                                           width="35" height="35" alt="...">
+                                        <i class="online dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Vlad Cardella</h5>
+                                            <div class="media-heading-sub">Cardiologist</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="chat-header">
+                                    <h5 class="list-heading">Offline</h5>
+                                </div>
+                                <ul class="media-list list-items">
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-warning">4</span>
+                                        </div> <img class="media-object" src="{{asset('admin/assets/img/prof/prof6.jpg')}}"
+                                                    width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jennifer Maklen</h5>
+                                            <div class="media-heading-sub">Nurse</div>
+                                            <div class="media-heading-small">Last seen 01:20 AM</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="{{asset('admin/assets/img/prof/prof8.jpg')}}"
+                                                           width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Lina Smith</h5>
+                                            <div class="media-heading-sub">Ortho Surgeon</div>
+                                            <div class="media-heading-small">Last seen 11:14 PM</div>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-status">
+                                            <span class="badge badge-success">9</span>
+                                        </div> <img class="media-object" src="{{asset('admin/assets/img/prof/prof9.jpg')}}"
+                                                    width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Jeff Adam</h5>
+                                            <div class="media-heading-sub">Compounder</div>
+                                            <div class="media-heading-small">Last seen 3:31 PM</div>
+                                        </div>
+                                    </li>
+                                    <li class="media"><img class="media-object" src="{{asset('admin/assets/img/prof/prof10.jpg')}}"
+                                                           width="35" height="35" alt="...">
+                                        <i class="offline dot"></i>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Anjelina Cardella</h5>
+                                            <div class="media-heading-sub">Physiotherapist</div>
+                                            <div class="media-heading-small">Last seen 7:45 PM</div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Update Resume
-                                <span class="label label-success pull-right">95%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <!-- End Doctor Chat -->
+                    <!-- Start Setting Panel -->
+                    <div class="tab-pane chat-sidebar-settings" role="tabpanel" id="quick_sidebar_tab_3">
+                        <div class="chat-sidebar-settings-list slimscroll-style">
+                            <div class="chat-header">
+                                <h5 class="list-heading">Layout Settings</h5>
                             </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Laravel Integration
-                                <span class="label label-warning pull-right">50%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                            <div class="chatpane inner-content ">
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Sidebar Position</div>
+                                        <div class="setting-set">
+                                            <select
+                                                class="sidebar-pos-option form-control input-inline input-sm input-small ">
+                                                <option value="left" selected="selected">Left</option>
+                                                <option value="right">Right</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Header</div>
+                                        <div class="setting-set">
+                                            <select
+                                                class="page-header-option form-control input-inline input-sm input-small ">
+                                                <option value="fixed" selected="selected">Fixed</option>
+                                                <option value="default">Default</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Footer</div>
+                                        <div class="setting-set">
+                                            <select
+                                                class="page-footer-option form-control input-inline input-sm input-small ">
+                                                <option value="fixed">Fixed</option>
+                                                <option value="default" selected="selected">Default</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-header">
+                                    <h5 class="list-heading">Account Settings</h5>
+                                </div>
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Notifications</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-1">
+                                                    <input type="checkbox" id="switch-1" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Show Online</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-7">
+                                                    <input type="checkbox" id="switch-7" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Status</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-2">
+                                                    <input type="checkbox" id="switch-2" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">2 Steps Verification</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-3">
+                                                    <input type="checkbox" id="switch-3" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-header">
+                                    <h5 class="list-heading">General Settings</h5>
+                                </div>
+                                <div class="settings-list">
+                                    <div class="setting-item">
+                                        <div class="setting-text">Location</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-4">
+                                                    <input type="checkbox" id="switch-4" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Save Histry</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-5">
+                                                    <input type="checkbox" id="switch-5" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-text">Auto Updates</div>
+                                        <div class="setting-set">
+                                            <div class="switch">
+                                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                                                       for="switch-6">
+                                                    <input type="checkbox" id="switch-6" class="mdl-switch__input"
+                                                           checked>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Back End Framework
-                                <span class="label label-primary pull-right">68%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.tab-pane -->
-            <!-- Stats tab content -->
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <!-- /.tab-pane -->
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Allow mail redirect
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Other sets of options are available
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Expose author name in posts
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Allow the user to show his name in blog posts
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Show me as online
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Turn off notifications
-                            <input type="checkbox" class="pull-right">
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Delete chat history
-                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
         </div>
-    </aside>
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
+        <!-- end chat sidebar -->
+    </div>
+    <!-- end page container -->
+    <!-- start footer -->
+    @include('layouts.assets._footer')
+    <!-- end footer -->
 </div>
-<!-- ./wrapper -->
-
-<!-- jQuery 3 -->
-<script src="{{asset('admin/assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{asset('admin/assets/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{asset('admin/assets/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<!-- Morris.js')}} charts -->
-<script src="{{asset('admin/assets/bower_components/raphael/raphael.min.js')}}"></script>
-<script src="{{asset('admin/assets/bower_components/morris.js')}}/morris.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset('admin/assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
-<!-- jvectormap -->
-<script src="{{asset('admin/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script src="{{asset('admin/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{asset('admin/assets/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{asset('admin/assets/bower_components/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('admin/assets/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
-<!-- datepicker -->
-<script src="{{asset('admin/assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{asset('admin/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
-<!-- Slimscroll -->
-<script src="{{asset('admin/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
-<!-- FastClick -->
-<script src="{{asset('admin/assets/bower_components/fastclick/lib/fastclick.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('admin/assets/dist/js/adminlte.min.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('admin/assets/dist/js/pages/dashboard.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('admin/assets/dist/js/demo.js')}}"></script>
+<!-- start js include path -->
+@include('layouts.assets._scripts')
+<!-- end js include path -->
 </body>
 </html>

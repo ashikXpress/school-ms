@@ -11,6 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
+use Illuminate\Support\Facades\Route;
+
+
+Route::namespace('Dashboard')->group(function (){
+    Route::get('dashboard','DashboardController@dashboard');
+});
+
+Route::namespace('Auth')->group(function (){
+
+});
+Route::namespace('Admin')->group(function (){
+
+});
+Route::namespace('Teacher')->group(function (){
+
+});
+Route::namespace('Student')->group(function (){
+
+});
+Route::namespace('Staff')->group(function (){
+
+});
+Route::namespace('Guardian')->group(function (){
+
+});
+Route::namespace('Management')->group(function (){
+
 });
