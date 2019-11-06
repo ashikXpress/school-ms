@@ -96,6 +96,7 @@
         <!-- start page content -->
         <div class="page-content-wrapper">
             <div class="page-content">
+                @include('layouts.assets._header_msg')
               @yield('content')
             </div>
         </div>

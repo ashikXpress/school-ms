@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Section extends Model
 {
-    protected $guarded=[];
-
+   protected $guarded=[];
 }

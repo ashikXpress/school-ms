@@ -15,10 +15,29 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('photo');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->smallInteger('gender_name');
+            $table->string('date_of_birth');
+            $table->integer('birth_certificate_number');
+            $table->string('blood_group');
+            $table->string('bus_facility')->nullable();
+            $table->string('previous_institute_name');
+            $table->string('class_name');
+            $table->string('father_name');
+             $table->string('father_occupation');
+             $table->string('mother_name');
+             $table->string('mother_occupation')->nullable();
+             $table->string('local_guardian_name')->nullable();
+             $table->string('address');
+             $table->string('address2')->nullable();
+             $table->string('contact_number');
+             $table->string('contact_number2')->nullable();
+             $table->string('admission_date')->nullable();
+             $table->decimal('admission_fees',9,2);
+             $table->string('email')->nullable();
+             $table->string('password')->nullable();
+             $table->timestamps();
         });
     }
 

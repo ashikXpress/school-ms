@@ -19,3 +19,12 @@
 <link href="{{asset('admin/assets/css/theme/light/theme-color.css')}}" rel="stylesheet" type="text/css" />
 <!-- favicon -->
 <link rel="shortcut icon" href="http://radixtouch.in/templates/admin/smart/source/assets/img/favicon.ico" />
+<link href="{{asset('admin/assets/plugins/bootstrap-datepicker/datepicker.css')}}" rel="stylesheet">
+<link href="{{asset('admin/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet"
+      media="screen">
+<link href="{{asset('admin/assets/plugins/select2/css/select2.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('admin/assets/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+<!-- dropzone -->
+<link href="{{asset('admin/assets/plugins/dropzone/dropzone.css')}}" rel="stylesheet" media="screen">
+<!--tagsinput-->
+<link href="{{asset('admin/assets/plugins/jquery-tags-input/jquery-tags-input.css')}}" rel="stylesheet">
