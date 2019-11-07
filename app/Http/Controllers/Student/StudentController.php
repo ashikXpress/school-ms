@@ -78,8 +78,8 @@ class StudentController extends Controller
         }
     }
     public function createSubjectForm(){
-
-        return view('student.create_subject');
+        $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
+        return view('student.create_subject',$data);
     }
     public function createSubject(Request $request){
         $this->validate($request,[
@@ -103,7 +103,8 @@ class StudentController extends Controller
         }
     }
     public function createShiftForm(){
-        return view('student.create_shift');
+        $data['shift_lists']=Shift::orderBy('id','desc')->paginate(4);
+        return view('student.create_shift',$data);
     }
     public function createShift(Request $request){
         $this->validate($request,[
@@ -123,7 +124,8 @@ class StudentController extends Controller
         }
     }
     public function createSectionForm(){
-        return view('student.create_section');
+        $data['section_lists']=Section::orderBy('id','desc')->paginate(4);
+        return view('student.create_section',$data);
     }
     public function createSection(Request $request){
         $this->validate($request,[
@@ -143,7 +145,8 @@ class StudentController extends Controller
         }
     }
     public function createClassForm(){
-        return view('student.create_class');
+        $data['class_lists']=ClassName::orderBy('id','desc')->paginate(4);
+        return view('student.create_class',$data);
     }
     public function createClass(Request $request){
         $this->validate($request,[
@@ -166,7 +169,8 @@ class StudentController extends Controller
 
     }
     public function createDepartmentForm(){
-        return view('student.create_department');
+        $data['department_lists']=Department::orderBy('id','desc')->paginate(4);
+        return view('student.create_department',$data);
     }
     public function createDepartment(Request $request){
 

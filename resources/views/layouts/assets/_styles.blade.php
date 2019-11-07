@@ -28,3 +28,8 @@
 <link href="{{asset('admin/assets/plugins/dropzone/dropzone.css')}}" rel="stylesheet" media="screen">
 <!--tagsinput-->
 <link href="{{asset('admin/assets/plugins/jquery-tags-input/jquery-tags-input.css')}}" rel="stylesheet">
+<style>
+    .btn-group>a>i {
+        color: #ffffff;
+    }
+</style>

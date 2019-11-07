@@ -49,10 +49,63 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                        <span class="title">Event Management</span>
-                    </a>
+                <li class="nav-item {{ Request::is('category/*') ? 'active' : null }}">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Create Category</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is('category/create-class') ? 'active' : null }}">
+                          <a href="{{route('create.class.form')}}" class="nav-link ">
+                              <span class="title">Create Class</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('category/create-section') ? 'active' : null }}">
+                            <a href="{{route('create.section.form')}}" class="nav-link ">
+                                <span class="title">Create section</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('category/create-shift') ? 'active' : null }}">
+                            <a href="{{route('create.shift.form')}}" class="nav-link ">
+                                <span class="title">Create shift</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('category/create-subject') ? 'active' : null }}">
+                            <a href="{{route('create.subject.form')}}" class="nav-link ">
+                                <span class="title">Create subject</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('category/create-department') ? 'active' : null }}">
+                            <a href="{{route('create.department.form')}}" class="nav-link ">
+                                <span class="title">Create department</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('category/create-designation') ? 'active' : null }}">
+                            <a href="{{route('create.designation.form')}}" class="nav-link ">
+                                <span class="title">Create designation</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{ Request::is('student*') ? 'active' : null }}">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Students</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is('create-designation') ? 'active' : null }}">
+                            <a href="{{route('student.admission.form')}}" class="nav-link ">
+                                <span class="title">Admission</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="add_student.html" class="nav-link ">
+                                <span class="title">All Student</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="student_profile.html" class="nav-link ">
+                                <span class="title">About Student</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
@@ -86,37 +139,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                        <span class="title">Students</span><span class="arrow"></span></a>
-                    <ul class="sub-menu">
-                        <li class="nav-item">
-                            <a href="all_students.html" class="nav-link "> <span class="title">All
-												Students</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="add_student.html" class="nav-link "> <span class="title">Add
-												Student</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="add_student_bootstrap.html" class="nav-link "> <span class="title">Add
-												Student Bootstrap</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="edit_student.html" class="nav-link "> <span class="title">Edit
-												Student</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="student_profile.html" class="nav-link "> <span class="title">About
-												Student</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
                         <span class="title">Courses</span> <span class="arrow"></span>
