@@ -36,9 +36,14 @@
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="dp1">Date of birth</label>
-                                <input type="text" name="date_of_birth" value="{{old('date_of_birth')}}"  class="form-control" placeholder="Enter date" size="30"  id="dp1">
-                                <span class="text text-danger">{{$errors->first('date_of_birth')}}</span>
+                                <div class="input-append date" id="dp1">
+                                    <input class="form-control formDatePicker" name="date_of_birth" value="{{old('date_of_birth')}}"  placeholder="Enter date of birth" size="44" type="text" aria-invalid="false">
+                                    <span class="add-on"><i class="fa fa-calendar"></i></span>
+                                    <span class="text text-danger">{{$errors->first('date_of_birth')}}</span>
+                                </div>
+
                             </div>
+
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="birth_certificate_number">Birth certificate number</label>
                                 <input type="text" name="birth_certificate_number" value="{{old('birth_certificate_number')}}" id="birth_certificate_number" class="form-control" placeholder="Enter Birth certificate number">
@@ -153,8 +158,12 @@
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="dp2">Admission date</label>
-                                <input type="text" name="admission_date" value="{{old('admission_date')}}"  class="form-control" placeholder="Enter admission date" size="30"  id="dp2">
+                                <div class="input-append date" id="dp2">
+                                    <input class="form-control formDatePicker" name="admission_date" value="{{old('admission_date')}}"  placeholder="Enter date of birth" size="44" type="text"   aria-invalid="false">
+                                    <span class="add-on"><i class="fa fa-calendar"></i></span>
+                                </div>
                                 <span class="text text-danger">{{$errors->first('admission_date')}}</span>
+
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
                                 <label>Admission fees</label>

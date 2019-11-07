@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class EmployeeController extends Controller
 {
     public function createDesignationForm(){
-        return view('Employee.create_designation');
+        $data['designation_lists']=Designation::orderBy('id','desc')->paginate(4);
+        return view('Employee.create_designation',$data);
     }
     public function createDesignation(Request $request){
         $this->validate($request,[

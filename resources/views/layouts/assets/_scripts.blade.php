@@ -38,8 +38,41 @@
 <script src="{{asset('admin/assets/plugins/jquery-tags-input/jquery-tags-input-init.js')}}"></script>
 <!-- dropzone -->
 <script src="{{asset('admin/assets/plugins/dropzone/dropzone.js')}}"></script>
+<script src="{{asset('admin/assets/sweet2/sweetalert2.js')}}"></script>
 
 
 <script>
-    $(document).ready(function() { $("#classseleted,#bloodgroupselected").select2(); });
+    $(document).ready(function() {
+        $("#classseleted,#bloodgroupselected").select2();
+
+
+
+
+    });
+</script>
+<script>
+    function checkDelete(url) {
+//        var check = confirm('Are you sure delete this?');
+//        if(check){
+//            return true;
+//        }else {
+//            return false;
+//        }
+        swal({
+            title: 'Are you sure sir?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(function () {
+            window.location.href = url;
+                           swal(
+                               'Deleted!',
+                               'Your file has been deleted.',
+                               'success'
+                           )
+        })
+    }
 </script>

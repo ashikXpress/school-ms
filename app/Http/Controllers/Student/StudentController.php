@@ -77,6 +77,12 @@ class StudentController extends Controller
             return redirect()->route('student.admission.form');
         }
     }
+
+    public function studentList(){
+
+        $data['student_lists']=Student::orderBy('id','desc')->paginate(4);
+        return view('student.student_lists',$data);
+    }
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
         return view('student.create_subject',$data);
@@ -165,6 +171,19 @@ class StudentController extends Controller
          }else{
             $request->session()->flash('success','Class create failed');
             return redirect()->route('create.class.form');
+        }
+
+    }
+
+    public function deleteClass($id,Request $request){
+
+        $result=ClassName::find($id)->delete();
+
+        if ($result){
+            $request->session()->flash('success','Class Deleted successfully');
+            return redirect()->route('create.class.form');
+        }else{
+            $request->session()->flash('error','Class delete failed');return redirect()->route('create.class.form');
         }
 
     }

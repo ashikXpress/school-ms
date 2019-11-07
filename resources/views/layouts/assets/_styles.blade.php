@@ -28,8 +28,18 @@
 <link href="{{asset('admin/assets/plugins/dropzone/dropzone.css')}}" rel="stylesheet" media="screen">
 <!--tagsinput-->
 <link href="{{asset('admin/assets/plugins/jquery-tags-input/jquery-tags-input.css')}}" rel="stylesheet">
+<link href="{{asset('admin/assets/sweet2/sweetalert2.css')}}" rel="stylesheet">
 <style>
     .btn-group>a>i {
         color: #ffffff;
+    }
+    input-append date{
+        position: relative;
+    }
+    .input-append.date .add-on i, .input-prepend.date .add-on i {
+
+        position: absolute;
+        right: 22px;
+        bottom: 12px;
     }
 </style>

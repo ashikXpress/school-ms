@@ -125,9 +125,9 @@
                                                 <a href="edit_professor.html" class="btn btn-primary btn-xs">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
-                                                <button class="btn btn-danger btn-xs">
+                                                <a href="#" class="btn btn-danger btn-xs" onclick="return checkDelete('{{route('delete.class',$class_list->id)}}')">
                                                     <i class="fa fa-trash-o "></i>
-                                                </button>
+                                                </a>
                                             </td>
                                         </tr>
                                         @endforeach

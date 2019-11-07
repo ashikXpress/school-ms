@@ -1,12 +1,12 @@
 $(function () {
 	$('#dp1').datepicker({
-		format: 'mm/dd/yyyy'
+		format: 'dd-mm-yyyy'
 	});
 	$('#dp2').datepicker({
-		format: 'mm/dd/yyyy'
+		format: 'dd-mm-yyyy'
 	});
 	$('#dp3').datepicker({
-		format: 'mm/dd/yyyy'
+		format: 'dd-mm-yyyy'
 	});
 
 });

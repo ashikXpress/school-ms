@@ -21,35 +21,16 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-{{--                    start active open--}}
-
-                    <a href="#" class="nav-link nav-toggle">
+                <li class="nav-item {{ Request::is('dashboard*') ? 'active' : null }}">
+                    <a href="{{route('dashboard')}}" class="nav-link">
                         <i class="material-icons">dashboard</i>
                         <span class="title">Dashboard</span>
                         <span class="selected"></span>
-                        <span class="arrow open"></span>
+
                     </a>
-                    <ul class="sub-menu">
-                        <li class="nav-item active">
-                            <a href="index.html" class="nav-link ">
-                                <span class="title">Dashboard 1</span>
-                                <span class="selected"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="dashboard2.html" class="nav-link ">
-                                <span class="title">Dashboard 2</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="dashboard3.html" class="nav-link ">
-                                <span class="title">Dashboard 3</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="nav-item {{ Request::is('category/*') ? 'active' : null }}">
+
+                <li class="nav-item {{ Request::is('category/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Create Category</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
@@ -85,17 +66,17 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ Request::is('student*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('student*') ? 'start active open ' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Students</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li class="nav-item {{ Request::is('create-designation') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('student/admission') ? 'active' : null }}">
                             <a href="{{route('student.admission.form')}}" class="nav-link ">
                                 <span class="title">Admission</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="add_student.html" class="nav-link ">
+                        <li class="nav-item {{ Request::is('student/student-lists') ? 'active' : null }}">
+                            <a href="{{route('student.lists')}}" class="nav-link ">
                                 <span class="title">All Student</span>
                             </a>
                         </li>
