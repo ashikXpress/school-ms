@@ -32,12 +32,13 @@ class CreateStudentsTable extends Migration
             $table->string('address2')->nullable();
             $table->string('contact_number');
             $table->string('contact_number2')->nullable();
+            $table->string('group')->nullable();
             $table->string('admission_date')->nullable();
             $table->decimal('admission_fees',9,2);
             $table->string('email')->nullable();
             $table->string('password')->nullable();
             $table->unsignedBigInteger('class_id')->nullable();
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+            $table->foreign('class_id')->references('id')->on('classes');
             $table->timestamps();
         });
     }

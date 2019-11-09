@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeesattendence extends Migration
+class CreateEmployeesAttendances extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEmployeesattendence extends Migration
      */
     public function up()
     {
-        Schema::create('employeesattendence', function (Blueprint $table) {
+        Schema::create('employees_attendances', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
@@ -31,6 +31,6 @@ class CreateEmployeesattendence extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employeesattendence');
+        Schema::dropIfExists('employees_attendances');
     }
 }

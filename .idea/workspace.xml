@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="209c9338-e024-4d67-9e28-6dce905eea39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112151_create_employees_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employeesattendence.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_studentsattendence.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Employee/create_employee.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/create_admin.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_175018_create_routines_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_121949_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_04_115612_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_04_115828_create_teachers_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_04_115850_create_staffs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_04_115957_create_guardians_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_06_062422_create_classes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_06_062422_create_classes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/auth/registration.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_121949_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_121949_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employeesattendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_studentsattendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_students_attendances.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +178,7 @@
       <workItem from="1573093063381" duration="8274000" />
       <workItem from="1573107492534" duration="8717000" />
       <workItem from="1573268433004" duration="14051000" />
-      <workItem from="1573290688669" duration="6183000" />
+      <workItem from="1573290688669" duration="12217000" />
     </task>
     <servers />
   </component>
@@ -213,5 +197,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
