@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="209c9338-e024-4d67-9e28-6dce905eea39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_175018_create_routines_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_121949_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_121949_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employeesattendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_studentsattendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_students_attendances.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +173,7 @@
       <workItem from="1573093063381" duration="8274000" />
       <workItem from="1573107492534" duration="8717000" />
       <workItem from="1573268433004" duration="14051000" />
-      <workItem from="1573290688669" duration="12217000" />
+      <workItem from="1573290688669" duration="13672000" />
     </task>
     <servers />
   </component>
