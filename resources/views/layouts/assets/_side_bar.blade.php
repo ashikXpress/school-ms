@@ -29,6 +29,35 @@
 
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Admin</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">
+                                <span class="title">Create admin</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">
+                                <span class="title">Admin list</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Academic</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="" class="nav-link ">
+                                <span class="title">Academic</span>
+                            </a>
+                        </li>
+                     </ul>
+                </li>
 
                 <li class="nav-item {{ Request::is('category/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
@@ -66,6 +95,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item {{ Request::is('student*') ? 'start active open ' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Students</span><span class="arrow"></span></a>

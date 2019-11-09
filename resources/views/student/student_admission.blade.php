@@ -95,22 +95,7 @@
                                 <input type="text" name="previous_institute_name" value="{{old('previous_institute_name')}}" id="previous_institute_name" class="form-control" placeholder="Enter previous institute name">
                                 <span class="text text-danger">{{$errors->first('previous_institute_name')}}</span>
                             </div>
-
-                            <div class="form-group col-md-6 col-sm-6">
-                                <label for="classseleted">Class name</label>
-                                <select class="form-control" name="class_name"  id="classseleted">
-                                    <option disabled selected>Selecte class</option>
-                                    <option value="Nursary" @if(old('class_name') == 'Nursary')selected @endif>Nursary</option>
-                                    <option value="One" @if(old('class_name') == 'One')selected @endif>One</option>
-                                    <option value="Two" @if(old('class_name') == 'Two')selected @endif>Two</option>
-                                    <option value="Three" @if(old('class_name') == 'Three')selected @endif>Three</option>
-
-                                </select>
-                                <span class="text text-danger">{{$errors->first('class_name')}}</span>
-
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-6">
+                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="father_name">Father's name</label>
                                 <input type="text" name="father_name" value="{{old('father_name')}}" id="father_name" class="form-control" placeholder="Enter father's name">
                                 <span class="text text-danger">{{$errors->first('father_name')}}</span>

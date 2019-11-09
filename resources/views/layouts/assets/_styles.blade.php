@@ -33,13 +33,12 @@
     .btn-group>a>i {
         color: #ffffff;
     }
-    input-append date{
-        position: relative;
+    input.form-control.formDatePicker {
+        padding-left: 26px;
     }
-    .input-append.date .add-on i, .input-prepend.date .add-on i {
-
+    span.add-on {
         position: absolute;
-        right: 22px;
-        bottom: 12px;
+        top: 45px;
+        left: 21px;
     }
 </style>

@@ -43,7 +43,7 @@
 
 <script>
     $(document).ready(function() {
-        $("#classseleted,#bloodgroupselected").select2();
+        $("#classseleted,#bloodgroupselected,#usertype").select2();
 
 
 
