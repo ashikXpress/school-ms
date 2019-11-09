@@ -23,9 +23,6 @@ Route::namespace('Auth')->group(function (){
 
 });
 Route::namespace('Admin')->group(function (){
-    Route::get('create-admin','AdminController@createAdminForm')->name('create.admin.form');
-    Route::post('create-admin','AdminController@createAdmin')->name('create.admin');
-    Route::get('create-role','AdminController@createRole')->name('create.role.form');
 
 });
 Route::namespace('Teacher')->group(function (){
