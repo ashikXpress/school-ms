@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use App\Models\ClassName;
 use App\Models\Department;
+use App\Models\Employee;
 use App\Models\Section;
 use App\Models\Shift;
 use App\Models\Student;
+use App\Models\StudentAttendance;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -35,7 +37,7 @@ class StudentController extends Controller
             'local_guardian_name'=>'nullable',
             'address'=>'required',
             'address2'=>'nullable',
-            'contact_number'=>'required',
+            'contact_number'=>'required|unique:students',
             'contact_number2'=>'nullable',
             'admission_date'=>'nullable',
             'admission_fees'=>'required',
@@ -81,6 +83,42 @@ class StudentController extends Controller
         $data['student_lists']=Student::orderBy('id','desc')->paginate(4);
         return view('student.student_lists',$data);
     }
+
+    public function studentAttendanceForm(Request $request){
+
+        $data['teachers']=Employee::get();
+        $data['students']=Student::get();
+        return view('student.attendance_student',$data);
+    }
+
+public function studentAttendance(Request $request){
+        $this->validate($request,[
+            'student_name'=>'required',
+            'teacher_name'=>'required',
+            'attend_date'=>'required',
+            'status'=>'required',
+            'description'=>'nullable',
+        ]);
+
+        $result=StudentAttendance::create([
+            'student_name'=>$request->student_name,
+            'teacher_name'=>$request->teacher_name,
+            'attend_date'=>$request->attend_date,
+            'status'=>$request->status,
+            'description'=>$request->description,
+        ]);
+    if ($result){
+        $request->session()->flash('success','Student attendance successful');
+        return redirect()->route('student.attendance.form');
+    }else{
+        $request->session()->flash('success','Student attendance failed');
+        return redirect()->route('student.attendance.form');
+    }
+}
+
+
+
+
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
         return view('student.create_subject',$data);

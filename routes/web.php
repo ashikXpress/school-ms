@@ -28,7 +28,12 @@ Route::namespace('Admin')->group(function (){
 Route::namespace('Teacher')->group(function (){
 
 });
-Route::namespace('Employee')->group(function (){
+Route::namespace('employee')->group(function (){
+    Route::get('join-employee','EmployeeController@joinEmployeeForm')->name('join.employee.form');
+    Route::post('join-employee','EmployeeController@joinEmployee')->name('join.employee');
+    Route::get('attendance-employee','EmployeeController@attendanceEmployeeForm')->name('attendance.employee.form');
+    Route::post('attendance-employee','EmployeeController@attendanceEmployee')->name('attendance.employee');
+
     Route::get('category/create-designation','EmployeeController@createDesignationForm')->name('create.designation.form');
     Route::post('category/create-designation','EmployeeController@createDesignation')->name('create.designation');
 });
@@ -36,6 +41,12 @@ Route::namespace('Student')->group(function (){
     Route::get('student/admission','StudentController@studentAdmissionForm')->name('student.admission.form');
     Route::post('student/admission','StudentController@studentAdmission')->name('student.admission');
     Route::get('student/student-lists','StudentController@studentList')->name('student.lists');
+
+
+    Route::get('student-attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
+    Route::post('student-attendance','StudentController@studentAttendance')->name('student.attendance');
+
+
 
     Route::get('category/create-subject','StudentController@createSubjectForm')->name('create.subject.form');
     Route::post('category/create-subject','StudentController@createSubject')->name('create.subject');

@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="209c9338-e024-4d67-9e28-6dce905eea39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/employee/attendance_employee.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/employee/join_employee.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student/attendance_student.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112151_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112151_create_employees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_121949_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_students_attendances.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_students_attendances.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Employee/create_designation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/create_designation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Employee/create_employee.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,19 +133,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/student" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\school-ms\app\Models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\school-ms\app\Http\Controllers\Auth" />
       <recent name="D:\xampp\htdocs\school-ms\app\Models" />
+      <recent name="D:\xampp\htdocs\school-ms\app\Http\Controllers\Auth" />
       <recent name="D:\xampp\htdocs\school-ms\app\Http\Controllers\Admin" />
       <recent name="D:\xampp\htdocs\school-ms\resources\views\layouts" />
       <recent name="D:\xampp\htdocs\school-ms\resources\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\school-ms\resources\views\student" />
+      <recent name="D:\xampp\htdocs\school-ms\app\Models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -173,7 +190,8 @@
       <workItem from="1573093063381" duration="8274000" />
       <workItem from="1573107492534" duration="8717000" />
       <workItem from="1573268433004" duration="14051000" />
-      <workItem from="1573290688669" duration="13672000" />
+      <workItem from="1573290688669" duration="14043000" />
+      <workItem from="1573354894228" duration="16238000" />
     </task>
     <servers />
   </component>
@@ -192,16 +210,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

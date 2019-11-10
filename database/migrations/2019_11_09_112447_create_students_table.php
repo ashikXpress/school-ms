@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('date_of_birth');
             $table->integer('birth_certificate_number');
             $table->string('blood_group');
-            $table->string('bus_facility')->nullable();
+            $table->smallInteger('bus_facility')->nullable();
             $table->string('previous_institute_name');
             $table->string('father_name');
             $table->string('father_occupation');
@@ -30,11 +30,11 @@ class CreateStudentsTable extends Migration
             $table->string('local_guardian_name')->nullable();
             $table->string('address');
             $table->string('address2')->nullable();
-            $table->string('contact_number');
+            $table->string('contact_number')->unique();
             $table->string('contact_number2')->nullable();
             $table->string('group')->nullable();
             $table->string('admission_date')->nullable();
-            $table->decimal('admission_fees',9,2);
+            $table->decimal('admission_fees',15,2);
             $table->string('email')->nullable();
             $table->string('password')->nullable();
             $table->unsignedBigInteger('class_id')->nullable();

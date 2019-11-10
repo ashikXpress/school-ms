@@ -1,13 +1,14 @@
 @extends('layouts.master_layout')
 @section('content')
+
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="card card-box">
                 <div class="card-head">
-                    <header>Student Admission Form</header>
+                    <header>Employee join Form</header>
                     <button id="panel-button3"
                             class="mdl-button mdl-js-button mdl-button--icon pull-right"
-                            data-upgraded="MaterialButton">
+                            data-upgraded=",MaterialButton">
                         <i class="material-icons">more_vert</i>
                     </button>
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
@@ -21,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="card-body " id="bar-parent2">
-                    <form action="{{route('student.admission')}}" method="post">
+                    <form action="{{route('join.employee')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6 col-sm-6">
@@ -34,6 +35,29 @@
                                 <input type="text" name="last_name" value="{{old('last_name')}}" id="last_name" class="form-control" placeholder="Enter first name">
                                 <span class="text text-danger">{{$errors->first('last_name')}}</span>
                             </div>
+
+
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label>User type</label>
+                                <select class="form-control" name="user_type" id="employeeusertype">
+                                    <option disabled selected>Selecte group</option>
+                                    <option value="superadmin" @if(old('user_type') == 'superadmin')selected @endif>Super Admin</option>
+                                    <option value="admin" @if(old('user_type') == 'admin')selected @endif>Admin</option>
+                                    <option value="teacher" @if(old('user_type') == 'teacher')selected @endif>Teacher</option>
+                                    <option value="staff" @if(old('user_type') == 'staff')selected @endif>Staff</option>
+                                </select>
+                                <span class="text text-danger">{{$errors->first('user_type')}}</span>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label>Designation</label>
+                                <select class="form-control" name="designation" id="designation">
+                                    <option disabled selected>Selecte group</option>
+                                    @foreach($designations as $designation)
+                                        <option value="{{$designation->designation_name}}" @if(old('designation') == $designation->designation_name)selected @endif>{{$designation->designation_name}}</option>
+                                    @endforeach
+                                </select>
+                                <span class="text text-danger">{{$errors->first('designation')}}</span>
+                            </div>
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="dp1">Date of birth</label>
                                 <div class="input-append date" id="dp1">
@@ -44,11 +68,7 @@
 
                             </div>
 
-                            <div class="form-group col-md-6 col-sm-6">
-                                <label for="birth_certificate_number">Birth certificate number</label>
-                                <input type="text" name="birth_certificate_number" value="{{old('birth_certificate_number')}}" id="birth_certificate_number" class="form-control" placeholder="Enter Birth certificate number">
-                                <span class="text text-danger">{{$errors->first('birth_certificate_number')}}</span>
-                            </div>
+
                             <div class="form-group col-md-6 col-sm-6">
                                 <label>Gender</label>
                                 <div class="row col-md-12">
@@ -64,19 +84,25 @@
                                 <span class="text text-danger">{{$errors->first('gender_name')}}</span>
                             </div>
 
-                            <div class="col-md-6 col-sm-6">
-                                <label>Bus facility</label>
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label>Marital status</label>
                                 <div class="row col-md-12">
                                     <div class="radio p-0 col-md-3">
-                                        <input type="radio" name="bus_facility" id="bus_facility1" value="0" value="0" {{ old('bus_facility') == '0' ? 'checked' : ''}}>
-                                        <label for="bus_facility1">Yes</label>
+                                        <input type="radio" name="marital_status" id="optionsRadios4" value="0" {{ old('marital_status') == '0' ? 'checked' : ''}}>
+                                        <label for="optionsRadios4">Married</label>
                                     </div>
                                     <div class="radio p-0 col-md-3">
-                                        <input type="radio" name="bus_facility" id="bus_facility2" value="1" value="1" {{ old('bus_facility') == '1' ? 'checked' : ''}}>
-                                        <label for="bus_facility2">No</label>
+                                        <input type="radio" name="marital_status"  id="optionsRadios3" value="1" {{ old('marital_status') == '1' ? 'checked' : ''}}>
+                                        <label for="optionsRadios3">Unmarried</label>
                                     </div>
-                                    <span class="text text-danger">{{$errors->first('bus_facility')}}</span>
                                 </div>
+                                <span class="text text-danger">{{$errors->first('marital_status')}}</span>
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label for="nid">National Identity</label>
+                                <input type="number" name="nid" value="{{old('nid')}}" id="nid" class="form-control" placeholder="Enter National Identity">
+                                <span class="text text-danger">{{$errors->first('nid')}}</span>
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
                                 <label>Blood group</label>
@@ -90,36 +116,27 @@
                                 </select>
                                 <span class="text text-danger">{{$errors->first('blood_group')}}</span>
                             </div>
+
+
+
+
                             <div class="form-group col-md-6 col-sm-6">
-                                <label for="previous_institute_name">Previous institute name</label>
-                                <input type="text" name="previous_institute_name" value="{{old('previous_institute_name')}}" id="previous_institute_name" class="form-control" placeholder="Enter previous institute name">
-                                <span class="text text-danger">{{$errors->first('previous_institute_name')}}</span>
+                                <label for="education_qualification">Education qualification</label>
+                                <textarea class="form-control" name="education_qualification" id="education_qualification"  rows="3" placeholder="Enter education qualification">{{old('education_qualification')}}</textarea>
+                                <span class="text text-danger">{{$errors->first('education_qualification')}}</span>
                             </div>
-                             <div class="form-group col-md-6 col-sm-6">
+                            <div class="form-group col-md-6 col-sm-6">
                                 <label for="father_name">Father's name</label>
                                 <input type="text" name="father_name" value="{{old('father_name')}}" id="father_name" class="form-control" placeholder="Enter father's name">
                                 <span class="text text-danger">{{$errors->first('father_name')}}</span>
                             </div>
-                            <div class="form-group col-md-6 col-sm-6">
-                                <label for="father_occupation">Father's occupation</label>
-                                <input type="text" name="father_occupation" value="{{old('father_occupation')}}" id="father_occupation" class="form-control" placeholder="Enter father's occupation">
-                                <span class="text text-danger">{{$errors->first('father_occupation')}}</span>
-                            </div>
+
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="mother_name">Mother's name</label>
                                 <input type="text" name="mother_name" value="{{old('mother_name')}}" id="mother_name" class="form-control" placeholder="Enter mother's name">
                                 <span class="text text-danger">{{$errors->first('mother_name')}}</span>
                             </div>
-                            <div class="form-group col-md-6 col-sm-6">
-                                <label for="mother_occupation">Mother's occupation</label>
-                                <input type="text" name="mother_occupation" value="{{old('mother_occupation')}}" id="mother_occupation" class="form-control" placeholder="Enter mother's occupation">
-                                <span class="text text-danger">{{$errors->first('mother_occupation')}}</span>
-                            </div>
-                            <div class="form-group col-md-6 col-sm-6">
-                                <label for="local_guardian_name">Local guardian name</label>
-                                <input type="text" name="local_guardian_name" value="{{old('local_guardian_name')}}" id="local_guardian_name" class="form-control" placeholder="Enter local guardian name">
-                                <span class="text text-danger">{{$errors->first('local_guardian_name')}}</span>
-                            </div>
+
 
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="address">Address</label>
@@ -142,18 +159,28 @@
                                 <span class="text text-danger">{{$errors->first('contact_number2')}}</span>
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
-                                <label for="dp2">Admission date</label>
+                                <label for="dp2">Joining date</label>
                                 <div class="input-append date" id="dp2">
-                                    <input class="form-control formDatePicker" name="admission_date" value="{{old('admission_date')}}"  placeholder="Enter date of birth" size="44" type="text"   aria-invalid="false">
+                                    <input class="form-control formDatePicker" name="joining_date" value="{{old('joining_date')}}"  placeholder="Enter joining date" size="44" type="text"   aria-invalid="false">
                                     <span class="add-on"><i class="fa fa-calendar"></i></span>
                                 </div>
-                                <span class="text text-danger">{{$errors->first('admission_date')}}</span>
+                                <span class="text text-danger">{{$errors->first('joining_date')}}</span>
 
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
-                                <label>Admission fees</label>
-                                <input type="number" name="admission_fees" value="{{old('admission_fees')}}" id="admission_fees" class="form-control" placeholder="Enter admission fees">
-                                <span class="text text-danger">{{$errors->first('admission_fees')}}</span>
+                                <label for="basic_salary">Basic salary</label>
+                                <input type="number" name="basic_salary" value="{{old('basic_salary')}}" id="basic_salary" class="form-control" placeholder="Enter basic salary">
+                                <span class="text text-danger">{{$errors->first('basic_salary')}}</span>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label for="others_honorarium">Others honorarium</label>
+                                <input type="number" name="others_honorarium" value="{{old('others_honorarium')}}" id="others_honorarium" class="form-control" placeholder="Enter others honorarium">
+                                <span class="text text-danger">{{$errors->first('others_honorarium')}}</span>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label for="subject_speciality">Subject speciality</label>
+                                <input type="text" name="subject_speciality" value="{{old('subject_speciality')}}" id="subject_speciality" class="form-control" placeholder="Enter subject speciality">
+                                <span class="text text-danger">{{$errors->first('subject_speciality')}}</span>
                             </div>
 
                             <div class="form-group col-md-6 col-sm-6">
@@ -167,7 +194,7 @@
                                 <span class="text text-danger">{{$errors->first('password')}}</span>
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
-                                <label>Retype password</label>
+                                <label for="retype_password">Retype password</label>
                                 <input type="password" name="retype_password" value="{{old('retype_password')}}" id="retype_password" class="form-control" placeholder="Enter retype password">
                                 <span class="text text-danger">{{$errors->first('retype_password')}}</span>
                             </div>
@@ -181,8 +208,7 @@
                         </div>
                     </form>
                 </div>
-        </div>
+            </div>
         </div>
     </div>
-
 @endsection
