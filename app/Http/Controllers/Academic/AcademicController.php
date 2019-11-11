@@ -13,11 +13,13 @@ use Illuminate\Http\Request;
 
 class AcademicController extends Controller
 {
-
-
+    public function __construct()
+    {
+        $this->middleware('employee.login');
+    }
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
-        return view('student.create_subject',$data);
+        return view('academic.create_subject',$data);
     }
     public function createSubject(Request $request){
         $this->validate($request,[
@@ -42,7 +44,7 @@ class AcademicController extends Controller
     }
     public function createShiftForm(){
         $data['shift_lists']=Shift::orderBy('id','desc')->paginate(4);
-        return view('student.create_shift',$data);
+        return view('academic.create_shift',$data);
     }
     public function createShift(Request $request){
         $this->validate($request,[
@@ -63,7 +65,7 @@ class AcademicController extends Controller
     }
     public function createSectionForm(){
         $data['section_lists']=Section::orderBy('id','desc')->paginate(4);
-        return view('student.create_section',$data);
+        return view('academic.create_section',$data);
     }
     public function createSection(Request $request){
         $this->validate($request,[
@@ -84,7 +86,7 @@ class AcademicController extends Controller
     }
     public function createClassForm(){
         $data['class_lists']=ClassName::orderBy('id','desc')->paginate(4);
-        return view('student.create_class',$data);
+        return view('academic.create_class',$data);
     }
     public function createClass(Request $request){
         $this->validate($request,[
@@ -121,7 +123,7 @@ class AcademicController extends Controller
     }
     public function createDepartmentForm(){
         $data['department_lists']=Department::orderBy('id','desc')->paginate(4);
-        return view('student.create_department',$data);
+        return view('academic.create_department',$data);
     }
     public function createDepartment(Request $request){
 
@@ -144,7 +146,7 @@ class AcademicController extends Controller
 
     public function createDesignationForm(){
         $data['designation_lists']=Designation::orderBy('id','desc')->paginate(4);
-        return view('employee.create_designation',$data);
+        return view('academic.create_designation',$data);
     }
     public function createDesignation(Request $request){
         $this->validate($request,[

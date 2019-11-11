@@ -26,46 +26,77 @@ class StudentController extends Controller
             'last_name'=>'required',
             'gender_name'=>'required',
             'date_of_birth'=>'required',
-            'birth_certificate_number'=>'required',
-            'blood_group'=>'required',
-            'bus_facility'=>'nullable',
-            'previous_institute_name'=>'required',
-            'father_name'=>'required',
-            'father_occupation'=>'required',
-            'mother_name'=>'required',
-            'mother_occupation'=>'nullable',
-            'local_guardian_name'=>'nullable',
-            'address'=>'required',
-            'address2'=>'nullable',
+            'blood_group'=>'nullable',
+            'present_address'=>'required',
+            'permanent_address'=>'nullable',
             'contact_number'=>'required|unique:students',
             'contact_number2'=>'nullable',
-            'admission_date'=>'nullable',
+
+
+
+            'class'=>'required',
+            'roll'=>'required',
+            'section'=>'nullable',
+            'shift'=>'nullable',
+            'group'=>'nullable',
+            'admission_date'=>'required',
             'admission_fees'=>'required',
+            'birth_certificate_number'=>'required',
+            'transport'=>'nullable',
+            'previous_institute_name'=>'nullable',
+
+
+            'father_name'=>'required',
+            'father_contact_number'=>'required|unique:students',
+            'father_occupation'=>'required',
+            'mother_name'=>'required',
+            'mother_contact_number'=>'nullable|unique:students',
+            'mother_occupation'=>'nullable',
+            'local_guardian_name'=>'nullable',
+
+
             'email'=>'required|unique:students',
+            'photo'=>'required',
             'password'=>'required|min:6|max:20',
-            'retype_password'=>'required|same:password|min:6|max:20',
+            'confirm_password'=>'required|same:password|min:6|max:20',
         ]);
+
+        $photo_path= $request->photo->store('gallery');
 
         $result=Student::create([
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
             'gender_name'=>$request->gender_name,
             'date_of_birth'=>$request->date_of_birth,
-            'birth_certificate_number'=>$request->birth_certificate_number,
             'blood_group'=>$request->blood_group,
-            'bus_facility'=>$request->bus_facility,
-            'previous_institute_name'=>$request->previous_institute_name,
-            'father_name'=>$request->father_name,
-            'father_occupation'=>$request->father_occupation,
-            'mother_name'=>$request->mother_name,
-            'mother_occupation'=>$request->mother_occupation,
-            'local_guardian_name'=>$request->local_guardian_name,
-            'address'=>$request->address,
-            'address2'=>$request->address2,
+            'present_address'=>$request->present_address,
+            'permanent_address'=>$request->permanent_address,
             'contact_number'=>$request->contact_number,
             'contact_number2'=>$request->contact_number2,
+
+
+            'class'=>$request->class,
+            'roll'=>$request->roll,
+            'section'=>$request->roll,
+            'shift'=>$request->shift,
+            'group'=>$request->group,
+            'birth_certificate_number'=>$request->birth_certificate_number,
             'admission_date'=>$request->admission_date,
             'admission_fees'=>$request->admission_fees,
+            'previous_institute_name'=>$request->previous_institute_name,
+            'transport'=>$request->transport,
+
+
+            'father_name'=>$request->father_name,
+            'father_contact_number'=>$request->father_contact_number,
+            'father_occupation'=>$request->father_occupation,
+            'mother_name'=>$request->mother_name,
+            'mother_contact_number'=>$request->mother_contact_number,
+            'mother_occupation'=>$request->mother_occupation,
+            'local_guardian_name'=>$request->local_guardian_name,
+
+
+            'photo'=>$photo_path,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
         ]);
@@ -88,7 +119,7 @@ class StudentController extends Controller
 
         $data['teachers']=Employee::get();
         $data['students']=Student::get();
-        return view('student.attendance_student',$data);
+        return view('student.student_attendance',$data);
     }
 
 public function studentAttendance(Request $request){

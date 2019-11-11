@@ -27,4 +27,11 @@ class AuthController extends Controller
             return redirect()->route('login.form');
         }
     }
+
+    public function logoutProcess(){
+
+            Auth::guard('employee')->logout();
+            return redirect()->route('login.form');
+
+    }
 }

@@ -19,26 +19,36 @@ class CreateStudentsTable extends Migration
             $table->string('last_name');
             $table->smallInteger('gender_name');
             $table->string('date_of_birth');
-            $table->integer('birth_certificate_number');
-            $table->string('blood_group');
-            $table->smallInteger('bus_facility')->nullable();
-            $table->string('previous_institute_name');
-            $table->string('father_name');
-            $table->string('father_occupation');
-            $table->string('mother_name');
-            $table->string('mother_occupation')->nullable();
-            $table->string('local_guardian_name')->nullable();
-            $table->string('address');
-            $table->string('address2')->nullable();
+            $table->string('blood_group')->nullable();
+            $table->string('present_address');
+            $table->string('permanent_address')->nullable();
             $table->string('contact_number')->unique();
             $table->string('contact_number2')->nullable();
+
+
+            $table->string('class');
+            $table->string('roll')->nullable();
+            $table->string('section')->nullable();
+            $table->string('shift')->nullable();
             $table->string('group')->nullable();
+            $table->integer('birth_certificate_number');
             $table->string('admission_date')->nullable();
             $table->decimal('admission_fees',15,2);
+            $table->string('previous_institute_name')->nullable();
+            $table->smallInteger('transport')->nullable();
+
+            $table->string('father_name');
+            $table->string('father_contact_number');
+            $table->string('father_occupation');
+            $table->string('mother_name');
+            $table->string('mother_contact_number')->nullable();
+            $table->string('mother_occupation')->nullable();
+            $table->string('local_guardian_name')->nullable();
+
+
             $table->string('email')->nullable();
             $table->string('password')->nullable();
-            $table->unsignedBigInteger('class_id')->nullable();
-            $table->foreign('class_id')->references('id')->on('classes');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

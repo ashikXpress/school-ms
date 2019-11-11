@@ -22,6 +22,7 @@ Route::namespace('Dashboard')->group(function (){
 Route::namespace('Auth')->group(function (){
     Route::get('login','AuthController@loginForm')->name('login.form');
     Route::post('login','AuthController@loginProcess')->name('login');
+    Route::get('logout','AuthController@logoutProcess')->name('logout');
 
 });
 Route::namespace('Admin')->group(function (){
@@ -62,8 +63,9 @@ Route::namespace('Student')->group(function (){
     Route::get('student/admission','StudentController@studentAdmissionForm')->name('student.admission.form');
     Route::post('student/admission','StudentController@studentAdmission')->name('student.admission');
     Route::get('student/student-lists','StudentController@studentList')->name('student.lists');
-    Route::get('student-attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
-    Route::post('student-attendance','StudentController@studentAttendance')->name('student.attendance');
+
+    Route::get('student/attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
+    Route::post('student/attendance','StudentController@studentAttendance')->name('student.attendance');
 
 
 

@@ -44,6 +44,7 @@
 <script>
     $(document).ready(function() {
         $("#classseleted,#bloodgroupselected,#employeeusertype,#designation,#studentattendanceselected,#teacherattendanceselected").select2();
+        $("#section,#shift,#group,#class").select2();
 
 
 
