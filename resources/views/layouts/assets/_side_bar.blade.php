@@ -47,48 +47,38 @@
                     </ul>
                 </li>
 
-                <li class="nav-item ">
+
+
+                <li class="nav-item {{ Request::is('academic/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Academic</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">
-                                <span class="title">Academic</span>
-                            </a>
-                        </li>
-                     </ul>
-                </li>
-
-                <li class="nav-item {{ Request::is('category/*') ? 'start active open' : null }}">
-                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                        <span class="title">Create Category</span><span class="arrow"></span></a>
-                    <ul class="sub-menu">
-                        <li class="nav-item {{ Request::is('category/create-class') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('academic/create-class') ? 'active' : null }}">
                           <a href="{{route('create.class.form')}}" class="nav-link ">
                               <span class="title">Create Class</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('category/create-section') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('academic/create-section') ? 'active' : null }}">
                             <a href="{{route('create.section.form')}}" class="nav-link ">
                                 <span class="title">Create section</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('category/create-shift') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('academic/create-shift') ? 'active' : null }}">
                             <a href="{{route('create.shift.form')}}" class="nav-link ">
                                 <span class="title">Create shift</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('category/create-subject') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('academic/create-subject') ? 'active' : null }}">
                             <a href="{{route('create.subject.form')}}" class="nav-link ">
                                 <span class="title">Create subject</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('category/create-department') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('academic/create-department') ? 'active' : null }}">
                             <a href="{{route('create.department.form')}}" class="nav-link ">
                                 <span class="title">Create department</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('category/create-designation') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('academic/create-designation') ? 'active' : null }}">
                             <a href="{{route('create.designation.form')}}" class="nav-link ">
                                 <span class="title">Create designation</span>
                             </a>

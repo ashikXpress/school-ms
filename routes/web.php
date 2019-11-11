@@ -20,12 +20,34 @@ Route::namespace('Dashboard')->group(function (){
 });
 
 Route::namespace('Auth')->group(function (){
+    Route::get('login','AuthController@loginForm')->name('login.form');
+    Route::post('login','AuthController@loginProcess')->name('login');
 
 });
 Route::namespace('Admin')->group(function (){
 
 });
-Route::namespace('Teacher')->group(function (){
+Route::namespace('Academic')->group(function (){
+
+
+    Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
+    Route::post('academic/create-subject','AcademicController@createSubject')->name('create.subject');
+
+    Route::get('academic/create-shift','AcademicController@createShiftForm')->name('create.shift.form');
+    Route::post('academic/create-shift','AcademicController@createShift')->name('create.shift');
+
+    Route::get('academic/create-section','AcademicController@createSectionForm')->name('create.section.form');
+    Route::post('academic/create-section','AcademicController@createSection')->name('create.section');
+
+    Route::get('academic/create-class','AcademicController@createClassForm')->name('create.class.form');
+    Route::post('academic/create-class','AcademicController@createClass')->name('create.class');
+    Route::get('academic/delete-class/{id}','AcademicController@deleteClass')->name('delete.class');
+
+    Route::get('academic/create-department','AcademicController@createDepartmentForm')->name('create.department.form');
+    Route::post('academic/create-department','AcademicController@createDepartment')->name('create.department');
+
+    Route::get('academic/create-designation','AcademicController@createDesignationForm')->name('create.designation.form');
+    Route::post('academic/create-designation','AcademicController@createDesignation')->name('create.designation');
 
 });
 Route::namespace('employee')->group(function (){
@@ -34,35 +56,18 @@ Route::namespace('employee')->group(function (){
     Route::get('attendance-employee','EmployeeController@attendanceEmployeeForm')->name('attendance.employee.form');
     Route::post('attendance-employee','EmployeeController@attendanceEmployee')->name('attendance.employee');
 
-    Route::get('category/create-designation','EmployeeController@createDesignationForm')->name('create.designation.form');
-    Route::post('category/create-designation','EmployeeController@createDesignation')->name('create.designation');
+
 });
 Route::namespace('Student')->group(function (){
     Route::get('student/admission','StudentController@studentAdmissionForm')->name('student.admission.form');
     Route::post('student/admission','StudentController@studentAdmission')->name('student.admission');
     Route::get('student/student-lists','StudentController@studentList')->name('student.lists');
-
-
     Route::get('student-attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
     Route::post('student-attendance','StudentController@studentAttendance')->name('student.attendance');
 
 
 
-    Route::get('category/create-subject','StudentController@createSubjectForm')->name('create.subject.form');
-    Route::post('category/create-subject','StudentController@createSubject')->name('create.subject');
 
-    Route::get('category/create-shift','StudentController@createShiftForm')->name('create.shift.form');
-    Route::post('category/create-shift','StudentController@createShift')->name('create.shift');
-
-    Route::get('category/create-section','StudentController@createSectionForm')->name('create.section.form');
-    Route::post('category/create-section','StudentController@createSection')->name('create.section');
-
-    Route::get('category/create-class','StudentController@createClassForm')->name('create.class.form');
-    Route::post('category/create-class','StudentController@createClass')->name('create.class');
-    Route::get('category/delete-class/{id}','StudentController@deleteClass')->name('delete.class');
-
-    Route::get('category/create-department','StudentController@createDepartmentForm')->name('create.department.form');
-    Route::post('category/create-department','StudentController@createDepartment')->name('create.department');
 });
 Route::namespace('Staff')->group(function (){
 
