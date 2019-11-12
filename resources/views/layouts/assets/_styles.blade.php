@@ -41,4 +41,8 @@
         top: 45px;
         left: 21px;
     }
+
+    .col-md-2.padd-less {
+        margin-top: 31px;
+    }
 </style>

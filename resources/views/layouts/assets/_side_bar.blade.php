@@ -29,25 +29,6 @@
 
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                        <span class="title">Admin</span><span class="arrow"></span></a>
-                    <ul class="sub-menu">
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">
-                                <span class="title">Create admin</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link ">
-                                <span class="title">Admin list</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-
 
                 <li class="nav-item {{ Request::is('academic/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
@@ -107,6 +88,24 @@
                         </li>
 
 
+                    </ul>
+                </li>
+
+
+                <li class="nav-item {{ Request::is('employee/*') ? 'active' : null }}">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Employee</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is('employee/employee-join') ? 'active' : null }}">
+                            <a href="{{route('employee.join.form')}}" class="nav-link ">
+                                <span class="title">Add employee</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('employee/employee-attendance') ? 'active' : null }}">
+                            <a href="{{route('employee.attendance.form')}}" class="nav-link ">
+                                <span class="title">Employee attendance</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

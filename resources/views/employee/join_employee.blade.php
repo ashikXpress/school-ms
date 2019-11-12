@@ -22,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="card-body " id="bar-parent2">
-                    <form action="{{route('join.employee')}}" method="post">
+                    <form action="{{route('employee.join')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-6 col-sm-6">

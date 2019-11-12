@@ -22,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="card-body " id="bar-parent2">
-                    <form action="{{route('attendance.employee')}}" method="post">
+                    <form action="{{route('employee.attendance')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="form-group col-md-4 col-sm-4">

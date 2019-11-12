@@ -3,23 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="209c9338-e024-4d67-9e28-6dce905eea39" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Academic/AcademicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Academic/AcademicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/employee/create_designation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_designation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/attendance_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/attendance_employee.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employee/join_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/join_employee.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/attendance_student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/create_class.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_class.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/create_department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_department.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/create_section.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_section.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/create_shift.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_shift.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/create_subject.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_subject.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_top_bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,7 +126,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env&#10;D:/xampp/htdocs/school-ms/storage/app/gallery/qq63y7vQ7aegRspWUBiczNn8vvA0OlID68aZzHdw.jpeg" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/student" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
@@ -203,7 +194,8 @@
       <workItem from="1573442672431" duration="2176000" />
       <workItem from="1573449407745" duration="323000" />
       <workItem from="1573455215572" duration="1524000" />
-      <workItem from="1573469009307" duration="24608000" />
+      <workItem from="1573469009307" duration="24960000" />
+      <workItem from="1573526188534" duration="7011000" />
     </task>
     <servers />
   </component>

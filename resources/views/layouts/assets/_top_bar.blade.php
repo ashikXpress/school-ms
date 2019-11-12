@@ -242,7 +242,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="login.html">
+                            <a href="{{route('logout')}}">
                                 <i class="icon-logout"></i> Log Out </a>
                         </li>
                     </ul>

@@ -119,6 +119,9 @@ class StudentController extends Controller
 
         $data['teachers']=Employee::get();
         $data['students']=Student::get();
+        $data['classes']=ClassName::get();
+        $data['shifts']=Shift::get();
+        $data['sections']=Section::get();
         return view('student.student_attendance',$data);
     }
 

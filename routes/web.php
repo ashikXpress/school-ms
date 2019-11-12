@@ -52,10 +52,10 @@ Route::namespace('Academic')->group(function (){
 
 });
 Route::namespace('employee')->group(function (){
-    Route::get('join-employee','EmployeeController@joinEmployeeForm')->name('join.employee.form');
-    Route::post('join-employee','EmployeeController@joinEmployee')->name('join.employee');
-    Route::get('attendance-employee','EmployeeController@attendanceEmployeeForm')->name('attendance.employee.form');
-    Route::post('attendance-employee','EmployeeController@attendanceEmployee')->name('attendance.employee');
+    Route::get('employee/employee-join','EmployeeController@joinEmployeeForm')->name('employee.join.form');
+    Route::post('employee/employee-join','EmployeeController@joinEmployee')->name('employee.join');
+    Route::get('employee/employee-attendance','EmployeeController@attendanceEmployeeForm')->name('employee.attendance.form');
+    Route::post('employee/employee-attendance','EmployeeController@attendanceEmployee')->name('employee.attendance');
 
 
 });
