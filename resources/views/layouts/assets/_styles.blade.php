@@ -53,4 +53,7 @@
     label.padd-less-right {
         padding-right: 27px;
     }
+    button.btn.btn-lg.btn-info.present-btn {
+        margin-bottom: 20px;
+    }
 </style>

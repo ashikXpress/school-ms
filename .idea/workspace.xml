@@ -2,17 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/employee/employee_lists.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Academic/AcademicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Academic/AcademicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/StudentsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/StudentsFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_05_144438_create_departments_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_05_144554_create_shifts_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112151_create_employees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112151_create_employees_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_112447_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_175018_create_routines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_175018_create_routines_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_195917_create_examinations_routines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_195917_create_examinations_routines_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/employee/join_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employee/join_employee.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_admission.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/student_lists.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_lists.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +28,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -120,6 +128,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TaYm4dr07s9qzEiES047TJAfzO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -161,6 +172,8 @@
       <option name="presentableId" value="Default" />
       <updated>1573699828467</updated>
       <workItem from="1573699832965" duration="10533000" />
+      <workItem from="1573710666028" duration="390000" />
+      <workItem from="1573717580968" duration="25249000" />
     </task>
     <servers />
   </component>
@@ -172,7 +185,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

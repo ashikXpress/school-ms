@@ -32,8 +32,8 @@ public function joinEmployee(Request $request){
 
 
             'father_name'=>'required',
-           'mother_name'=>'required',
-           'emergency_number'=>'required',
+            'mother_name'=>'required',
+            'emergency_number'=>'required',
 
 
             'designation'=>'required',
@@ -47,7 +47,7 @@ public function joinEmployee(Request $request){
             'photo'=>'nullable',
             'email'=>'nullable|unique:employees',
             'password'=>'nullable|min:6|max:20',
-            'retype_password'=>'nullable|same:password|min:6|max:20',
+            'confirm_password'=>'nullable|same:password|min:6|max:20',
         ]);
     $photo_path= $request->photo->store('gallery');
 
@@ -113,7 +113,13 @@ public function attendanceEmployee(Request $request){
         $request->session()->flash('success','Employee attendance create failed');
         return redirect()->route('employee.attendance.form');
     }
+
+
+
 }
 
-
+public function employeeList(){
+        $data['employee_lists']=Employee::orderBy('user_type')->paginate(20);
+        return view('employee.employee_lists',$data);
+}
 }

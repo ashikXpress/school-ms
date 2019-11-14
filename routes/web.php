@@ -34,9 +34,6 @@ Route::namespace('Academic')->group(function (){
     Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
     Route::post('academic/create-subject','AcademicController@createSubject')->name('create.subject');
 
-    Route::get('academic/create-shift','AcademicController@createShiftForm')->name('create.shift.form');
-    Route::post('academic/create-shift','AcademicController@createShift')->name('create.shift');
-
     Route::get('academic/create-section','AcademicController@createSectionForm')->name('create.section.form');
     Route::post('academic/create-section','AcademicController@createSection')->name('create.section');
 
@@ -44,8 +41,6 @@ Route::namespace('Academic')->group(function (){
     Route::post('academic/create-class','AcademicController@createClass')->name('create.class');
     Route::get('academic/delete-class/{id}','AcademicController@deleteClass')->name('delete.class');
 
-    Route::get('academic/create-department','AcademicController@createDepartmentForm')->name('create.department.form');
-    Route::post('academic/create-department','AcademicController@createDepartment')->name('create.department');
 
     Route::get('academic/create-designation','AcademicController@createDesignationForm')->name('create.designation.form');
     Route::post('academic/create-designation','AcademicController@createDesignation')->name('create.designation');
@@ -56,6 +51,7 @@ Route::namespace('employee')->group(function (){
     Route::post('employee/employee-join','EmployeeController@joinEmployee')->name('employee.join');
     Route::get('employee/employee-attendance','EmployeeController@attendanceEmployeeForm')->name('employee.attendance.form');
     Route::post('employee/employee-attendance','EmployeeController@attendanceEmployee')->name('employee.attendance');
+    Route::get('employee/employee-lists','EmployeeController@employeeList')->name('employee.lists');
 
 
 });
@@ -66,6 +62,7 @@ Route::namespace('Student')->group(function (){
 
     Route::get('student/attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
     Route::post('student/attendance','StudentController@studentAttendance')->name('student.attendance');
+
 
 
 

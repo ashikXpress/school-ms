@@ -42,27 +42,8 @@ class AcademicController extends Controller
             return redirect()->route('create.subject.form');
         }
     }
-    public function createShiftForm(){
-        $data['shift_lists']=Shift::orderBy('id','desc')->paginate(4);
-        return view('academic.create_shift',$data);
-    }
-    public function createShift(Request $request){
-        $this->validate($request,[
-            'shift_name'=>'required|unique:shifts|min:1|max:50',
-            'description'=>'nullable|min:5|max:300',
-        ]);
-        $result=Shift::create([
-            'shift_name'=>$request->shift_name,
-            'description'=>$request->description,
-        ]);
-        if ($result){
-            $request->session()->flash('success','Shift created successfully');
-            return redirect()->route('create.shift.form');
-        }else{
-            $request->session()->flash('success','Shift create failed');
-            return redirect()->route('create.shift.form');
-        }
-    }
+
+
     public function createSectionForm(){
         $data['section_lists']=Section::orderBy('id','desc')->paginate(4);
         return view('academic.create_section',$data);
@@ -73,7 +54,7 @@ class AcademicController extends Controller
             'description'=>'nullable|min:5|max:300',
         ]);
         $result=Section::create([
-            'section_name'=>$request->section_name,
+            'section_name'=>ucfirst(strtolower($request->section_name)),
             'description'=>$request->description,
         ]);
         if ($result){
@@ -96,7 +77,7 @@ class AcademicController extends Controller
 
 
         $result=ClassName::create([
-            'class_name'=>$request->class_name,
+            'class_name'=>ucfirst(strtolower($request->class_name)),
             'description'=>$request->description,
         ]);
         if ($result){
@@ -121,28 +102,8 @@ class AcademicController extends Controller
         }
 
     }
-    public function createDepartmentForm(){
-        $data['department_lists']=Department::orderBy('id','desc')->paginate(4);
-        return view('academic.create_department',$data);
-    }
-    public function createDepartment(Request $request){
 
-        $this->validate($request,[
-            'dept_name'=>'required|unique:departments|min:3|max:50',
-            'description'=>'nullable|min:5|max:300',
-        ]);
-        $result=Department::create([
-            'dept_name'=>$request->dept_name,
-            'description'=>$request->description,
-        ]);
-        if ($result){
-            $request->session()->flash('success','Department created successfully');
-            return redirect()->route('create.department.form');
-        }else{
-            $request->session()->flash('Department','Department create failed');
-            return redirect()->route('create.department.form');
-        }
-    }
+
 
     public function createDesignationForm(){
         $data['designation_lists']=Designation::orderBy('id','desc')->paginate(4);

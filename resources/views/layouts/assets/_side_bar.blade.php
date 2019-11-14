@@ -44,21 +44,13 @@
                                 <span class="title">Create section</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('academic/create-shift') ? 'active' : null }}">
-                            <a href="{{route('create.shift.form')}}" class="nav-link ">
-                                <span class="title">Create shift</span>
-                            </a>
-                        </li>
+
                         <li class="nav-item {{ Request::is('academic/create-subject') ? 'active' : null }}">
                             <a href="{{route('create.subject.form')}}" class="nav-link ">
                                 <span class="title">Create subject</span>
                             </a>
                         </li>
-                        <li class="nav-item {{ Request::is('academic/create-department') ? 'active' : null }}">
-                            <a href="{{route('create.department.form')}}" class="nav-link ">
-                                <span class="title">Create department</span>
-                            </a>
-                        </li>
+
                         <li class="nav-item {{ Request::is('academic/create-designation') ? 'active' : null }}">
                             <a href="{{route('create.designation.form')}}" class="nav-link ">
                                 <span class="title">Create designation</span>
@@ -104,6 +96,11 @@
                         <li class="nav-item {{ Request::is('employee/employee-attendance') ? 'active' : null }}">
                             <a href="{{route('employee.attendance.form')}}" class="nav-link ">
                                 <span class="title">Employee attendance</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('employee/employee-lists') ? 'active' : null }}">
+                            <a href="{{route('employee.lists')}}" class="nav-link ">
+                                <span class="title">All employee</span>
                             </a>
                         </li>
                     </ul>

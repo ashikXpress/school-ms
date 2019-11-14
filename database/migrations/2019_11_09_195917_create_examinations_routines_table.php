@@ -18,8 +18,8 @@ class CreateExaminationsRoutinesTable extends Migration
             $table->date('date');
             $table->unsignedBigInteger('exam_name_id')->nullable();
             $table->unsignedBigInteger('subject_id')->nullable();
-            $table->unsignedBigInteger('class_id')->nullable();
-            $table->unsignedBigInteger('shift_id')->nullable();
+            $table->unsignedBigInteger('class_id');
+            $table->string('shift')->nullable();
             $table->time('start_time');
             $table->time('end_time');
             $table->string('academic_year');
@@ -27,7 +27,6 @@ class CreateExaminationsRoutinesTable extends Migration
             $table->foreign('exam_name_id')->references('id')->on('examinations');
             $table->foreign('subject_id')->references('id')->on('subjects');
             $table->foreign('class_id')->references('id')->on('classes');
-            $table->foreign('shift_id')->references('id')->on('shifts');
             $table->foreign('authorized_id')->references('id')->on('employees');
             $table->timestamps();
         });

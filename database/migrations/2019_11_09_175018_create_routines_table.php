@@ -21,11 +21,10 @@ class CreateRoutinesTable extends Migration
             $table->time('end_time');
             $table->integer('room_number');
             $table->string('academic_year');
+            $table->string('shift');
             $table->unsignedBigInteger('class_id')->nullable();
             $table->unsignedBigInteger('section_id')->nullable();
             $table->unsignedBigInteger('teacher_id')->nullable();
-            $table->unsignedBigInteger('shift_id')->nullable();
-           $table->foreign('shift_id')->references('id')->on('shifts');
             $table->foreign('teacher_id')->references('id')->on('employees');
             $table->foreign('class_id')->references('id')->on('classes');
             $table->foreign('section_id')->references('id')->on('sections');

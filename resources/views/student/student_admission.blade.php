@@ -30,7 +30,9 @@
                                 <label for="class">Class (*Required)</label>
                                 <select class="form-control" name="class" id="class">
                                     <option disabled selected>Select class</option>
-                                    <option value="one" @if(old('class') == 'one')selected @endif>One</option>
+                                    @foreach($classes as $class)
+                                    <option value="{{$class->class_name}}" @if(old('class') == $class->class_name)selected @endif>{{$class->class_name}}</option>
+                                    @endforeach
                                 </select>
 
                                 <span class="text text-danger">{{$errors->first('class')}}</span>
@@ -54,7 +56,9 @@
                                 <label for="section">Section (Optional)</label>
                                 <select class="form-control" name="section" id="section">
                                     <option disabled selected>Select section</option>
-                                    <option value="A" @if(old('section') == 'A')selected @endif>A</option>
+                                    @foreach($sections as $section)
+                                    <option value="{{$section->section_name}}" @if(old('section') == $section->section_name)selected @endif>{{$section->section_name}}</option>
+                                    @endforeach
                                 </select>
                                 <span class="text text-danger">{{$errors->first('section')}}</span>
                             </div>
@@ -64,6 +68,7 @@
                                     <option disabled selected>Select shift</option>
                                     <option value="Morning" @if(old('shift') == 'Morning')selected @endif>Morning</option>
                                     <option value="Day" @if(old('shift') == 'Day')selected @endif>Day</option>
+
                                 </select>
                                 <span class="text text-danger">{{$errors->first('shift')}}</span>
                             </div>

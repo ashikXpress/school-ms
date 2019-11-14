@@ -90,7 +90,7 @@
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="permanent_address">Permanent address (Optional)</label>
-                                <textarea class="form-control" name="permanent_address" id="address2"  rows="3" placeholder="Enter permanent address">{{old('permanent_address')}}</textarea>
+                                <textarea class="form-control" name="permanent_address" id="permanent_address"  rows="3" placeholder="Enter permanent address">{{old('permanent_address')}}</textarea>
                                 <span class="text text-danger">{{$errors->first('permanent_address')}}</span>
                             </div>
 
@@ -226,9 +226,9 @@
                                 <span class="text text-danger">{{$errors->first('password')}}</span>
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
-                                <label for="retype_password">Retype password (Optional)</label>
-                                <input type="password" name="retype_password" value="{{old('retype_password')}}" id="retype_password" class="form-control" placeholder="Enter retype password">
-                                <span class="text text-danger">{{$errors->first('retype_password')}}</span>
+                                <label for="confirm_password">Confirm password (Optional)</label>
+                                <input type="password" name="confirm_password" value="{{old('confirm_password')}}" id="confirm_password" class="form-control" placeholder="Enter confirm password">
+                                <span class="text text-danger">{{$errors->first('confirm_password')}}</span>
                             </div>
 
                             <div class="form-group col-md-12">

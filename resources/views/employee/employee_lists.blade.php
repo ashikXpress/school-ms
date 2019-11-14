@@ -44,8 +44,8 @@
                             </div>
                         </div>
                     </div>
-                    @if($student_lists!=null)
-                     <div class="table-scrollable">
+
+                    <div class="table-scrollable">
                         <div id="example4_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
 
                             <div class="row">
@@ -54,23 +54,21 @@
                                         <thead>
                                         <tr role="row">
                                             <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 65px;">Photo</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Roll No : activate to sort column descending" style="width: 60px;">Class</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Roll No : activate to sort column descending" style="width: 60px;">Roll</th>
                                             <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Name</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Designation</th>
                                             <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 85px;">Contact number</th>
-                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Action : activate to sort column ascending" style="width: 61px;"> Action </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Action : activate to sort column ascending" style="width: 61px;"> Action </th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($student_lists as $student_list)
+                                        @foreach($employee_lists as $employee_list)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="patient-img">
-                                                    <img src="{{$student_list->photo}}" alt="">
+                                                    <img src="{{$employee_list->photo}}" alt="">
                                                 </td>
-                                                <td class="left">{{$student_list->class}}</td>
-                                                <td class="left">{{$student_list->roll}}</td>
-                                                <td><a href="">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>
-                                                <td>{{$student_list->contact_number}}</td>
+                                                <td class="left"><a href="">{{$employee_list->first_name.' '.$employee_list->last_name}}</a></td>
+                                                <td class="left">{{$employee_list->designation}}</td>
+                                                <td class="left">{{$employee_list->contact_number}}</td>
 
                                                 <td>
                                                     <a href="edit_professor.html" class="btn btn-primary btn-xs">
@@ -92,12 +90,11 @@
                                     <div class="dataTables_info" id="example4_info" role="status" aria-live="polite">Showing 1 to 10 of 18 entries</div>
                                 </div>
                                 <div class="col-sm-12 col-md-7">
-                                    {{$student_lists->links()}}
+                                    {{$employee_lists->links()}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endif
                 </div>
             </div>
         </div>

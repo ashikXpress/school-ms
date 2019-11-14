@@ -11,13 +11,18 @@ use App\Models\Shift;
 use App\Models\Student;
 use App\Models\StudentAttendance;
 use App\Models\Subject;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Input\Input;
 
 class StudentController extends Controller
 {
     public function studentAdmissionForm(){
+        $data['sections']=Section::get();
+        $data['classes']=ClassName::get();
 
-        return view('student.student_admission');
+        return view('student.student_admission',$data);
     }
 
     public function studentAdmission(Request $request){
@@ -115,36 +120,79 @@ class StudentController extends Controller
 
     public function studentList(){
 
-        $data['student_lists']=Student::orderBy('id','desc')->paginate(20);
+        $data['student_lists']=Student::orderBy('class','asc')->paginate(20);
         return view('student.student_lists',$data);
     }
 
     public function studentAttendanceForm(Request $request){
 
-        $data['teachers']=Employee::get();
-        $data['students']=Student::get();
+
+
         $data['classes']=ClassName::get();
-        $data['shifts']=Shift::get();
         $data['sections']=Section::get();
+        $class=$request->class;
+        $shift=$request->shift;
+        $section=$request->section;
+
+
+        if ($class!='' && $shift=='' && $section==''){
+
+            $data['student_search_lists']=Student::Where('class',$class)->get();
+
+
+            }elseif ($class!='' && $shift!='' && $section=='')
+        {
+            $data['student_search_lists']=Student::Where('class',$class)->where('shift',$shift)->get();
+
+        }elseif ($class!='' && $shift!='' && $section!=''){
+            $data['student_search_lists']=Student::Where('class',$class)->where('shift',$shift)->where('section',$section)->get();
+
+        }elseif ($class=='' && $shift!='' && $section==''){
+            $data['student_search_lists']=Student::where('shift',$shift)->get();
+
+        }elseif ($class=='' && $shift=='' && $section!=''){
+            $data['student_search_lists']=Student::where('section',$section)->get();
+
+        }elseif ($class!='' && $shift=='' && $section!=''){
+            $data['student_search_lists']=Student::where('class',$class)->where('section',$section)->get();
+
+        }elseif ($class=='' && $shift!='' && $section!=''){
+            $data['student_search_lists']=Student::where('shift',$shift)->where('section',$section)->get();
+
+        }
+
+
         return view('student.student_attendance',$data);
     }
 
+
+
 public function studentAttendance(Request $request){
-        $this->validate($request,[
-            'student_name'=>'required',
-            'teacher_name'=>'required',
-            'attend_date'=>'required',
-            'status'=>'required',
-            'description'=>'nullable',
-        ]);
+
+
+
+    $allstatus=$request->status;
+
+
+
+    foreach ($allstatus as $statusValue)
+    {
+
+
+
 
         $result=StudentAttendance::create([
             'student_name'=>$request->student_name,
-            'teacher_name'=>$request->teacher_name,
-            'attend_date'=>$request->attend_date,
-            'status'=>$request->status,
+            'teacher_name'=>\auth()->guard('employee')->user()->id,
+            'attend_date'=>Carbon::now(),
+            'status'=>$statusValue,
             'description'=>$request->description,
         ]);
+    }
+
+
+
+
     if ($result){
         $request->session()->flash('success','Student attendance successful');
         return redirect()->route('student.attendance.form');
