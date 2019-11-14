@@ -69,10 +69,10 @@ public function joinEmployee(Request $request){
 
     if ($result){
         $request->session()->flash('success','Employee join successfully');
-        return redirect()->route('join.employee.form');
+        return redirect()->route('employee.attendance.form');
     }else{
         $request->session()->flash('success','Employee join failed');
-        return redirect()->route('join.employee.form');
+        return redirect()->route('employee.join.form');
     }
 }
 
@@ -97,10 +97,10 @@ public function attendanceEmployee(Request $request){
 
     if ($result){
         $request->session()->flash('success','Employee attendance successful');
-        return redirect()->route('attendance.employee.form');
+        return redirect()->route('employee.attendance.form');
     }else{
         $request->session()->flash('success','Employee attendance create failed');
-        return redirect()->route('attendance.employee.form');
+        return redirect()->route('employee.attendance.form');
     }
 }
 

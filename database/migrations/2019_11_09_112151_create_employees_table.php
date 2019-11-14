@@ -29,13 +29,13 @@ class CreateEmployeesTable extends Migration
             $table->string('mother_name');
             $table->text('address');
             $table->text('address2')->nullable();
-            $table->string('contact_number')->unique();
+            $table->string('contact_number',15)->unique();
             $table->string('contact_number2')->nullable();
             $table->string('joining_date')->nullable();
             $table->decimal('basic_salary',15,2);
             $table->string('subject_speciality')->nullable();
             $table->decimal('others_honorarium',15,2)->nullable();
-            $table->string('email')->nullable()->unique();
+            $table->string('email',250)->nullable()->unique();
             $table->string('password')->nullable();
             $table->timestamps();
         });

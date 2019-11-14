@@ -22,7 +22,7 @@ class CreateStudentsTable extends Migration
             $table->string('blood_group')->nullable();
             $table->string('present_address');
             $table->string('permanent_address')->nullable();
-            $table->string('contact_number')->unique();
+            $table->string('contact_number',15)->unique();
             $table->string('contact_number2')->nullable();
 
 
@@ -46,7 +46,7 @@ class CreateStudentsTable extends Migration
             $table->string('local_guardian_name')->nullable();
 
 
-            $table->string('email')->nullable();
+            $table->string('email',50)->unique()->nullable();
             $table->string('password')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
