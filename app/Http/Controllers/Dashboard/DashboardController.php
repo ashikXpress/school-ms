@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-public function __construct()
-{
-    $this->middleware('employee.login');
-}
+//public function __construct()
+//{
+//    $this->middleware('employee.login');
+//}
 
     public function home(){
         return redirect()->route('dashboard');

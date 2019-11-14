@@ -45,4 +45,12 @@
     .col-md-2.padd-less {
         margin-top: 31px;
     }
+
+    .top-padd-less {
+        padding-top: 39px;
+    }
+
+    label.padd-less-right {
+        padding-right: 27px;
+    }
 </style>

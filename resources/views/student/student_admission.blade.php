@@ -41,6 +41,16 @@
                                 <span class="text text-danger">{{$errors->first('roll')}}</span>
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
+                                <label for="id_number">ID number/Login id (*Required)</label>
+                                <input type="number" name="id_number" value="{{old('id_number')}}" id="id_number" class="form-control" placeholder="Enter ID number/login id number">
+                                <span class="text text-danger">{{$errors->first('id_number')}}</span>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
+                                <label for="reg">Registration (Optional)</label>
+                                <input type="number" name="reg" value="{{old('reg')}}" id="reg" class="form-control" placeholder="Enter registration number">
+                                <span class="text text-danger">{{$errors->first('reg')}}</span>
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6">
                                 <label for="section">Section (Optional)</label>
                                 <select class="form-control" name="section" id="section">
                                     <option disabled selected>Select section</option>
@@ -52,6 +62,7 @@
                                 <label for="shift">Shift (Optional)</label>
                                 <select class="form-control" name="shift" id="shift">
                                     <option disabled selected>Select shift</option>
+                                    <option value="Morning" @if(old('shift') == 'Morning')selected @endif>Morning</option>
                                     <option value="Day" @if(old('shift') == 'Day')selected @endif>Day</option>
                                 </select>
                                 <span class="text text-danger">{{$errors->first('shift')}}</span>
@@ -60,7 +71,9 @@
                                 <label for="group">Group (Optional)</label>
                                 <select class="form-control" name="group" id="group">
                                     <option disabled selected>Select group</option>
+                                    <option value="Science" @if(old('group') == 'Science')selected @endif>Science</option>
                                     <option value="Humanity" @if(old('group') == 'Humanity')selected @endif>Humanity</option>
+                                    <option value="Commerce" @if(old('group') == 'Commerce')selected @endif>commerce</option>
                                 </select>
                                 <span class="text text-danger">{{$errors->first('group')}}</span>
                             </div>
@@ -89,9 +102,10 @@
                                 <span class="text text-danger">{{$errors->first('previous_institute_name')}}</span>
                             </div>
 
-                            <div class="col-md-6 col-sm-6">
-                                <label>Transport (Optional)</label>
-                                <div class="row col-md-12">
+                            <div class="col-md-6 col-sm-6 ">
+
+                                <div class="row col-md-12 top-padd-less">
+                                    <label class="col-md-5">Transport (Optional)</label>
                                     <div class="radio p-0 col-md-3">
                                         <input type="radio" name="transport" id="transport" value="0"  {{ old('transport') == '0' ? 'checked' : ''}}>
                                         <label for="transport">Yes</label>
@@ -162,8 +176,9 @@
                                 <span class="text text-danger">{{$errors->first('contact_number2')}}</span>
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
-                                <label>Gender (*Required)</label>
+
                                 <div class="row col-md-12">
+                                    <label class="padd-less-right">Gender (*Required) </label>
                                     <div class="radio p-0 col-md-3">
                                         <input type="radio" name="gender_name" id="optionsRadios1" value="0" {{ old('gender_name') == '0' ? 'checked' : ''}}>
                                         <label for="optionsRadios1">Male</label>

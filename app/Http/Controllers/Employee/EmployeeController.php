@@ -21,27 +21,36 @@ public function joinEmployee(Request $request){
             'first_name'=>'required',
             'last_name'=>'required',
             'user_type'=>'required',
-            'designation'=>'required',
             'gender_name'=>'required',
             'date_of_birth'=>'required',
-            'nid'=>'required',
-            'blood_group'=>'required',
-            'marital_status'=>'nullable',
-            'education_qualification'=>'required',
-            'father_name'=>'required',
-           'mother_name'=>'required',
-           'joining_date'=>'nullable',
-            'address'=>'required',
-            'address2'=>'nullable',
+            'blood_group'=>'nullable',
+            'marital_status'=>'required',
+            'present_address'=>'required',
+            'permanent_address'=>'nullable',
             'contact_number'=>'required|unique:employees',
             'contact_number2'=>'nullable',
+
+
+            'father_name'=>'required',
+           'mother_name'=>'required',
+           'emergency_number'=>'required',
+
+
+            'designation'=>'required',
+            'joining_date'=>'required',
+            'education_qualification'=>'required',
+            'nid'=>'required',
             'basic_salary'=>'required',
             'subject_speciality'=>'nullable',
             'others_honorarium'=>'nullable',
-            'email'=>'required|unique:employees',
-            'password'=>'required|min:6|max:20',
-            'retype_password'=>'required|same:password|min:6|max:20',
+
+            'photo'=>'nullable',
+            'email'=>'nullable|unique:employees',
+            'password'=>'nullable|min:6|max:20',
+            'retype_password'=>'nullable|same:password|min:6|max:20',
         ]);
+    $photo_path= $request->photo->store('gallery');
+
         $result=Employee::create([
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
@@ -55,21 +64,23 @@ public function joinEmployee(Request $request){
             'education_qualification'=>$request->education_qualification,
             'father_name'=>$request->father_name,
             'mother_name'=>$request->mother_name,
+            'emergency_number'=>$request->emergency_number,
             'joining_date'=>$request->joining_date,
-            'address'=>$request->address,
-            'address2'=>$request->address2,
+            'present_address'=>$request->present_address,
+            'permanent_address'=>$request->permanent_address,
             'contact_number'=>$request->contact_number,
             'contact_number2'=>$request->contact_number2,
             'basic_salary'=>$request->basic_salary,
             'subject_speciality'=>$request->subject_speciality,
             'others_honorarium'=>$request->others_honorarium,
+            'photo'=>$photo_path,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
         ]);
 
     if ($result){
         $request->session()->flash('success','Employee join successfully');
-        return redirect()->route('employee.attendance.form');
+        return redirect()->route('employee.join.form');
     }else{
         $request->session()->flash('success','Employee join failed');
         return redirect()->route('employee.join.form');

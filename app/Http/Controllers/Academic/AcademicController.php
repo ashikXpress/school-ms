@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 
 class AcademicController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('employee.login');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('employee.login');
+//    }
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
         return view('academic.create_subject',$data);

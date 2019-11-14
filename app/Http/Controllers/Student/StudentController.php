@@ -36,6 +36,8 @@ class StudentController extends Controller
 
             'class'=>'required',
             'roll'=>'required',
+            'reg'=>'nullable|unique:students',
+            'id_number'=>'required|unique:students',
             'section'=>'nullable',
             'shift'=>'nullable',
             'group'=>'nullable',
@@ -77,6 +79,8 @@ class StudentController extends Controller
 
             'class'=>$request->class,
             'roll'=>$request->roll,
+            'reg'=>$request->reg,
+            'id_number'=>$request->id_number,
             'section'=>$request->roll,
             'shift'=>$request->shift,
             'group'=>$request->group,
@@ -111,7 +115,7 @@ class StudentController extends Controller
 
     public function studentList(){
 
-        $data['student_lists']=Student::orderBy('id','desc')->paginate(4);
+        $data['student_lists']=Student::orderBy('id','desc')->paginate(20);
         return view('student.student_lists',$data);
     }
 

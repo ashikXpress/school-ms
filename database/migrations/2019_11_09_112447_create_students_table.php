@@ -22,12 +22,14 @@ class CreateStudentsTable extends Migration
             $table->string('blood_group')->nullable();
             $table->string('present_address');
             $table->string('permanent_address')->nullable();
-            $table->string('contact_number',15)->unique();
+            $table->string('contact_number',200)->unique();
             $table->string('contact_number2')->nullable();
 
 
             $table->string('class');
             $table->string('roll')->nullable();
+            $table->string('reg',15)->nullable();
+            $table->string('id_number',15)->nullable();
             $table->string('section')->nullable();
             $table->string('shift')->nullable();
             $table->string('group')->nullable();
