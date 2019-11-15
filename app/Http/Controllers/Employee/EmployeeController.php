@@ -118,8 +118,30 @@ public function attendanceEmployee(Request $request){
 
 }
 
-public function employeeList(){
+public function employeeList(Request $request){
+    $search=$request->search;
+    $token=$request->_token;
+    if($search=='' && $token==''){
+
         $data['employee_lists']=Employee::orderBy('user_type')->paginate(20);
+        $data['counts']=Employee::count();
+    }else{
+        $data['counts']=Employee::count();
+        $data['employee_lists']=Employee::orWhere('designation', 'LIKE', '%'.$search.'%')
+            ->orWhere('first_name', 'LIKE', '%'.$search.'%')
+            ->orWhere('last_name', 'LIKE', '%'.$search.'%')
+            ->orWhere('contact_number', 'LIKE', '%'.$search.'%')
+            ->paginate(20);
+
+    }
+
         return view('employee.employee_lists',$data);
 }
+
+public function employeeProfile($id){
+    $data['employee_profile']=Employee::find($id);
+        return view('employee.employee_profile',$data);
+}
+
+
 }

@@ -56,4 +56,9 @@
     button.btn.btn-lg.btn-info.present-btn {
         margin-bottom: 20px;
     }
+
+.search-form-left-less {
+        margin-left: 15px;
+        margin-bottom: 20px;
+    }
 </style>

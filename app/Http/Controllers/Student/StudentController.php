@@ -118,10 +118,33 @@ class StudentController extends Controller
         }
     }
 
-    public function studentList(){
+    public function studentList(Request $request){
 
-        $data['student_lists']=Student::orderBy('class','asc')->paginate(20);
+        $search=$request->search;
+        $token=$request->_token;
+        if($search=='' && $token==''){
+
+            $data['student_lists']=Student::orderBy('class','asc')->paginate(20);
+            $data['counts']=Student::count();
+        }else{
+            $data['counts']=Student::count();
+            $data['student_lists']=Student::orWhere('class', 'LIKE', '%'.$search.'%')
+                ->orWhere('roll', 'LIKE', '%'.$search.'%')
+                ->orWhere('first_name', 'LIKE', '%'.$search.'%')
+                ->orWhere('last_name', 'LIKE', '%'.$search.'%')
+                ->orWhere('contact_number', 'LIKE', '%'.$search.'%')
+                ->paginate(20);
+
+        }
+
+
         return view('student.student_lists',$data);
+    }
+
+
+    public function studentProfile($id){
+        $data['student_profile']=Student::find($id);
+        return view('student.student_profile',$data);
     }
 
     public function studentAttendanceForm(Request $request){

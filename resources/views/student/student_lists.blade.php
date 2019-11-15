@@ -44,10 +44,20 @@
                             </div>
                         </div>
                     </div>
-                    @if($student_lists!=null)
+
                      <div class="table-scrollable">
                         <div id="example4_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 search-form-left-less">
+                                    <form action="">
+                                        @csrf
+                                    <label>Search:<input type="text" name="search" class="form-control form-control-sm" placeholder="Type..." aria-controls="example4">
+                                    </label>
+                                    <button class="btn btn-info">Search</button>
 
+                                    </form>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table class="table table-striped table-bordered table-hover table-checkable order-column valign-middle dataTable no-footer" id="example4" role="grid" aria-describedby="example4_info">
@@ -69,7 +79,7 @@
                                                 </td>
                                                 <td class="left">{{$student_list->class}}</td>
                                                 <td class="left">{{$student_list->roll}}</td>
-                                                <td><a href="">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>
+                                                <td><a href="{{route('student.profile',$student_list->id)}}">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>
                                                 <td>{{$student_list->contact_number}}</td>
 
                                                 <td>
@@ -89,7 +99,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 col-md-5">
-                                    <div class="dataTables_info" id="example4_info" role="status" aria-live="polite">Showing 1 to 10 of 18 entries</div>
+                                    <div class="dataTables_info" id="example4_info" role="status" aria-live="polite">Showing {{$student_lists->count()}} of {{$counts}} entries</div>
                                 </div>
                                 <div class="col-sm-12 col-md-7">
                                     {{$student_lists->links()}}
@@ -97,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    @endif
+
                 </div>
             </div>
         </div>

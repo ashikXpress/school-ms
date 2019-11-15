@@ -52,6 +52,7 @@ Route::namespace('employee')->group(function (){
     Route::get('employee/employee-attendance','EmployeeController@attendanceEmployeeForm')->name('employee.attendance.form');
     Route::post('employee/employee-attendance','EmployeeController@attendanceEmployee')->name('employee.attendance');
     Route::get('employee/employee-lists','EmployeeController@employeeList')->name('employee.lists');
+    Route::get('employee/profile/{id}','EmployeeController@employeeProfile')->name('employee.profile');
 
 
 });
@@ -62,6 +63,7 @@ Route::namespace('Student')->group(function (){
 
     Route::get('student/attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
     Route::post('student/attendance','StudentController@studentAttendance')->name('student.attendance');
+    Route::get('student/profile/{id}','StudentController@studentProfile')->name('student.profile');
 
 
 
