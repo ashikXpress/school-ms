@@ -16,7 +16,7 @@
                         </div>
                         <ul class="list-group list-group-unbordered">
                             <li class="list-group-item">
-                                <b>Followers</b> <a class="pull-right">1,200</a>
+                                <b>Followers</b> <a class="pull-right">1,2000</a>
                             </li>
                             <li class="list-group-item">
                                 <b>Following</b> <a class="pull-right">750</a>
