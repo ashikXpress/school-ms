@@ -34,9 +34,9 @@
 
 <body>
 <!-- Start Preloader -->
-{{--<div id="preload-block">--}}
-{{--    <div class="square-block"></div>--}}
-{{--</div>--}}
+<div id="preload-block">
+    <div class="square-block"></div>
+</div>
 <!-- Preloader End -->
 
 <div class="container-fluid">
@@ -44,7 +44,9 @@
         <div class="col-lg-4 col-md-6 col-sm-8 col-lg-offset-4 col-md-offset-3 col-sm-offset-2">
             <!-- brand-logo start -->
             <div class="brand-logo text-center">
-                <img src="{{asset('admin/assets/images/brand-logo.png')}}" width="120" alt="brand-logo">
+{{--                <img src="{{asset('admin/assets/images/brand-logo.png')}}" width="120" alt="brand-logo">--}}
+{{--            --}}
+                <h2>School MS</h2>
             </div><!-- ./brand-logo -->
             <!-- authfy-login start -->
             <div class="authfy-login">

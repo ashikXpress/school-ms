@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('employee.login')->only('logoutProcess');
+    }
+
     public function loginForm(){
         if (Auth::guard('employee')->check()){
             return redirect()->route('dashboard');

@@ -18,6 +18,11 @@ use Symfony\Component\Console\Input\Input;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('employee.login');
+    }
+
     public function studentAdmissionForm(){
         $data['sections']=Section::get();
         $data['classes']=ClassName::get();

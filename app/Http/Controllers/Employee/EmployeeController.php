@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('employee.login');
+    }
+
     public function joinEmployeeForm(){
         $data['designations']=Designation::get();
 
