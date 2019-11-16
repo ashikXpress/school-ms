@@ -53,7 +53,7 @@
                        </div>
 
                    </form>
-                   @if(isset($student_search_lists))
+
                    <form class="table-scrollable" action="{{route('student.attendance')}}" method="post">
                        @csrf
                        <div id="example4_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
@@ -74,15 +74,15 @@
                                        </tr>
                                        </thead>
                                        <tbody>
+                                       @if(isset($student_search_lists))
                                        @foreach($student_search_lists as $student_list)
 
                                            <tr class="gradeX odd" role="row">
                                                <td class="sorting_1">
                                                    <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
                                                      <input type="checkbox" name="status[]" class="checkboxes" value="1" checked >
-                                                     <input type="hidden" name="status[]" value="0" >
 
-                                                       <span></span>
+                                                         <span></span>
                                                    </label>
                                                </td>
                                                <input type="hidden" name="student_name" value="{{$student_list->id}}">
@@ -96,21 +96,23 @@
 
                                            </tr>
                                        @endforeach
-
+                                       @endif
                                        </tbody>
                                    </table>
                                </div>
                            </div>
                            <div class="row">
                                <div class="col-sm-6 col-md-6 ">
+                                   @if(isset($student_search_lists))
                                    <p><strong>Total student is {{ $student_search_lists->count()}}</strong></p>
                                    <button type="submit" class="btn btn-lg btn-info present-btn">Present</button>
+                                   @endif
 
                                </div>
                            </div>
                        </div>
                    </form>
-                    @endif
+
 
                </div>
            </div>

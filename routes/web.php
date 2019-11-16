@@ -49,6 +49,9 @@ Route::namespace('Academic')->group(function (){
 Route::namespace('employee')->group(function (){
     Route::get('employee/employee-join','EmployeeController@joinEmployeeForm')->name('employee.join.form');
     Route::post('employee/employee-join','EmployeeController@joinEmployee')->name('employee.join');
+    Route::get('employee/employee-edit/{id}','EmployeeController@employeeEditForm')->name('employee.edit.form');
+    Route::post('employee/employee-update/{id}','EmployeeController@employeeUpdate')->name('employee.update');
+
     Route::get('employee/employee-attendance','EmployeeController@attendanceEmployeeForm')->name('employee.attendance.form');
     Route::post('employee/employee-attendance','EmployeeController@attendanceEmployee')->name('employee.attendance');
     Route::get('employee/employee-lists','EmployeeController@employeeList')->name('employee.lists');
@@ -59,6 +62,9 @@ Route::namespace('employee')->group(function (){
 Route::namespace('Student')->group(function (){
     Route::get('student/admission','StudentController@studentAdmissionForm')->name('student.admission.form');
     Route::post('student/admission','StudentController@studentAdmission')->name('student.admission');
+    Route::get('student/edit/{id}','StudentController@studentEditForm')->name('student.edit.form');
+    Route::post('student/update/{id}','StudentController@studentUpdate')->name('student.update');
+
     Route::get('student/student-lists','StudentController@studentList')->name('student.lists');
 
     Route::get('student/attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');

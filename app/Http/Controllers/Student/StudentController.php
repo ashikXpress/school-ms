@@ -118,6 +118,63 @@ class StudentController extends Controller
         }
     }
 
+    public function studentEditForm($id){
+        $data['sections']=Section::get();
+        $data['classes']=ClassName::get();
+        $data['student']=Student::find($id);
+
+        return view('student.student_edit',$data);
+    }
+public function studentUpdate($id,Request $request){
+        $data=$this->validate($request,[
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'gender_name'=>'required',
+            'date_of_birth'=>'required',
+            'blood_group'=>'nullable',
+            'present_address'=>'required',
+            'permanent_address'=>'nullable',
+            'contact_number'=>'required',
+            'contact_number2'=>'nullable',
+
+            'class'=>'required',
+            'roll'=>'required',
+            'reg'=>'nullable',
+            'id_number'=>'required',
+            'section'=>'nullable',
+            'shift'=>'nullable',
+            'group'=>'nullable',
+            'admission_date'=>'required',
+            'admission_fees'=>'required',
+            'birth_certificate_number'=>'required',
+            'transport'=>'nullable',
+            'previous_institute_name'=>'nullable',
+
+            'father_name'=>'required',
+            'father_contact_number'=>'required',
+            'father_occupation'=>'required',
+            'mother_name'=>'required',
+            'mother_contact_number'=>'nullable',
+            'mother_occupation'=>'nullable',
+            'local_guardian_name'=>'nullable',
+
+            'email'=>'required',
+            'photo'=>'nullable',
+
+        ]);
+
+        $result=Student::find($id)->update($data);
+    if ($result){
+        $request->session()->flash('success','Student data updated successfully');
+        return redirect()->back();
+    }else{
+        $request->session()->flash('success','Student data update failed');
+        return redirect()->back();
+    }
+
+}
+
+
     public function studentList(Request $request){
 
         $search=$request->search;
@@ -198,22 +255,16 @@ public function studentAttendance(Request $request){
 
 
 
-    foreach ($allstatus as $statusValue)
-    {
-
-
-
-
+    foreach ($allstatus as $status) {
         $result=StudentAttendance::create([
             'student_name'=>$request->student_name,
-            'teacher_name'=>\auth()->guard('employee')->user()->id,
+//            'teacher_name'=>\auth()->guard('employee')->user()->id,
+            'teacher_name'=>'1',
             'attend_date'=>Carbon::now(),
-            'status'=>$statusValue,
+            'status'=>$status,
             'description'=>$request->description,
         ]);
     }
-
-
 
 
     if ($result){

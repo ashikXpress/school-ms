@@ -83,8 +83,9 @@
                                                 <td>{{$student_list->contact_number}}</td>
 
                                                 <td>
-                                                    <a href="edit_professor.html" class="btn btn-primary btn-xs">
+                                                    <a href="{{route('student.edit.form',$student_list->id)}}" class="btn btn-primary btn-xs">
                                                         <i class="fa fa-pencil"></i>
+                                                        Edit
                                                     </a>
                                                     <button class="btn btn-danger btn-xs">
                                                         <i class="fa fa-trash-o "></i>

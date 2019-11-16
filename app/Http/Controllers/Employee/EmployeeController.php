@@ -45,9 +45,9 @@ public function joinEmployee(Request $request){
             'others_honorarium'=>'nullable',
 
             'photo'=>'nullable',
-            'email'=>'nullable|unique:employees',
-            'password'=>'nullable|min:6|max:20',
-            'confirm_password'=>'nullable|same:password|min:6|max:20',
+            'email'=>'required|unique:employees',
+            'password'=>'required|min:6|max:20',
+            'confirm_password'=>'required|same:password|min:6|max:20',
         ]);
     $photo_path= $request->photo->store('gallery');
 
@@ -86,6 +86,55 @@ public function joinEmployee(Request $request){
         return redirect()->route('employee.join.form');
     }
 }
+
+public function employeeEditForm($id){
+        $data['designations']=Designation::get();
+        $data['employee']=Employee::find($id);
+        return view('employee.edit_employee',$data);
+}
+
+public function employeeUpdate($id,Request $request){
+        $data=$this->validate($request,[
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'user_type'=>'required',
+            'gender_name'=>'required',
+            'date_of_birth'=>'required',
+            'blood_group'=>'nullable',
+            'marital_status'=>'required',
+            'present_address'=>'required',
+            'permanent_address'=>'nullable',
+            'contact_number'=>'required',
+            'contact_number2'=>'nullable',
+
+
+            'father_name'=>'required',
+            'mother_name'=>'required',
+            'emergency_number'=>'required',
+
+
+            'designation'=>'required',
+            'joining_date'=>'required',
+            'education_qualification'=>'required',
+            'nid'=>'required',
+            'basic_salary'=>'required',
+            'subject_speciality'=>'nullable',
+            'others_honorarium'=>'nullable',
+
+            'photo'=>'nullable',
+            'email'=>'required',
+        ]);
+        $result=Employee::find($id)->update($data);
+
+    if ($result){
+        $request->session()->flash('success','Employee data updated successfully');
+        return redirect()->back();
+    }else{
+        $request->session()->flash('success','Employee data update failed');
+        return redirect()->back();
+    }
+}
+
 
 public function attendanceEmployeeForm(){
         $data['employees']=Employee::get();

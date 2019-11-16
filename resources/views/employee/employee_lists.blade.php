@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-6">
                             <div class="btn-group">
-                                <a href="{{route('student.admission.form')}}" id="addRow" class="btn btn-info">
+                                <a href="{{route('employee.join.form')}}" id="addRow" class="btn btn-info">
                                     Add New <i class="fa fa-plus"></i>
                                 </a>
                             </div>
@@ -81,8 +81,9 @@
                                                 <td class="left">{{$employee_list->contact_number}}</td>
 
                                                 <td>
-                                                    <a href="edit_professor.html" class="btn btn-primary btn-xs">
+                                                    <a href="{{route('employee.edit.form',$employee_list->id)}}" class="btn btn-primary btn-xs">
                                                         <i class="fa fa-pencil"></i>
+                                                        Edit
                                                     </a>
                                                     <button class="btn btn-danger btn-xs">
                                                         <i class="fa fa-trash-o "></i>
