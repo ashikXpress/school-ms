@@ -49,6 +49,7 @@ class CreateStudentsTable extends Migration
 
 
             $table->string('email',191)->unique()->nullable();
+            $table->string('password_token')->nullable();
             $table->string('password')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();

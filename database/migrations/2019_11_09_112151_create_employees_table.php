@@ -43,6 +43,7 @@ class CreateEmployeesTable extends Migration
 
             $table->string('photo')->nullable();
             $table->string('email',191)->nullable()->unique();
+            $table->string('password_token')->nullable();
             $table->string('password')->nullable();
             $table->timestamps();
         });

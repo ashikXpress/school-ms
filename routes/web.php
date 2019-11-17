@@ -76,10 +76,14 @@ Route::namespace('Student')->group(function (){
 
 
 
-
-
 });
-Route::namespace('Staff')->group(function (){
+Route::namespace('Password')->group(function (){
+
+    Route::get('employee-recovery-password','PasswordController@employeeRecoveryPasswordForm')->name('employee.recovery.password.form');
+    Route::post('employee-recovery-password','PasswordController@employeeRecoveryPassword')->name('employee.recovery.password');
+
+    Route::get('employee-reset-password/{token}','PasswordController@employeeResetPasswordForm')->name('employee.reset.password.form');
+    Route::post('employee-reset-password/{token}','PasswordController@employeeResetPassword')->name('employee.reset.password');
 
 });
 Route::namespace('Guardian')->group(function (){
