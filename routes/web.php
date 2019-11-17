@@ -46,11 +46,14 @@ Route::namespace('Academic')->group(function (){
     Route::post('academic/create-designation','AcademicController@createDesignation')->name('create.designation');
 
 });
-Route::namespace('employee')->group(function (){
+Route::namespace('Employee')->group(function (){
     Route::get('employee/employee-join','EmployeeController@joinEmployeeForm')->name('employee.join.form');
     Route::post('employee/employee-join','EmployeeController@joinEmployee')->name('employee.join');
     Route::get('employee/employee-edit/{id}','EmployeeController@employeeEditForm')->name('employee.edit.form');
     Route::post('employee/employee-update/{id}','EmployeeController@employeeUpdate')->name('employee.update');
+
+    Route::get('employee/change-password','EmployeeController@changePasswordFrom')->name('employee.change.password.form');
+    Route::post('employee/change-password','EmployeeController@changePassword')->name('employee.change.password');
 
     Route::get('employee/employee-attendance','EmployeeController@attendanceEmployeeForm')->name('employee.attendance.form');
     Route::post('employee/employee-attendance','EmployeeController@attendanceEmployee')->name('employee.attendance');

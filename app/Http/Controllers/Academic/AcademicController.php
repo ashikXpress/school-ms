@@ -15,7 +15,7 @@ class AcademicController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('employee.login');
+       $this->middleware('super.admin');
     }
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);

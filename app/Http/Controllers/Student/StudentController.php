@@ -20,10 +20,12 @@ class StudentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('employee.login');
+       $this->middleware('super.admin');
     }
 
     public function studentAdmissionForm(){
+
+
         $data['sections']=Section::get();
         $data['classes']=ClassName::get();
 

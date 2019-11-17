@@ -7,15 +7,22 @@ use App\Models\Designation;
 use App\Models\Employee;
 use App\Models\EmployeeAttendance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('employee.login');
+       $this->middleware('super.admin');
+
+
     }
 
+
     public function joinEmployeeForm(){
+
+
         $data['designations']=Designation::get();
 
         return view('employee.join_employee',$data);
@@ -141,8 +148,17 @@ public function employeeUpdate($id,Request $request){
 }
 
 
-public function attendanceEmployeeForm(){
-        $data['employees']=Employee::get();
+public function attendanceEmployeeForm(Request $request){
+
+        $data['designations']=Designation::get();
+        $designation=$request->designation;
+
+    if ($designation != ''){
+
+        $data['student_search_lists']=Employee::get();
+    }
+
+
         return view('employee.attendance_employee',$data);
 }
 public function attendanceEmployee(Request $request){
@@ -196,6 +212,37 @@ public function employeeProfile($id){
     $data['employee_profile']=Employee::find($id);
         return view('employee.employee_profile',$data);
 }
+
+public function changePasswordFrom(){
+        return view('password.employee_change_password');
+}
+public function changePassword(Request $request){
+        $this->validate($request,[
+            'old_password'=>'required|min:6|max:20',
+            'new_password'=>'required|min:6|max:20',
+            'confirm_password'=>'required|same:new_password|min:6|max:20',
+        ]);
+
+        $auth_login_id=Auth::guard('employee')->user()->id;
+
+    $employeeObj=Employee::find($auth_login_id);
+
+    $hashedPassword=$employeeObj->password;
+    $oldPassword=$request->old_password;
+
+    if(Hash::check($oldPassword, $hashedPassword))
+    {
+        Employee::find($auth_login_id)->update([
+            'password'=>bcrypt($request->new_password),
+        ]);
+        $request->session()->flash('success','Password change successfully');
+        return redirect()->back();
+    }else{
+        $request->session()->flash('error','Your old password is incorrect !!');
+        return redirect()->back();
+    }
+}
+
 
 
 }

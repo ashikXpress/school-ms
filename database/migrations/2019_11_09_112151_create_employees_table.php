@@ -24,7 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->smallInteger('marital_status')->nullable();
             $table->text('present_address');
             $table->text('permanent_address')->nullable();
-            $table->string('contact_number',200)->unique();
+            $table->string('contact_number',50)->unique();
             $table->string('contact_number2')->nullable();
 
             $table->string('designation');
@@ -42,7 +42,7 @@ class CreateEmployeesTable extends Migration
 
 
             $table->string('photo')->nullable();
-            $table->string('email',250)->nullable()->unique();
+            $table->string('email',191)->nullable()->unique();
             $table->string('password')->nullable();
             $table->timestamps();
         });

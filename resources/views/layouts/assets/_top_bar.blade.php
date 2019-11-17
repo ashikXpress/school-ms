@@ -4,7 +4,7 @@
         <div class="page-logo">
             <a href="index.html">
                 <span class="logo-icon material-icons fa-rotate-45">school</span>
-                <span class="logo-default">Smart</span> </a>
+                <span class="logo-default">School</span> </a>
         </div>
         <!-- logo end -->
         <ul class="nav navbar-nav navbar-left in">
@@ -216,8 +216,8 @@
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                        data-close-others="true">
-                        <img alt="" class="img-circle " src="{{asset('admin/assets/img/dp.jpg')}}" />
-                        <span class="username username-hide-on-mobile"> Kiran </span>
+                        <img alt="" class="img-circle " src="{{asset(optional(Auth::guard('employee')->user())->photo)}}" />
+                        <span class="username username-hide-on-mobile"> {{optional(Auth::guard('employee')->user())->first_name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
@@ -226,21 +226,11 @@
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="icon-settings"></i> Settings
+                            <a href="{{route('employee.change.password.form')}}">
+                                <i class="icon-settings"></i> Change password
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-directions"></i> Help
-                            </a>
-                        </li>
-                        <li class="divider"> </li>
-                        <li>
-                            <a href="lock_screen.html">
-                                <i class="icon-lock"></i> Lock
-                            </a>
-                        </li>
+
                         <li>
                             <a href="{{route('logout')}}">
                                 <i class="icon-logout"></i> Log Out </a>
@@ -248,12 +238,7 @@
                     </ul>
                 </li>
                 <!-- end manage user dropdown -->
-                <li class="dropdown dropdown-quick-sidebar-toggler">
-                    <a id="headerSettingButton" class="mdl-button mdl-js-button mdl-button--icon pull-right"
-                       data-upgraded=",MaterialButton">
-                        <i class="material-icons">more_vert</i>
-                    </a>
-                </li>
+
             </ul>
         </div>
     </div>

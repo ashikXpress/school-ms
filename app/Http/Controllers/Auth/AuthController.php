@@ -12,13 +12,16 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('employee.login')->only('logoutProcess');
+
+//        $this->middleware('guest')->except('logoutProcess');
     }
 
     public function loginForm(){
-        if (Auth::guard('employee')->check()){
-            return redirect()->route('dashboard');
-        }
+
+    if (Auth::guard('employee')->check()){
+        return redirect()->route('dashboard');
+    }
+
         return view('admin.auth.login');
     }
     public function loginProcess(Request $request){
