@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Staff
 {
@@ -15,6 +16,14 @@ class Staff
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+
+
+        if (!Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type != 'staff') {
+
+            return redirect()->route('dashboard');
+        }
+
+         return $next($request);
+
     }
 }

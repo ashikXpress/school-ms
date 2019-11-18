@@ -81,8 +81,7 @@
                                                <td class="sorting_1">
                                                    <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
                                                      <input type="checkbox" name="status[]" class="checkboxes" value="1" checked >
-
-                                                         <span></span>
+                                                       <span></span>
                                                    </label>
                                                </td>
                                                <input type="hidden" name="student_name" value="{{$student_list->id}}">

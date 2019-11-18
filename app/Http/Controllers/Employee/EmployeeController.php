@@ -14,7 +14,8 @@ class EmployeeController extends Controller
 {
     public function __construct()
     {
-       $this->middleware('super.admin');
+
+
 
 
     }
@@ -148,18 +149,24 @@ public function employeeUpdate($id,Request $request){
 }
 
 
-public function attendanceEmployeeForm(Request $request){
+public function attendanceEmployeeForm(Request $request)
+{
 
-        $data['designations']=Designation::get();
-        $designation=$request->designation;
+    $data['designations'] = Designation::get();
+    $designation = $request->designation;
 
-    if ($designation != ''){
 
-        $data['student_search_lists']=Employee::get();
+    if ($designation == 'all') {
+
+        $data['employee_search_lists'] = Employee::get();
+    } elseif ($designation) {
+        $data['employee_search_lists'] = Employee::where('designation', $designation)->get();
+    }elseif($designation==''){
+        $request->session()->flash('error', 'Select type !');
     }
 
 
-        return view('employee.attendance_employee',$data);
+ return view('employee.attendance_employee',$data);
 }
 public function attendanceEmployee(Request $request){
         $this->validate($request,[

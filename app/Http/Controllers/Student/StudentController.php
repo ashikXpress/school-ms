@@ -20,7 +20,8 @@ class StudentController extends Controller
 {
     public function __construct()
     {
-       $this->middleware('super.admin');
+
+
     }
 
     public function studentAdmissionForm(){
@@ -258,20 +259,19 @@ public function studentAttendance(Request $request){
 
 
 
-    $allstatus=$request->status;
 
 
+    foreach ($request as $key=>$status) {
 
-    foreach ($allstatus as $status) {
-        $result=StudentAttendance::create([
-            'student_name'=>$request->student_name,
-//            'teacher_name'=>\auth()->guard('employee')->user()->id,
-            'teacher_name'=>'1',
+        $data[]=[
+            'status'=>$status['status'],
+            'student_name'=>$status['student_name'],
+            'teacher_name'=>auth()->guard('employee')->user()->id,
             'attend_date'=>Carbon::now(),
-            'status'=>$status,
-            'description'=>$request->description,
-        ]);
+        ];
     }
+    $result=StudentAttendance::create($data);
+    dd($result);
 
 
     if ($result){

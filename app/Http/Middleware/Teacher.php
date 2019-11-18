@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Teacher
 {
@@ -15,6 +16,15 @@ class Teacher
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+
+        if (!Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type != 'teacher') {
+
+            return redirect()->route('dashboard');
+        }
+
+     return $next($request);
+
+
+
     }
 }

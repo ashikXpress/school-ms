@@ -86,9 +86,9 @@ Route::namespace('Password')->group(function (){
     Route::post('employee-reset-password/{token}','PasswordController@employeeResetPassword')->name('employee.reset.password');
 
 });
-Route::namespace('Guardian')->group(function (){
-
+Route::namespace('Teacher')->group(function (){
+    Route::get('teacher/dashboard','TeacherController@teacherDashboard')->name('teacher.dashboard');
 });
-Route::namespace('Management')->group(function (){
-
+Route::namespace('staff')->group(function (){
+    Route::get('staff/dashboard','staffController@staffDashboard')->name('staff.dashboard');
 });

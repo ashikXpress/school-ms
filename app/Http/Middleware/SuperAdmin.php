@@ -18,20 +18,11 @@ class SuperAdmin
     public function handle($request, Closure $next)
     {
 
+        if (!Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type != 'superadmin') {
 
-        if (Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type == 'superadmin') {
-            return $next($request);
+            return redirect()->route('dashboard');
         }
-        elseif (Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type == 'admin') {
-            return $next($request);
-        }
-        else {
-            return redirect('dashboard');
-        }
-//        if (!Auth::guard('employee')->check())
-//        {
-//            return redirect()->route('login.form');
-//        }
-//        return $next($request);
+         return $next($request);
+
     }
 }

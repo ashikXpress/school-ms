@@ -19,6 +19,7 @@ class AuthController extends Controller
     public function loginForm(){
 
     if (Auth::guard('employee')->check()){
+
         return redirect()->route('dashboard');
     }
 
@@ -35,7 +36,6 @@ class AuthController extends Controller
         if (Auth::guard('employee')->attempt($credentials)){
 
                 return redirect()->route('dashboard');
-
 
         }else{
             $request->session()->flash('error','Invalid Email/Password');

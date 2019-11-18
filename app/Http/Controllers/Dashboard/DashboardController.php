@@ -10,7 +10,9 @@ class DashboardController extends Controller
 {
 public function __construct()
 {
-//    $this->middleware('super.admin');
+
+
+
 }
 
     public function home(){

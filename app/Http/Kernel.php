@@ -3,7 +3,10 @@
 namespace App\Http;
 
 use App\Http\Middleware\AccessLevel;
+use App\Http\Middleware\Admin;
+use App\Http\Middleware\Staff;
 use App\Http\Middleware\SuperAdmin;
+use App\Http\Middleware\Teacher;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -53,7 +56,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'super.admin' => SuperAdmin::class,
+        'super_admin' => SuperAdmin::class,
+        'admin' => Admin::class,
+        'teacher' => Teacher::class,
+        'staff' => Staff::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
