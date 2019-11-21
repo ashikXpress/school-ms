@@ -19,7 +19,7 @@ class AcademicController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('admin');
+
     }
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
@@ -222,10 +222,25 @@ if ($result){
 
 }
 
-public function showClassRoutine(){
+public function showClassRoutine(Request $request){
 
-        $data['all_class_routine']=Routine::get();
-        return view('academic.show_class_routine',$data);
+        $data['sections']=Section::get();
+        $data['classes']=ClassName::get();
+
+        $day=$request->day;
+        $class=$request->class;
+
+    if ($day!='' && $class==''){
+
+        $data['all_class_routine']=Routine::Where('day',$day)->get();
+    } elseif($day=='' && $class!=''){
+
+        $data['all_class_routine']=Routine::Where('class',$class)->get();
+    }elseif($day!='' && $class!=''){
+        $data['all_class_routine']=Routine::where('day',$day)->Where('class',$class)->get();
+    }
+
+    return view('academic.show_class_routine',$data);
 }
 
 }
