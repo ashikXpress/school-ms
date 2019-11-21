@@ -30,8 +30,11 @@ Route::namespace('Admin')->group(function (){
 });
 Route::namespace('Academic')->group(function (){
 
+    Route::group(['middleware' => ['admin' or 'teacher']], function(){
+        Route::get('academic/create-subject', 'AcademicController@createSubjectForm')->name('create.subject.form');
+    });
 
-    Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
+    //Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form')->middleware(['admin','teacher']);
     Route::post('academic/create-subject','AcademicController@createSubject')->name('create.subject');
 
     Route::get('academic/create-section','AcademicController@createSectionForm')->name('create.section.form');
@@ -44,6 +47,15 @@ Route::namespace('Academic')->group(function (){
 
     Route::get('academic/create-designation','AcademicController@createDesignationForm')->name('create.designation.form');
     Route::post('academic/create-designation','AcademicController@createDesignation')->name('create.designation');
+
+    Route::get('academic/create-class-routine','AcademicController@createClassRoutineForm')->name('create.class.routine.form');
+    Route::post('academic/create-class-routine','AcademicController@createClassRoutine')->name('create.class.routine');
+    Route::get('academic/show-class-routine','AcademicController@showClassRoutine')->name('show.class.routine.form');
+
+    Route::get('academic/create-class-subject','AcademicController@createClassSubjectForm')->name('create.class.subject.form');
+    Route::post('academic/create-class-subject','AcademicController@createClassSubject')->name('create.class.subject');
+
+
 
 });
 Route::namespace('Employee')->group(function (){

@@ -258,20 +258,24 @@ public function studentUpdate($id,Request $request){
 public function studentAttendance(Request $request){
 
 
+        $all_status=$request->status;
+        $all_student=$request->student_name;
 
 
+        foreach ($all_status as $checkbox)
+        {
+            foreach ($all_student as $student){
+                $result=StudentAttendance::create([
+                    'status'=>$checkbox,
+                    'student_name'=>$student,
+                    'teacher_name'=>auth()->guard('employee')->user()->id,
+                    'attend_date'=>Carbon::now(),
 
-    foreach ($request as $key=>$status) {
+                ]);
+            }
 
-        $data[]=[
-            'status'=>$status['status'],
-            'student_name'=>$status['student_name'],
-            'teacher_name'=>auth()->guard('employee')->user()->id,
-            'attend_date'=>Carbon::now(),
-        ];
-    }
-    $result=StudentAttendance::create($data);
-    dd($result);
+        }
+
 
 
     if ($result){

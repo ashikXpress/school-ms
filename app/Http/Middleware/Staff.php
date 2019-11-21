@@ -3,6 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+
+
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class Staff
@@ -17,13 +20,10 @@ class Staff
     public function handle($request, Closure $next)
     {
 
-
-        if (!Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type != 'staff') {
-
-            return redirect()->route('dashboard');
+        if (Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type == 'staff')
+        {
+            return $next($request);
         }
-
-         return $next($request);
-
+        return new Response(view('unauthorized')->with('role', 'Staff'));
     }
 }

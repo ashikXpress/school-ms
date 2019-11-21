@@ -15,13 +15,10 @@ class CreateClassesSubjectsTable extends Migration
     {
         Schema::create('classes_subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('class_subject');
-            $table->string('academic_year');
-            $table->unsignedBigInteger('subject_id')->nullable();
-            $table->unsignedBigInteger('class_id')->nullable();
-            $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->foreign('class_id')->references('id')->on('classes');
-            $table->text('description');
+            $table->string('class_name');
+            $table->string('subject_name');
+            $table->string('group_name')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

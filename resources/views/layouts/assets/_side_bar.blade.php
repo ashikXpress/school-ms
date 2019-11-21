@@ -24,7 +24,9 @@
                 </li>
 
 
-         <li class="nav-item {{ Request::is('dashboard*') ? 'active' : null }}">
+                @if(Auth::guard('employee')->user()->user_type=='admin')
+
+                        <li class="nav-item {{ Request::is('dashboard*') ? 'active' : null }}">
                             <a href="{{route('dashboard')}}" class="nav-link">
                                 <i class="material-icons">dashboard</i>
                                 <span class="title">Dashboard</span>
@@ -59,8 +61,24 @@
                                         <span class="title">Create designation</span>
                                     </a>
                                 </li>
+                                <li class="nav-item {{ Request::is('academic/create-class-subject') ? 'active' : null }}">
+                                    <a href="{{route('create.class.subject.form')}}" class="nav-link ">
+                                        <span class="title">Create class subject</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item {{ Request::is('academic/create-class-routine') ? 'active' : null }}">
+                                    <a href="{{route('create.class.routine.form')}}" class="nav-link ">
+                                        <span class="title">Create class routine</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item {{ Request::is('academic/show-class-routine') ? 'active' : null }}">
+                                    <a href="{{route('show.class.routine.form')}}" class="nav-link ">
+                                        <span class="title">Show class routine</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
+
 
                         <li class="nav-item {{ Request::is('student*') ? 'start active open ' : null }}">
                             <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
@@ -109,7 +127,7 @@
                             </ul>
                         </li>
 
-
+@endif
 
 
 

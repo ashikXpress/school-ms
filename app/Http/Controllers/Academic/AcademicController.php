@@ -4,21 +4,22 @@ namespace App\Http\Controllers\Academic;
 
 use App\Http\Controllers\Controller;
 use App\Models\ClassName;
+use App\Models\ClassSubject;
 use App\Models\Department;
 use App\Models\Designation;
+use App\Models\Employee;
+use App\Models\Routine;
 use App\Models\Section;
 use App\Models\Shift;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class AcademicController extends Controller
 {
     public function __construct()
     {
-
-
-
-
+//        $this->middleware('admin');
     }
     public function createSubjectForm(){
         $data['subject_lists']=Subject::orderBy('id','desc')->paginate(4);
@@ -130,5 +131,101 @@ class AcademicController extends Controller
         }
     }
 
+
+  public function createClassSubjectForm(Request $request)
+  {
+      $data['class_names']=ClassName::get();
+      $data['class_subjects']=Subject::get();
+
+
+      $search=$request->search;
+      $token=$request->_token;
+      if($search=='' && $token==''){
+
+          $data['class_subjects']=ClassSubject::orderBy('subject_name','asc')->paginate(15);
+          $data['counts']=ClassSubject::count();
+
+      }else{
+          $data['counts']=ClassSubject::count();
+          $data['class_subjects']=ClassSubject::orWhere('class_name', 'LIKE', '%'.$search.'%')
+              ->orWhere('subject_name', 'LIKE', '%'.$search.'%')
+              ->orWhere('group_name', 'LIKE', '%'.$search.'%')
+              ->paginate(15);
+
+      }
+
+      return view('academic.create_class_subject',$data);
+  }
+
+    public function createClassSubject(Request $request)
+    {
+        $this->validate($request,[
+            'class_name'=>'required',
+            'subject_name'=>'required',
+            'group_name'=>'nullable',
+            'description'=>'nullable',
+        ]);
+
+
+        $allsubject=$request->subject_name;
+        foreach($allsubject as $subject)
+
+        $result=ClassSubject::create([
+            'class_name'=>$request->class_name,
+            'subject_name'=>$subject,
+            'group_name'=>$request->group_name,
+            'description'=>$request->description,
+        ]);
+
+    if ($result){
+        $request->session()->flash('success','Class subject created successfully');
+        return redirect()->route('create.class.subject.form');
+    }else{
+        $request->session()->flash('error','Class subject create failed');
+        return redirect()->route('create.class.subject.form');
+    }
+
+    }
+
+    public function createClassRoutineForm(){
+
+        $data['class_names']=ClassName::get();
+        $data['all_subjects']=Subject::get();
+        $data['all_teacher']=Employee::get();
+        $data['all_section']=Section::get();
+        return view('academic.create_class_routine',$data);
+}
+public function createClassRoutine(Request $request){
+    $data=$this->validate($request,[
+        'day'=>'required',
+        'class'=>'required',
+        'period'=>'required',
+        'subject'=>'required',
+        'start_time'=>'required',
+        'end_time'=>'required',
+        'room_number'=>'required',
+        'teacher_name'=>'required',
+        'group'=>'nullable',
+        'shift'=>'nullable',
+        'section'=>'nullable',
+        'academic_year'=>'required',
+    ]);
+
+$result=Routine::create($data);
+if ($result){
+    $request->session()->flash('success','Class'.''.$request->class.'1st create'.'successfully');
+    return redirect()->route('create.class.routine.form');
+}else{
+    $request->session()->flash('error','Class routine create failed');
+    return redirect()->route('create.class.routine.form');
+}
+
+}
+
+public function showClassRoutine(){
+
+        $data['all_class_routine']=Routine::get();
+        return view('academic.show_class_routine',$data);
+}
 
 }

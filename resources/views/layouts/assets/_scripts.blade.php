@@ -77,3 +77,19 @@
         })
     }
 </script>
+
+<script>
+    // var Privileges = jQuery('.classname');
+    // var select = this.value;
+    // $('.groupshow').hide();
+    // Privileges.change(function () {
+    //     if ($(this).val() == 'Nine' || $(this).val() == 'Ten') {
+    //
+    //         $('.groupshow').show()
+    //     }
+    //     else {
+    //         $('.groupshow').hide();
+    //     }
+    //
+    // });
+</script>

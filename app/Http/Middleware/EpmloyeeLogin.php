@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
-class SuperAdmin
+class EpmloyeeLogin
 {
     /**
      * Handle an incoming request.
@@ -17,11 +17,10 @@ class SuperAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type == 'superadmin')
-        {
+        if(Auth::guard('employee')->check()){
             return $next($request);
         }
-        return new Response(view('unauthorized')->with('role', 'Super admin'));
+        return redirect()->route('login.form');
 
     }
 }

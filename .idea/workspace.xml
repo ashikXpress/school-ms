@@ -2,23 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/staff/staff_dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/teacher/teacher_dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/EpmloyeeLogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ClassSubject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Routine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ClassFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/SubjectFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_110439_create_routines_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/academic/create_class_routine.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/academic/create_class_subject.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/academic/show_class_routine.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/unauthorized.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Academic/AcademicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Academic/AcademicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Employee/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Staff/StaffController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Staff/StaffController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Student/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Staff.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/SuperAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/SuperAdmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/EmployeePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/EmployeePolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_175018_create_routines_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_185620_create_classes_subjects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_20_110104_create_classes_subjects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_attendance.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -138,14 +149,18 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/staff" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/academic" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\staff" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\employee" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\student" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\app\Models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -193,7 +208,12 @@
       <workItem from="1573872090651" duration="35267000" />
       <workItem from="1573956189602" duration="34107000" />
       <workItem from="1574002044999" duration="2254000" />
-      <workItem from="1574052358111" duration="1579000" />
+      <workItem from="1574052358111" duration="10736000" />
+      <workItem from="1574093953345" duration="7741000" />
+      <workItem from="1574131459635" duration="13011000" />
+      <workItem from="1574218708191" duration="10709000" />
+      <workItem from="1574235482911" duration="13474000" />
+      <workItem from="1574303338818" duration="9881000" />
     </task>
     <servers />
   </component>

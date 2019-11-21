@@ -17,11 +17,18 @@ class AuthController extends Controller
     }
 
     public function loginForm(){
+        if (Auth::guard('employee')->check()){
+            if (Auth::guard('employee')->user()->user_type=='superadmin'){
+                return redirect()->route('dashboard');
+            }elseif (Auth::guard('employee')->user()->user_type=='admin'){
+                return redirect()->route('dashboard');
+            }elseif (Auth::guard('employee')->user()->user_type=='teacher'){
+                return redirect()->route('teacher.dashboard');
+            }elseif (Auth::guard('employee')->user()->user_type=='staff'){
+                return redirect()->route('staff.dashboard');
+            }
+        }
 
-    if (Auth::guard('employee')->check()){
-
-        return redirect()->route('dashboard');
-    }
 
         return view('admin.auth.login');
     }
@@ -34,8 +41,16 @@ class AuthController extends Controller
 
 
         if (Auth::guard('employee')->attempt($credentials)){
-
+            if (Auth::guard('employee')->user()->user_type=='superadmin'){
                 return redirect()->route('dashboard');
+            }elseif (Auth::guard('employee')->user()->user_type=='admin'){
+                return redirect()->route('dashboard');
+            }elseif (Auth::guard('employee')->user()->user_type=='teacher'){
+                return redirect()->route('teacher.dashboard');
+            }elseif (Auth::guard('employee')->user()->user_type=='staff'){
+                return redirect()->route('staff.dashboard');
+            }
+
 
         }else{
             $request->session()->flash('error','Invalid Email/Password');

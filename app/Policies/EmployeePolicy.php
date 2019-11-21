@@ -29,7 +29,7 @@ class EmployeePolicy
      * @param  \App\Employee  $employee
      * @return mixed
      */
-    public function view(User $user, Employee $employee)
+    public function view(User $user)
     {
 
 
@@ -53,7 +53,7 @@ class EmployeePolicy
      * @param  \App\Employee  $employee
      * @return mixed
      */
-    public function update(User $user, Employee $employee)
+    public function update(User $user)
     {
         //
     }
@@ -65,7 +65,7 @@ class EmployeePolicy
      * @param  \App\Employee  $employee
      * @return mixed
      */
-    public function delete(User $user, Employee $employee)
+    public function delete(User $user)
     {
         //
     }
@@ -77,7 +77,7 @@ class EmployeePolicy
      * @param  \App\Employee  $employee
      * @return mixed
      */
-    public function restore(User $user, Employee $employee)
+    public function restore(User $user)
     {
         //
     }

@@ -80,11 +80,11 @@
                                            <tr class="gradeX odd" role="row">
                                                <td class="sorting_1">
                                                    <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
-                                                     <input type="checkbox" name="status[]" class="checkboxes" value="1" checked >
+                                                     <input type="checkbox" name="status[]" class="checkboxes"  value="1" checked>
                                                        <span></span>
                                                    </label>
                                                </td>
-                                               <input type="hidden" name="student_name" value="{{$student_list->id}}">
+                                               <input type="hidden" name="student_name[]" value="{{$student_list->id}}">
                                                <td class="left">{{$student_list->class}}</td>
                                                <td class="left">{{$student_list->roll}}</td>
                                                <td><a href="">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>

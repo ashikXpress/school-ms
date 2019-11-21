@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Response;
 
 class Teacher
 {
@@ -16,15 +17,10 @@ class Teacher
      */
     public function handle($request, Closure $next)
     {
-
-        if (!Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type != 'teacher') {
-
-            return redirect()->route('dashboard');
+        if (Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type == 'teacher')
+        {
+            return $next($request);
         }
-
-     return $next($request);
-
-
-
+        return new Response(view('unauthorized')->with('role', 'teacher'));
     }
 }

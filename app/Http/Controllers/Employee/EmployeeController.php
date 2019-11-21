@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Designation;
 use App\Models\Employee;
 use App\Models\EmployeeAttendance;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -22,7 +23,9 @@ class EmployeeController extends Controller
 
 
     public function joinEmployeeForm(){
-
+//        if (!\Gate::allows('isAdmin')){
+//            abort(404,'sorry');
+//        }
 
         $data['designations']=Designation::get();
 
@@ -161,10 +164,7 @@ public function attendanceEmployeeForm(Request $request)
         $data['employee_search_lists'] = Employee::get();
     } elseif ($designation) {
         $data['employee_search_lists'] = Employee::where('designation', $designation)->get();
-    }elseif($designation==''){
-        $request->session()->flash('error', 'Select type !');
     }
-
 
  return view('employee.attendance_employee',$data);
 }
