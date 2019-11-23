@@ -20,7 +20,7 @@ class Admin
         {
             return $next($request);
         }
-        return new Response(view('unauthorized')->with('role', 'ADMIN'));
+        return redirect()->route('login.form');
 
     }
 }

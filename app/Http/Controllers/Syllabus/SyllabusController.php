@@ -49,4 +49,8 @@ class SyllabusController extends Controller
         $data['counts']=Syllabus::count();
         return view('syllabus.show_syllabus',$data);
     }
+    public function detailsSyllabus($id){
+        $data['syllabus']=Syllabus::find($id);
+        return view('syllabus.detalies_syllabus',$data);
+    }
 }

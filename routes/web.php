@@ -55,8 +55,13 @@ Route::namespace('Syllabus')->group(function (){
     Route::get('syllabus/create-syllabus','SyllabusController@createSyllabusForm')->name('create.syllabus.form');
     Route::post('syllabus/create-syllabus','SyllabusController@createSyllabus')->name('create.syllabus');
     Route::get('syllabus/syllabus-lists','SyllabusController@syllabusList')->name('syllabus.list');
+    Route::get('syllabus/details-syllabus/{id}','SyllabusController@detailsSyllabus')->name('details.syllabus');
 });
 
+Route::namespace('Exam')->group(function (){
+    Route::get('exam/create-exam-term','ExaminationController@createExamTermForm')->name('create.exam.term.form');
+    Route::post('exam/create-exam-term','ExaminationController@createExamTerm')->name('create.exam.term');
+});
 Route::namespace('Employee')->group(function (){
     Route::get('employee/create-designation','EmployeeController@createDesignationForm')->name('create.designation.form');
     Route::post('employee/create-designation','EmployeeController@createDesignation')->name('create.designation');

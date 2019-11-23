@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/syllabus/show_syllabus.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Exam/ExaminationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/exam/exam_term_name.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/syllabus/detalies_syllabus.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Syllabus/SyllabusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Syllabus/SyllabusController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Syllabus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Syllabus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_191255_create_syllabus_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_191255_create_syllabus_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/syllabus/show_syllabus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/syllabus/show_syllabus.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -198,7 +198,7 @@
       <workItem from="1574303338818" duration="20356000" />
       <workItem from="1574395444051" duration="1315000" />
       <workItem from="1574480255328" duration="19112000" />
-      <workItem from="1574507775476" duration="9718000" />
+      <workItem from="1574507775476" duration="15712000" />
     </task>
     <servers />
   </component>

@@ -128,14 +128,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ Request::is('subject/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('exam/*') ? 'active' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                        <span class="title">Manage Exam</span><span class="arrow"></span></a>
+                        <span class="title">Exam</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
-                        <li class="nav-item {{ Request::is('employee/employee-lists') ? 'active' : null }}">
-                            <a href="{{route('employee.lists')}}" class="nav-link ">
-                                <span class="title">All employee</span>
+                        <li class="nav-item {{ Request::is('exam/create-exam-term') ? 'active' : null }}">
+                            <a href="{{route('create.exam.term.form')}}" class="nav-link ">
+                                <span class="title">Manage Exam Term</span>
                             </a>
                         </li>
                     </ul>

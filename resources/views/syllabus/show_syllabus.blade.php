@@ -82,11 +82,11 @@
                                                 <td class="left">{{$syllabus_list->examTerm->exam_term_name}}</td>
                                                 <td class="left">{{$syllabus_list->academic_year}}</td>
 
-                                                <td class="left">{!! Illuminate\Support\Str::words(html_entity_decode($syllabus_list->description),8) !!}</td>
+                                                <td class="left">{!! Illuminate\Support\Str::words(html_entity_decode($syllabus_list->description),3) !!}</td>
 
 
                                                 <td>
-                                                    <a href="" class="btn btn-default btn-xs">
+                                                    <a href="{{route('details.syllabus',$syllabus_list->id)}}" class="btn btn-default btn-xs">
                                                         <i class="fa fa-eye-slash"></i>
                                                         view
                                                     </a>
