@@ -30,11 +30,11 @@ Route::namespace('Admin')->group(function (){
 });
 Route::namespace('Academic')->group(function (){
 
-    Route::group(['middleware' => ['admin' or 'teacher']], function(){
-        Route::get('academic/create-subject', 'AcademicController@createSubjectForm')->name('create.subject.form');
-    });
+//    Route::group(['middleware' => ['admin' or 'teacher']], function(){
+//        Route::get('academic/create-subject', 'AcademicController@createSubjectForm')->name('create.subject.form');
+//    });
 
-    //Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form')->middleware(['admin','teacher']);
+   Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
     Route::post('academic/create-subject','AcademicController@createSubject')->name('create.subject');
 
     Route::get('academic/create-section','AcademicController@createSectionForm')->name('create.section.form');
@@ -44,21 +44,23 @@ Route::namespace('Academic')->group(function (){
     Route::post('academic/create-class','AcademicController@createClass')->name('create.class');
     Route::get('academic/delete-class/{id}','AcademicController@deleteClass')->name('delete.class');
 
-
-    Route::get('academic/create-designation','AcademicController@createDesignationForm')->name('create.designation.form');
-    Route::post('academic/create-designation','AcademicController@createDesignation')->name('create.designation');
-
-    Route::get('academic/create-class-routine','AcademicController@createClassRoutineForm')->name('create.class.routine.form');
-    Route::post('academic/create-class-routine','AcademicController@createClassRoutine')->name('create.class.routine');
-    Route::get('academic/show-class-routine','AcademicController@showClassRoutine')->name('show.class.routine.form');
-
-    Route::get('academic/create-class-subject','AcademicController@createClassSubjectForm')->name('create.class.subject.form');
-    Route::post('academic/create-class-subject','AcademicController@createClassSubject')->name('create.class.subject');
-
-
+});
+Route::namespace('ClassRoutine')->group(function (){
+    Route::get('class-routine/create-class-routine','ClassRoutineController@createClassRoutineForm')->name('create.class.routine.form');
+    Route::post('class-routine/create-class-routine','ClassRoutineController@createClassRoutine')->name('create.class.routine');
+    Route::get('class-routine/show-class-routine','ClassRoutineController@showClassRoutine')->name('show.class.routine.form');
 
 });
+Route::namespace('Syllabus')->group(function (){
+    Route::get('syllabus/create-syllabus','SyllabusController@createSyllabusForm')->name('create.syllabus.form');
+    Route::post('syllabus/create-syllabus','SyllabusController@createSyllabus')->name('create.syllabus');
+});
+
 Route::namespace('Employee')->group(function (){
+    Route::get('employee/create-designation','EmployeeController@createDesignationForm')->name('create.designation.form');
+    Route::post('employee/create-designation','EmployeeController@createDesignation')->name('create.designation');
+
+
     Route::get('employee/employee-join','EmployeeController@joinEmployeeForm')->name('employee.join.form');
     Route::post('employee/employee-join','EmployeeController@joinEmployee')->name('employee.join');
     Route::get('employee/employee-edit/{id}','EmployeeController@employeeEditForm')->name('employee.edit.form');
@@ -67,8 +69,7 @@ Route::namespace('Employee')->group(function (){
     Route::get('employee/change-password','EmployeeController@changePasswordFrom')->name('employee.change.password.form');
     Route::post('employee/change-password','EmployeeController@changePassword')->name('employee.change.password');
 
-    Route::get('employee/employee-attendance','EmployeeController@attendanceEmployeeForm')->name('employee.attendance.form');
-    Route::post('employee/employee-attendance','EmployeeController@attendanceEmployee')->name('employee.attendance');
+
     Route::get('employee/employee-lists','EmployeeController@employeeList')->name('employee.lists');
     Route::get('employee/profile/{id}','EmployeeController@employeeProfile')->name('employee.profile');
 
@@ -82,13 +83,21 @@ Route::namespace('Student')->group(function (){
 
     Route::get('student/student-lists','StudentController@studentList')->name('student.lists');
 
-    Route::get('student/attendance','StudentController@studentAttendanceForm')->name('student.attendance.form');
-    Route::post('student/attendance','StudentController@studentAttendance')->name('student.attendance');
+
     Route::get('student/profile/{id}','StudentController@studentProfile')->name('student.profile');
 
 
 
 });
+Route::namespace('Attendance')->group(function (){
+    Route::get('attendance/student-attendance','StudentAttendanceController@studentAttendanceForm')->name('student.attendance.form');
+    Route::post('attendance/student-attendance','StudentAttendanceController@studentAttendance')->name('student.attendance');
+
+    Route::get('attendance/employee-attendance','EmployeeAttendanceController@attendanceEmployeeForm')->name('employee.attendance.form');
+    Route::post('attendance/employee-attendance','EmployeeAttendanceController@attendanceEmployee')->name('employee.attendance');
+
+});
+
 Route::namespace('Password')->group(function (){
 
     Route::get('employee-recovery-password','PasswordController@employeeRecoveryPasswordForm')->name('employee.recovery.password.form');
@@ -98,6 +107,14 @@ Route::namespace('Password')->group(function (){
     Route::post('employee-reset-password/{token}','PasswordController@employeeResetPassword')->name('employee.reset.password');
 
 });
+
+
+
+
+
+
+
+
 Route::namespace('Teacher')->group(function (){
     Route::get('teacher/dashboard','TeacherController@teacherDashboard')->name('teacher.dashboard');
 });
