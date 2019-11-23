@@ -22,7 +22,7 @@ class CreateSyllabusTable extends Migration
             $table->text('description');
             $table->foreign('class_id')->references('id')->on('classes');
             $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->foreign('examination_term_id')->references('id')->on('syllabus');
+            $table->foreign('examination_term_id')->references('id')->on('examination_term');
             $table->timestamps();
         });
     }

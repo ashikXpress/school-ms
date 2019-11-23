@@ -54,6 +54,7 @@ Route::namespace('ClassRoutine')->group(function (){
 Route::namespace('Syllabus')->group(function (){
     Route::get('syllabus/create-syllabus','SyllabusController@createSyllabusForm')->name('create.syllabus.form');
     Route::post('syllabus/create-syllabus','SyllabusController@createSyllabus')->name('create.syllabus');
+    Route::get('syllabus/syllabus-lists','SyllabusController@syllabusList')->name('syllabus.list');
 });
 
 Route::namespace('Employee')->group(function (){

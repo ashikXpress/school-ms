@@ -140,14 +140,19 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ Request::is('subject/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('syllabus/*') ? 'active' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Syllabus</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
-                        <li class="nav-item {{ Request::is('syllabus/*') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('syllabus/create-syllabus') ? 'active' : null }}">
                             <a href="{{route('create.syllabus.form')}}" class="nav-link ">
-                                <span class="title">Manage Syllabus</span>
+                                <span class="title">Create Syllabus</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('syllabus/syllabus-lists') ? 'active' : null }}">
+                            <a href="{{route('syllabus.list')}}" class="nav-link ">
+                                <span class="title">Syllabus list</span>
                             </a>
                         </li>
                     </ul>

@@ -43,4 +43,10 @@ class SyllabusController extends Controller
             return redirect()->route('create.syllabus.form');
         }
     }
+
+    public function syllabusList(){
+        $data['syllabus_lists']=Syllabus::paginate(10);
+        $data['counts']=Syllabus::count();
+        return view('syllabus.show_syllabus',$data);
+    }
 }
