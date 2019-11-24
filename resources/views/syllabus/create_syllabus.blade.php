@@ -57,7 +57,7 @@
 
                             <div class="form-group col-md-3 col-sm-3">
                                 <label for="academic_year">Academic year</label>
-                                <input type="text" name="academic_year" value="{{old('academic_year')}}" id="academic_year" class="form-control" placeholder="Academic year">
+                                <input type="text" name="academic_year" value="{{old('academic_year')}}" id="academic_year" class="form-control yearpicker" placeholder="Academic year">
                                 <span class="text text-danger">{{$errors->first('academic_year')}}</span>
                             </div>
 

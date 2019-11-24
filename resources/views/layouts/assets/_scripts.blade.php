@@ -39,6 +39,8 @@
 <!-- dropzone -->
 <script src="{{asset('admin/assets/plugins/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('admin/assets/sweet2/sweetalert2.js')}}"></script>
+<script src="{{asset('admin/assets/js/yearpicker.js')}}"></script>
+<script src="{{asset('admin/assets/js/timepicker.min.js')}}"></script>
 
 
 <script>
@@ -79,17 +81,9 @@
 </script>
 
 <script>
-    // var Privileges = jQuery('.classname');
-    // var select = this.value;
-    // $('.groupshow').hide();
-    // Privileges.change(function () {
-    //     if ($(this).val() == 'Nine' || $(this).val() == 'Ten') {
-    //
-    //         $('.groupshow').show()
-    //     }
-    //     else {
-    //         $('.groupshow').hide();
-    //     }
-    //
-    // });
+    $('.yearpicker').yearpicker({
+        show:null,
+
+    });
+    $('.timepicker').timepicker({ timeFormat: 'h:mm:ss p' });
 </script>

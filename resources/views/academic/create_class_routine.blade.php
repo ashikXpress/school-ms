@@ -83,12 +83,12 @@
 
                             <div class="form-group col-md-2 col-sm-2">
                                 <label for="start_time">Start time</label>
-                                <input type="text" name="start_time" value="{{old('start_time')}}" id="start_time" class="form-control" placeholder="8:00am">
+                                <input type="text" name="start_time" value="{{old('start_time')}}"  id="start_time" class="form-control" placeholder="8:00am">
                                 <span class="text text-danger">{{$errors->first('start_time')}}</span>
                             </div>
                             <div class="form-group col-md-2 col-sm-2">
                                 <label for="end_time">End time</label>
-                                <input type="text" name="end_time" value="{{old('end_time')}}" id="end_time" class="form-control" placeholder="8:45am">
+                                <input type="text" name="end_time" value="{{old('end_time')}}" id="end_time" class="form-control timepicker" placeholder="8:45am">
                                 <span class="text text-danger">{{$errors->first('end_time')}}</span>
                             </div>
 
@@ -145,7 +145,7 @@
 
                             <div class="form-group col-md-2 col-sm-2">
                                 <label for="academic_year">Academic year</label>
-                                <input type="text" name="academic_year" value="{{old('academic_year')}}" id="academic_year" class="form-control" placeholder="Academic year">
+                                <input type="text" name="academic_year" value="{{old('academic_year')}}" id="academic_year" class="form-control yearpicker" placeholder="Academic year">
                                 <span class="text text-danger">{{$errors->first('academic_year')}}</span>
                             </div>
 

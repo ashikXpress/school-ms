@@ -63,12 +63,12 @@
                                    <table class="table table-striped table-bordered table-hover table-checkable order-column valign-middle dataTable no-footer" id="example4" role="grid" aria-describedby="example4_info">
                                        <thead>
                                        <tr role="row">
-                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 65px;">Status</th>
+                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 200px;">Status</th>
                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Roll No : activate to sort column descending" style="width: 60px;">Class</th>
                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Roll No : activate to sort column descending" style="width: 60px;">Roll</th>
                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Name</th>
-                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Shift</th>
-                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Section</th>
+                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 80px;">Shift</th>
+                                           <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 20px;">Section</th>
                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 85px;">Contact number</th>
 
                                        </tr>
@@ -78,11 +78,11 @@
                                        @foreach($student_search_lists as $student_list)
 
                                            <tr class="gradeX odd" role="row">
-                                               <td class="sorting_1">
-                                                   <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
-                                                     <input type="checkbox" name="status[]" class="checkboxes"  value="1" checked>
-                                                       <span></span>
-                                                   </label>
+                                               <td>
+                                                   <label for="optionsRadios_{{$student_list->id}}">Present </label>
+                                                       <input type="radio" name="status_{{$student_list->id}}" id="optionsRadios_{{$student_list->id}}" value="1" {{ old('status_'.$student_list->id) == '1' ? 'checked' : ''}}>
+                                                   <label for="optionsRadios_{{$student_list->id}}"> Absent </label>
+                                                       <input type="radio" name="status_{{$student_list->id}}"  id="optionsRadios_{{$student_list->id}}" value="0" {{ old('status_'.$student_list->id) == '0' ? 'checked' : ''}}>
                                                </td>
                                                <input type="hidden" name="student_name[]" value="{{$student_list->id}}">
                                                <td class="left">{{$student_list->class}}</td>

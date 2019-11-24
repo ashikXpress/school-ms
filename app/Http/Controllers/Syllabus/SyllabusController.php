@@ -12,10 +12,13 @@ use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 
 class SyllabusController extends Controller
 {
-    public function createSyllabusForm(){
+    public function createSyllabusForm(Request $request){
+
+        $data['terms']=ExaminationTerm::get();
+
         $data['classes']=ClassName::get();
         $data['subjects']=Subject::get();
-        $data['terms']=ExaminationTerm::get();
+
         return view('syllabus.create_syllabus',$data);
     }
 
@@ -28,25 +31,67 @@ class SyllabusController extends Controller
             'description'=>'required',
         ]);
 
-        $result=Syllabus::create([
-           'class_id'=>$request->class,
-           'subject_id'=>$request->subject,
-            'examination_term_id'=>$request->exam_term_name,
-            'academic_year'=>$request->academic_year,
-            'description'=>$request->description,
+        $dataCheck=Syllabus::where('class_id',$request->class)
+            ->where('subject_id',$request->subject)
+            ->where('examination_term_id',$request->exam_term_name)
+            ->where('academic_year',$request->academic_year)->first();
+        if ($dataCheck==null){
+            Syllabus::create([
+                'class_id'=>$request->class,
+                'subject_id'=>$request->subject,
+                'examination_term_id'=>$request->exam_term_name,
+                'academic_year'=>$request->academic_year,
+                'description'=>$request->description,
             ]);
-        if ($result){
+
             $request->session()->flash('success','Syllabus created successfully');
             return redirect()->route('create.syllabus.form');
         }else{
-            $request->session()->flash('error','Syllabus create failed');
+            $request->session()->flash('error','This data already exists, check your syllabus list');
             return redirect()->route('create.syllabus.form');
         }
     }
 
-    public function syllabusList(){
-        $data['syllabus_lists']=Syllabus::paginate(10);
+    public function syllabusList(Request $request){
+        $data['terms']=ExaminationTerm::get();
+        $data['classes']=ClassName::get();
+        $data['subjects']=Subject::get();
+
+        $class_id=$request->class;
+        $subject_id=$request->subject;
+        $examination_term_id=$request->exam_term_name;
+        $academic_year=$request->academic_year;
+        if ($class_id!='' && $subject_id!='' && $examination_term_id!='' && $academic_year!=''){
+
+            $data['syllabus_lists']=Syllabus::where('class_id',$class_id)->where('subject_id',$subject_id)->where('examination_term_id',$examination_term_id)->where('academic_year',$academic_year)->paginate(30);
+
+        }elseif ($class_id!='' && $academic_year!=''){
+            $data['syllabus_lists']=Syllabus::where('class_id',$class_id)->where('academic_year',$academic_year)->paginate(30);
+
+        }elseif ($class_id!='' && $subject_id!='' && $academic_year!=''){
+            $data['syllabus_lists']=Syllabus::where('class_id',$class_id)->where('subject_id',$subject_id)->where('academic_year',$academic_year)->paginate(30);
+
+        }elseif ($class_id!='' && $subject_id!='' && $examination_term_id!='' && $academic_year!=''){
+            $data['syllabus_lists']=Syllabus::where('class_id',$class_id)->where('subject_id',$subject_id)->where('examination_term_id',$examination_term_id)->where('academic_year',$academic_year)->paginate(30);
+
+        }elseif ($subject_id!='' && $academic_year!=''){
+            $data['syllabus_lists']=Syllabus::where('subject_id',$subject_id)->where('academic_year',$academic_year)->paginate(20);
+
+        }
+        elseif ($examination_term_id!='' && $academic_year!=''){
+            $data['syllabus_lists']=Syllabus::where('examination_term_id',$examination_term_id)->where('academic_year',$academic_year)->paginate(20);
+
+        }
+        elseif ($academic_year!=''){
+            $data['syllabus_lists']=Syllabus::where('academic_year',$academic_year)->paginate(20);
+
+        }
+        else{
+            $data['syllabus_lists']=Syllabus::paginate(15);
+
+        }
         $data['counts']=Syllabus::count();
+
         return view('syllabus.show_syllabus',$data);
     }
     public function detailsSyllabus($id){

@@ -59,32 +59,28 @@ class StudentAttendanceController extends Controller
     public function studentAttendance(Request $request){
 
 
-        $all_status=$request->status;
-        $all_student=$request->student_name;
+
+        $all_student_name=$request->student_name;
 
 
-        foreach ($all_status as $checkbox)
-        {
-            foreach ($all_student as $student){
-                $result=StudentAttendance::create([
-                    'status'=>$checkbox,
-                    'student_name'=>$student,
-                    'teacher_name'=>auth()->guard('employee')->user()->id,
-                    'attend_date'=>Carbon::now(),
-
-                ]);
-            }
-
+        foreach($all_student_name as $student_name){
+            $result=StudentAttendance::create([
+                'status'=>$request->status_.$student_name,
+                'student_name'=>$student_name,
+                'teacher_name'=>auth()->guard('employee')->user()->id,
+                'attend_date'=>Carbon::now(),
+            ]);
         }
+
 
 
 
         if ($result){
             $request->session()->flash('success','Student attendance successful');
-            return redirect()->route('attendance.attendance.form');
+            return redirect()->route('student.attendance.form');
         }else{
             $request->session()->flash('success','Student attendance failed');
-            return redirect()->route('attendance.attendance.form');
+            return redirect()->route('student.attendance.form');
         }
     }
 }
