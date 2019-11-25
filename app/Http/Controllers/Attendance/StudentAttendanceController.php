@@ -9,6 +9,7 @@ use App\Models\StudentAttendance;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use phpDocumentor\Reflection\Types\Integer;
 
 
 class StudentAttendanceController extends Controller
@@ -55,21 +56,19 @@ class StudentAttendanceController extends Controller
     }
 
 
-
     public function studentAttendance(Request $request){
 
+        $all_student=$request->student_id;
 
+        foreach($all_student as $key =>$student_id){
 
-        $all_student_name=$request->student_name;
-
-
-        foreach($all_student_name as $student_name){
-            $result=StudentAttendance::create([
-                'status'=>$request->status_.$student_name,
-                'student_name'=>$student_name,
-                'teacher_name'=>auth()->guard('employee')->user()->id,
-                'attend_date'=>Carbon::now(),
-            ]);
+                    $result=StudentAttendance::create([
+                        'status'=>$request->status[$key],
+                        'student_id'=>$student_id,
+                        'teacher_id'=>auth()->guard('employee')->user()->id,
+                        'attend_date'=>Carbon::now()->format('d-m-Y'),
+//                        H:i:s
+                    ]);
         }
 
 
@@ -82,5 +81,26 @@ class StudentAttendanceController extends Controller
             $request->session()->flash('success','Student attendance failed');
             return redirect()->route('student.attendance.form');
         }
+    }
+
+    public function studentAttendanceInfo(Request $request){
+        $data['classes']=ClassName::get();
+        $data['sections']=Section::get();
+
+        $from=$request->from_date;
+        $to=$request->to_date;
+        $class=$request->class;
+
+
+       if ($from!='' && $to!=''){
+           $data['students_attendance_info']=StudentAttendance::where('attend_date', '>=',$from)
+               ->where('attend_date','<=',$to)->get();
+
+       }else{
+           $data['students_attendance_info']=StudentAttendance::orderBy('attend_date','desc')->get();
+
+       }
+
+        return view('attendance.student_attendance_info',$data);
     }
 }

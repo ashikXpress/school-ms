@@ -43,6 +43,7 @@
 <script src="{{asset('admin/assets/js/timepicker.min.js')}}"></script>
 
 
+
 <script>
     $(document).ready(function() {
         $("#classseleted,#bloodgroupselected,#employeeusertype,#designation,#studentattendanceselected,#teacherattendanceselected").select2();
@@ -81,9 +82,8 @@
 </script>
 
 <script>
-    $('.yearpicker').yearpicker({
-        show:null,
+    $('.yearpicker').yearpicker();
 
-    });
-    $('.timepicker').timepicker({ timeFormat: 'h:mm:ss p' });
+
+
 </script>

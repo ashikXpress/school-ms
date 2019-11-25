@@ -20,7 +20,7 @@
                             </a>
                         </li>
 
-                <li class="nav-item {{ Request::is('employee/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('employee/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Manage Employee</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
@@ -65,9 +65,9 @@
                         </ul>
                     </li>
 
-                <li class="nav-item {{ Request::is('attendance/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('attendance/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                        <span class="title">Attendance</span><span class="arrow"></span></a>
+                        <span class="title">Daily Attendance</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
                         <li class="nav-item {{ Request::is('attendance/student-attendance') ? 'active' : null }}">
@@ -75,9 +75,19 @@
                                 <span class="title">Student attendance</span>
                             </a>
                         </li>
+                        <li class="nav-item {{ Request::is('attendance/student-attendance-info') ? 'active' : null }}">
+                            <a href="{{route('student.attendance.info')}}" class="nav-link ">
+                                <span class="title">Student attendance info</span>
+                            </a>
+                        </li>
                         <li class="nav-item {{ Request::is('attendance/employee-attendance') ? 'active' : null }}">
                             <a href="{{route('employee.attendance.form')}}" class="nav-link ">
                                 <span class="title">Employee attendance</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('attendance/employee-attendance-info') ? 'active' : null }}">
+                            <a href="{{route('employee.attendance.info')}}" class="nav-link ">
+                                <span class="title">Employee attendance info</span>
                             </a>
                         </li>
                     </ul>
@@ -128,7 +138,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ Request::is('exam/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('exam/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Exam</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
@@ -140,7 +150,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ Request::is('syllabus/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('syllabus/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Syllabus</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
@@ -158,7 +168,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item {{ Request::is('subject/*') ? 'active' : null }}">
+                <li class="nav-item {{ Request::is('subject/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Notice</span><span class="arrow"></span></a>
                     <ul class="sub-menu">

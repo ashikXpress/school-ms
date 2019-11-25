@@ -15,11 +15,11 @@ class CreateEmployeesAttendances extends Migration
     {
         Schema::create('employees_attendances', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('employee_name');
+            $table->unsignedBigInteger('employee_id');
             $table->string('attend_date');
             $table->smallInteger('status');
             $table->text('description')->nullable();
-            $table->foreign('employee_name')->references('id')->on('employees')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -31,6 +31,7 @@
 <link href="{{asset('admin/assets/sweet2/sweetalert2.css')}}" rel="stylesheet">
 <link href="{{asset('admin/assets/css/yearpicker.css')}}" rel="stylesheet">
 <link href="{{asset('admin/assets/css/timepicker.min.css')}}" rel="stylesheet">
+<link href="{{asset('admin/assets/css/jquery-ui.css')}}" rel="stylesheet">
 <style>
     .btn-group>a>i {
         color: #ffffff;

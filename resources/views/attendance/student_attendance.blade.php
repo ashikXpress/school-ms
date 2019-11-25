@@ -75,16 +75,17 @@
                                        </thead>
                                        <tbody>
                                        @if(isset($student_search_lists))
-                                       @foreach($student_search_lists as $student_list)
+                                       @foreach($student_search_lists as  $key=>$student_list)
 
                                            <tr class="gradeX odd" role="row">
+                                               <input type="hidden" name="student_id[]" value="{{$student_list->id}}">
                                                <td>
-                                                   <label for="optionsRadios_{{$student_list->id}}">Present </label>
-                                                       <input type="radio" name="status_{{$student_list->id}}" id="optionsRadios_{{$student_list->id}}" value="1" {{ old('status_'.$student_list->id) == '1' ? 'checked' : ''}}>
-                                                   <label for="optionsRadios_{{$student_list->id}}"> Absent </label>
-                                                       <input type="radio" name="status_{{$student_list->id}}"  id="optionsRadios_{{$student_list->id}}" value="0" {{ old('status_'.$student_list->id) == '0' ? 'checked' : ''}}>
+                                                   <label for="optionsRadios{{$student_list->id}}">Present </label>
+                                                       <input type="radio" name="status[{{$key}}]" id="optionsRadios{{$student_list->id}}" checked value="1" >
+                                                   <label for="optionsRadios{{$student_list->id}}"> Absent </label>
+                                                       <input type="radio" name="status[{{$key}}]"  id="optionsRadios{{$student_list->id}}" value="0" >
                                                </td>
-                                               <input type="hidden" name="student_name[]" value="{{$student_list->id}}">
+
                                                <td class="left">{{$student_list->class}}</td>
                                                <td class="left">{{$student_list->roll}}</td>
                                                <td><a href="">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>

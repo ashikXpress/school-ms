@@ -98,9 +98,11 @@ Route::namespace('Student')->group(function (){
 Route::namespace('Attendance')->group(function (){
     Route::get('attendance/student-attendance','StudentAttendanceController@studentAttendanceForm')->name('student.attendance.form');
     Route::post('attendance/student-attendance','StudentAttendanceController@studentAttendance')->name('student.attendance');
+    Route::get('attendance/student-attendance-info','StudentAttendanceController@studentAttendanceInfo')->name('student.attendance.info');
 
     Route::get('attendance/employee-attendance','EmployeeAttendanceController@attendanceEmployeeForm')->name('employee.attendance.form');
     Route::post('attendance/employee-attendance','EmployeeAttendanceController@attendanceEmployee')->name('employee.attendance');
+    Route::get('attendance/employee-attendance-info','EmployeeAttendanceController@attendanceEmployeeInfo')->name('employee.attendance.info');
 
 });
 

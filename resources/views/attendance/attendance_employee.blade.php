@@ -14,8 +14,6 @@
                 </div>
                 <div class="card-body " >
                     <form class="row" action="">
-                        {{csrf_field()}}
-
                         <div class="form-group col-md-3 col-sm-3">
                             <label for="designation">Employee</label>
                             <select class="form-control" name="designation" id="designation">
@@ -45,26 +43,26 @@
                                     <table class="table table-striped table-bordered table-hover table-checkable order-column valign-middle dataTable no-footer" id="example4" role="grid" aria-describedby="example4_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 65px;">Status</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=": activate to sort column ascending" style="width: 200px;">Status</th>
                                             <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 150px;">Designation</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 85px;">Contact number</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 120px;">Designation</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1" colspan="1" aria-label=" Name : activate to sort column ascending" style="width: 100px;">Contact number</th>
 
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @if(isset($employee_search_lists))
-                                            @foreach($employee_search_lists as $employee_list)
+                                            @foreach($employee_search_lists as $key=>$employee_list)
 
                                                 <tr class="gradeX odd" role="row">
-                                                    <td class="sorting_1">
-                                                        <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
-                                                            <input type="checkbox" name="status[]" class="checkboxes" value="1" checked >
-
-                                                            <span></span>
-                                                        </label>
+                                                    <td>
+                                                        <label for="optionsRadios{{$employee_list->id}}">Present </label>
+                                                        <input type="radio" name="status[{{$key}}]" id="optionsRadios{{$employee_list->id}}" checked value="1" >
+                                                        <label for="optionsRadios{{$employee_list->id}}"> Absent </label>
+                                                        <input type="radio" name="status[{{$key}}]"  id="optionsRadios{{$employee_list->id}}" value="0" >
                                                     </td>
-                                                    <input type="hidden" name="student_name" value="{{$employee_list->id}}">
+                                                    <input type="hidden" name="employee_id[]" value="{{$employee_list->id}}">
+
                                                     <td><a href="">{{$employee_list->first_name.' '.$employee_list->last_name}}</a></td>
                                                     <td>{{$employee_list->designation}}</td>
                                                     <td>{{$employee_list->contact_number}}</td>
@@ -80,7 +78,7 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-6 ">
                                     @if(isset($employee_search_lists))
-                                        <p><strong>Total student is {{ $employee_search_lists->count()}}</strong></p>
+                                        <p><strong>Total employee is {{ $employee_search_lists->count()}}</strong></p>
                                         <button type="submit" class="btn btn-lg btn-info present-btn">Present</button>
                                     @endif
 
