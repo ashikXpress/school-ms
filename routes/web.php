@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace('Dashboard')->group(function (){
-    Route::get('','DashboardController@home')->name('home');
+    Route::get('/','DashboardController@home')->name('home');
     Route::get('dashboard','DashboardController@dashboard')->name('dashboard');
 });
 
@@ -62,6 +62,12 @@ Route::namespace('Exam')->group(function (){
     Route::get('exam/create-exam-term','ExaminationController@createExamTermForm')->name('create.exam.term.form');
     Route::post('exam/create-exam-term','ExaminationController@createExamTerm')->name('create.exam.term');
 });
+
+Route::namespace('Notice')->group(function (){
+    Route::get('notice/create-diary','NoticeController@createDiaryForm')->name('create.diary.form');
+    Route::post('notice/create-diary','NoticeController@createDiary')->name('create.diary');
+});
+
 Route::namespace('Employee')->group(function (){
     Route::get('employee/create-designation','EmployeeController@createDesignationForm')->name('create.designation.form');
     Route::post('employee/create-designation','EmployeeController@createDesignation')->name('create.designation');

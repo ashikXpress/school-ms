@@ -75,7 +75,7 @@
                                         @foreach($student_lists as $student_list)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="patient-img">
-                                                    <img src="{{$student_list->photo}}" alt="">
+                                                    <img src="{{asset('uploads/'.$student_list->photo)}}" alt="">
                                                 </td>
                                                 <td class="left">{{$student_list->class}}</td>
                                                 <td class="left">{{$student_list->roll}}</td>

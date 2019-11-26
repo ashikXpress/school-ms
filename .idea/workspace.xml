@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/css/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/js/jquery-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/attendance/employee_attendance_info.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/attendance/student_attendance_info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Ashik_Khan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Notice/NoticeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Diary.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/SmsNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_26_093222_create_diaries_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/5RkNOEdxYjJJTUHEKHPBZ4p9tqCM3bJNs4DCwC7O.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/notice/create_student_diary.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/notifications/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/school-ms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/school-ms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Attendance/EmployeeAttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Attendance/EmployeeAttendanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Attendance/StudentAttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Attendance/StudentAttendanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EmployeeAttendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EmployeeAttendance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/StudentAttendance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/StudentAttendance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122508_create_employees_attendances.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_students_attendances.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_09_122607_create_students_attendances.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin/assets/plugins/bootstrap-datepicker/datepicker-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin/assets/plugins/bootstrap-datepicker/datepicker-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/attendance/attendance_employee.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attendance/attendance_employee.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/attendance/student_attendance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/attendance/student_attendance.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/student_lists.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/student_lists.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,6 +128,23 @@
       <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
       <path value="$PROJECT_DIR$/vendor/spatie/db-dumper" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-backup" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client-core" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/laravel" />
+      <path value="$PROJECT_DIR$/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/laravel/nexmo-notification-channel" />
     </include_path>
   </component>
   <component name="ProjectId" id="1TaYm4dr07s9qzEiES047TJAfzO" />
@@ -141,19 +158,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\ClassRoutine" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\attendance" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Attendance" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\staff" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\employee" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Notice" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Models" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\ClassRoutine" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -212,7 +229,11 @@
       <workItem from="1574507775476" duration="15999000" />
       <workItem from="1574565557595" duration="12239000" />
       <workItem from="1574581987354" duration="11042000" />
-      <workItem from="1574652445071" duration="23394000" />
+      <workItem from="1574652445071" duration="23630000" />
+      <workItem from="1574689569665" duration="656000" />
+      <workItem from="1574696949877" duration="837000" />
+      <workItem from="1574738837395" duration="6443000" />
+      <workItem from="1574754618849" duration="14631000" />
     </task>
     <servers />
   </component>

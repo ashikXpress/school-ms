@@ -168,9 +168,21 @@
                     </ul>
                 </li>
 
-                <li class="nav-item {{ Request::is('subject/*') ? 'start active open' : null }}">
+                <li class="nav-item {{ Request::is('notice/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Notice</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+
+                        <li class="nav-item {{ Request::is('notice/create-diary') ? 'active' : null }}">
+                            <a href="{{route('create.diary')}}" class="nav-link ">
+                                <span class="title">Create student diary</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{ Request::is('subject/*') ? 'start active open' : null }}">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Accounting</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
                         <li class="nav-item {{ Request::is('employee/employee-lists') ? 'active' : null }}">
