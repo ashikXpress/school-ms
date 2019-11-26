@@ -17,13 +17,21 @@ class EmployeeAttendanceController extends Controller
         $data['designations'] = Designation::get();
         $designation = $request->designation;
 
+        $data_check=Carbon::now()->format('d-m-Y');
 
-        if ($designation == 'all') {
+        $check_attendance=EmployeeAttendance::where('attend_date',$data_check)->first();
 
-            $data['employee_search_lists'] = Employee::get();
-        } elseif ($designation) {
-            $data['employee_search_lists'] = Employee::where('designation', $designation)->get();
-        }
+
+            if ($designation == 'all') {
+                if ($check_attendance==null){
+                    $data['employee_search_lists'] = Employee::get();
+                }else{
+                    $data['attendance_check']='Sorry, Already today attendance is taken. if you change any data then check employee attendance report';
+
+                }
+
+            }
+
 
         return view('attendance.attendance_employee',$data);
     }
@@ -59,8 +67,6 @@ public function attendanceEmployeeInfo(Request $request){
         $from=$request->from_date;
         $to=$request->to_date;
         $employee_id=$request->employee_id;
-
-
 
         if ($from!='' && $to!='' && $employee_id!=''){
 

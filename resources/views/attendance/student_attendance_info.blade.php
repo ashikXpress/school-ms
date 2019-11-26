@@ -44,16 +44,6 @@
 
                         </div>
                         <div class="form-group col-md-2 col-sm-2">
-                            <label for="shift">Shift</label>
-                            <select class="form-control" name="shift" id="shift">
-                                <option disabled selected>Select shift</option>
-                                <option value="Morning" @if(old('shift') == 'Morning')selected @endif>Morning</option>
-                                <option value="Day" @if(old('shift') == 'Day')selected @endif>Day</option>
-
-                            </select>
-
-                        </div>
-                        <div class="form-group col-md-2 col-sm-2">
                             <label for="section">Section</label>
                             <select class="form-control" name="section" id="section">
                                 <option disabled selected>Select section</option>
@@ -63,6 +53,17 @@
                             </select>
 
                         </div>
+                        <div class="form-group col-md-2 col-sm-2">
+                            <label for="shift">Shift</label>
+                            <select class="form-control" name="shift" id="shift">
+                                <option disabled selected>Select shift</option>
+                                <option value="Morning" @if(old('shift') == 'Morning')selected @endif>Morning</option>
+                                <option value="Day" @if(old('shift') == 'Day')selected @endif>Day</option>
+
+                            </select>
+
+                        </div>
+
                         <div class="col-md-2 padd-less">
 
                             <button type="submit" class=" btn btn-info">Search</button>

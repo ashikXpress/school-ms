@@ -70,9 +70,15 @@
 
                                                 </tr>
                                             @endforeach
+
                                         @endif
+
                                         </tbody>
+
                                     </table>
+                                    @if(isset($attendance_check))
+                                        <h3 class="text text-danger">{{$attendance_check}}</h3>
+                                    @endif
                                 </div>
                             </div>
                             <div class="row">

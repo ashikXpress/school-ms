@@ -43,7 +43,7 @@ class SmsNotification extends Notification
     {
         $diary=$this->diary;
         return (new MailMessage)
-                  ->line($diary->student->first_name.$diary->student->last_name)
+                    ->line($diary->student->first_name.' '.$diary->student->last_name)
                     ->line($diary->title)
                     ->line($diary->diary)
                     ->action('Notification Action', url('/'))
@@ -63,7 +63,7 @@ class SmsNotification extends Notification
 
         return (new NexmoMessage)
 
-            ->content('Dear, '.$diary->student->first_name.$diary->student->last_name.' '.$diary->title.'. '.$diary->diary)
+            ->content('Dear, '.$diary->student->first_name.' '.$diary->student->last_name.' '.$diary->title.'. '.$diary->diary)
             ->unicode();
     }
 

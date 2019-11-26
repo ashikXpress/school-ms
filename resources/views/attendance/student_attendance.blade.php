@@ -14,17 +14,27 @@
                </div>
                <div class="card-body " >
                    <form class="row" action="">
-                       {{csrf_field()}}
 
-                           <div class="form-group col-md-3 col-sm-3">
+                        <div class="form-group col-md-3 col-sm-3">
                            <label for="class">Class</label>
                            <select class="form-control" name="class" id="class">
                                <option disabled selected>Select class</option>
                                @foreach($classes as $class)
-                                   <option value="{{$class->class_name}}" @if(old('class') == $class->class_name)selected @endif>{{$class->class_name}}</option>
+                                   <option  value="{{$class->class_name}}" @if(old('class') == $class->class_name)selected @endif>{{$class->class_name}}</option>
                                @endforeach
                            </select>
                            <span class="text text-danger">{{$errors->first('class')}}</span>
+                       </div>
+
+                       <div class="form-group col-md-3 col-sm-3">
+                           <label for="section">Section</label>
+                           <select class="form-control" name="section" id="section">
+                               <option disabled selected>Select section</option>
+                               @foreach($sections as $section)
+                                   <option value="{{$section->section_name}}" @if(old('section') == $section->section_name)selected @endif>{{$section->section_name}}</option>
+                               @endforeach
+                           </select>
+                           <span class="text text-danger">{{$errors->first('section')}}</span>
                        </div>
                        <div class="form-group col-md-3 col-sm-3">
                            <label for="shift">Shift</label>
@@ -35,16 +45,6 @@
 
                            </select>
                            <span class="text text-danger">{{$errors->first('shift')}}</span>
-                       </div>
-                       <div class="form-group col-md-3 col-sm-3">
-                           <label for="section">Section</label>
-                           <select class="form-control" name="section" id="section">
-                               <option disabled selected>Select section</option>
-                               @foreach($sections as $section)
-                                   <option value="{{$section->section_name}}" @if(old('section') == $section->section_name)selected @endif>{{$section->section_name}}</option>
-                               @endforeach
-                           </select>
-                           <span class="text text-danger">{{$errors->first('section')}}</span>
                        </div>
                        <div class="col-md-2 padd-less">
 
@@ -99,6 +99,9 @@
                                        @endif
                                        </tbody>
                                    </table>
+                                   @if(isset($attendance_check))
+                                       <h3 class="text text-danger">{{$attendance_check}}</h3>
+                                   @endif
                                </div>
                            </div>
                            <div class="row">
