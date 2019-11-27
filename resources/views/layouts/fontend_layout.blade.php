@@ -55,7 +55,7 @@
                 <div class="top-bar-right pull-right">
                     <ul>
                         <li><a href="faq.html"><i class="fa fa-question-circle"></i> Ask a Question</a> </li>
-                        <li><a href="register.html">Log In</a></li>
+                        <li><a href="{{route('student.login.form')}}">Log In</a></li>
 
                     </ul>
                 </div>
@@ -79,7 +79,7 @@
 
                         <ul>
                             <li><a href="">Admission</a></li>
-                            <li><a href="">Reault</a></li>
+                            <li><a href="">Result</a></li>
                             <li><a href="">Fees</a></li>
                             <li><a href="">Notice</a></li>
                         </ul>

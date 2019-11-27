@@ -155,6 +155,7 @@
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item {{ Request::is('syllabus/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Syllabus</span><span class="arrow"></span></a>

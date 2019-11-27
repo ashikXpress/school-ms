@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'employees',
         ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -78,6 +82,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Employee::class,
         ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -107,6 +115,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
     ],
 
     /*

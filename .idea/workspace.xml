@@ -2,104 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/Flaticon.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/cook.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/default.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/driving.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/flaticon1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/kindergarden.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/modal-video-min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/owl.carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/owl.video.play.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/plugin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/css/video_096.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Flaticon1.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Flaticon1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Flaticon1.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Flaticon1.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Flaticon1d41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Simple-Line-Iconsc05f.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/Simple-Line-Iconsc05f.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/et-line.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/et-line.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/et-line.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/et-line.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/et-lined41dd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont93e393e3.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont93e393e3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont93e393e3.html.readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont93e393e3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont93e393e3.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont93e393e3.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfontd41d.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfontd41dd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/glyphicons-halflings-regular-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/glyphicons-halflings-regular-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/glyphicons-halflings-regular-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/glyphicons-halflings-regular-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/glyphicons-halflings-regular.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/glyphicons-halflings-regulard41dd41d.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/iconsmindca27.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/iconsmindca27.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/iconsmindca27.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/iconsmindca27.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/iconsmindd41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/ionicons28b528b528b5.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/ionicons28b528b528b5.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/ionicons28b528b528b5.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/ionicons28b528b528b5.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/simple-line-iconsc05f-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/fonts/simple-line-iconsc05f.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/images/comment.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/images/icon-cross.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/images/img08.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/counterup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/custom-magnificpopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/custom-map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/custom-modalvideo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/custom-nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/custom-video.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/custom.timer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/dashboard-custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/isotope.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jpanelmenu.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery-modal-video.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.appear.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.countTo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.countdown.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.fancybox.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/jquery.parallax-1.1.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/plugin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/slicknav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/swiper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fontend/assets/js/wow.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/StudentAuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/student_login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student_panel/student_dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -235,14 +151,14 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts/assets" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
       <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\staff" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\employee" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -315,7 +231,7 @@
       <workItem from="1574738837395" duration="6443000" />
       <workItem from="1574754618849" duration="27580000" />
       <workItem from="1574822735059" duration="4616000" />
-      <workItem from="1574831219417" duration="5789000" />
+      <workItem from="1574831219417" duration="12333000" />
     </task>
     <servers />
   </component>

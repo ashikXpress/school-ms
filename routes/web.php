@@ -139,6 +139,15 @@ Route::namespace('staff')->group(function (){
 
 
 
+Route::namespace('StudentPanel')->group(function (){
+    Route::get('student/dashboard','StudentController@studentDashboard')->name('student.dashboard');
+
+});
+
+
+
 Route::namespace('Fontend')->group(function (){
     Route::get('/','HomeController@home')->name('home');
+    Route::get('student/student-login','StudentAuthController@studentLoginForm')->name('student.login.form');
+    Route::post('student/student-login','StudentAuthController@studentLogin')->name('student.login');
 });

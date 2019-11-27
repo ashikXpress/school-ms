@@ -18,8 +18,7 @@
 <div class="page-wrapper">
     <!-- start header -->
 
-    @include('layouts.assets._top_bar')
-
+        @include('layouts.assets._student_top_bar')
 
 
     <!-- end header -->
@@ -31,7 +30,10 @@
         <!-- start sidebar menu -->
 
 
-            @include('layouts.assets._side_bar')
+            @include('layouts.assets._student_side_bar')
+
+
+
 
 
 
