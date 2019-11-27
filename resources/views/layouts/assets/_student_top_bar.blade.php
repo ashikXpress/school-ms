@@ -95,7 +95,7 @@
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                        data-close-others="true">
-                        <img alt="" class="img-circle " src="{{asset(optional(Auth::guard('student')->user())->photo)}}" />
+                        <img alt="" class="img-circle " src="{{asset('uploads/'.optional(Auth::guard('student')->user())->photo)}}" />
                         <span class="username username-hide-on-mobile"> {{optional(Auth::guard('student')->user())->first_name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
@@ -105,13 +105,13 @@
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                         <li>
-                            <a href="{{route('employee.change.password.form')}}">
+                            <a href="#">
                                 <i class="icon-settings"></i> Change password
                             </a>
                         </li>
 
                         <li>
-                            <a href="{{route('logout')}}">
+                            <a href="{{route('student.logout')}}">
                                 <i class="icon-logout"></i> Log Out </a>
                         </li>
                     </ul>

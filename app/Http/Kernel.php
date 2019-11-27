@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\AccessLevel;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Staff;
+use App\Http\Middleware\StudentMiddleware;
 use App\Http\Middleware\SuperAdmin;
 use App\Http\Middleware\Teacher;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -56,6 +57,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'student'=>\App\Http\Middleware\StudentMiddleware::class,
         'employee' => \App\Http\Middleware\EpmloyeeLogin::class,
         'admin' => \App\Http\Middleware\Admin::class,
         'teacher' => \App\Http\Middleware\Teacher::class,

@@ -8,6 +8,19 @@
                         <span></span>
                     </div>
                 </li>
+                <li class="sidebar-user-panel">
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="{{asset('uploads/'.optional(Auth::guard('student')->user())->photo)}}" class="img-circle user-img-circle"
+                                 alt="User Image" />
+                        </div>
+                        <div class="pull-left info">
+                            <p>{{optional(Auth::guard('student')->user())->first_name}}</p>
+                            <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
+												Online</span></a>
+                        </div>
+                    </div>
+                </li>
 
 
 

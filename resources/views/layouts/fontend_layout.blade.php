@@ -29,6 +29,58 @@
     <!--Font Icons-->
     <link href="{{asset('fontend/assets/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('fontend/assets/css/flaticon1.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="{{asset('admin/assets/custom_date/datepicker.min.css')}}" rel="stylesheet">
+   <style>
+       span.select2-selection.select2-selection--single{
+           font-size: 16px;
+           font-weight: 300;
+           background-color: #fff;
+           border: 1px solid #eceaea;
+           border-radius: 5px;
+           padding: 10px 25px;
+           width: 100%;
+           color: #444444;
+           font-family: 'Roboto', sans-serif;
+           height: 42px;
+           box-shadow: none;
+       }
+       .select2-container--default .select2-selection--single .select2-selection__rendered {
+
+           line-height: 21px;
+       }
+       .select2-dropdown{
+           border: 1px solid #eceaea;
+       }
+
+       .select2-container--default .select2-results__option--highlighted[aria-selected]{
+           background-color: #ffac00;
+       }
+       .select2-container .select2-selection--single .select2-selection__rendered {
+           padding-left: 0;
+       }
+       .select2-container--default .select2-search--dropdown .select2-search__field {
+           border: 1px solid #eceaea;
+       }
+       .select2-container--default .select2-selection--single .select2-selection__arrow {
+
+           top: 10px;
+
+       }
+       .select2-container--default .select2-search--dropdown .select2-search__field {
+           border: 1px solid #eceaea;
+       }
+       input.select2-search__field:focus{
+           color: #ffac00;
+       }
+       .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+           background-color: #fff;
+           opacity: 1;
+       }
+       .text-danger{
+           color: #ffac00;
+       }
+   </style>
 
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')}}"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script><![endif]-->
 </head>
@@ -78,7 +130,7 @@
                     <li class="active"><a href="#">Academic <i class="fa fa-angle-down"></i></a>
 
                         <ul>
-                            <li><a href="">Admission</a></li>
+                            <li><a href="{{route('admission.form')}}">Admission</a></li>
                             <li><a href="">Result</a></li>
                             <li><a href="">Fees</a></li>
                             <li><a href="">Notice</a></li>
@@ -123,27 +175,7 @@
 <footer id="mt_footer">
     <div class="container">
 
-        <section id="newsletter">
-            <div class="newsletter-inner">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="news-content">
-                            <h2>Like to become an instructor?</h2>
-                            <p class="mar-0">Join thousand of instructors and earn money hassle free! Lorem ipsums dolors sit amet consectetur adipiselo elit sed do eiuse.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="mailpoet_form">
-                            <form target="_self" method="post" action="https://cyclonethemes.com/demo/html/padhai/email" novalidate="">
-                                <input type="email" class="mailpoet_text" name="mail" title="Email" placeholder="Please specify a valid email address.">
 
-                                <div class="button"><input type="submit" class="mailpoet_submit" value="Subscribe!"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <div class="footer-main">
             <div class="row">
@@ -291,6 +323,26 @@
 <!-- custom Popup video Jquery --><script src="{{asset('fontend/assets/js/custom-modalvideo.js')}}"></script>
 
 <!-- main default Jquery --><script src="{{asset('fontend/assets/js/main.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+<script src="{{asset('admin/assets/custom_date/datepicker.min.js')}}"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#class').select2();
+
+        $( "#dpicker1" ).datepicker({
+            format: 'dd-mm-yyyy',
+            autoHide:true,
+            date:'Date',
+        });
+        $( "#dpicker2" ).datepicker({
+            format: 'dd-mm-yyyy',
+            autoHide:true,
+            date:'Date',
+        });
+    });
+</script>
 </body>
 
 </html>

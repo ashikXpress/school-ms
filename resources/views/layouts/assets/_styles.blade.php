@@ -65,4 +65,8 @@
         margin-left: 15px;
         margin-bottom: 20px;
     }
+    .user-panel .image {
+        width: 20%;
+
+    }
 </style>

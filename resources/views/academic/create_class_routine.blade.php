@@ -47,6 +47,7 @@
                                     <option disabled selected>Select class</option>
                                     @foreach($class_names as $class_name)
                                         <option value="{{$class_name->class_name}}" @if(old('class') == $class_name->class_name)selected @endif>{{$class_name->class_name}}</option>
+
                                     @endforeach
                                 </select>
 
