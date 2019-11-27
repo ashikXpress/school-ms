@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/AdmissionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/StudentMiddleware.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/4G8W9LVkFHZEYIeUZVsEvzjFyfjPA3mcJCqSqELK.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/Zokar1str1PyY0dw6GTqlyDwoRvuYMuYdSIPdhFz.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/fRTnppL6FYkRmvahVO7uky7fdJgrls4OeF4dughM.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/admission/admission_form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student_panel/student_idcard_generate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/academic/create_class_routine.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic/create_class_routine.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -233,7 +224,7 @@
       <workItem from="1574754618849" duration="27580000" />
       <workItem from="1574822735059" duration="4616000" />
       <workItem from="1574831219417" duration="12333000" />
-      <workItem from="1574869935202" duration="11762000" />
+      <workItem from="1574869935202" duration="13582000" />
     </task>
     <servers />
   </component>

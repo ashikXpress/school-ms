@@ -142,6 +142,7 @@ Route::namespace('staff')->group(function (){
 Route::namespace('StudentPanel')->group(function (){
     Route::get('student/dashboard','StudentController@studentDashboard')->name('student.dashboard');
     Route::get('student/logout','StudentController@studentLogout')->name('student.logout');
+    Route::get('student/id-card','StudentController@studentIdCard')->name('student.id.card');
 
 });
 

@@ -24,8 +24,8 @@
 
 
 
-                <li class="nav-item {{ Request::is('student*') ? 'active' : null }}">
-                    <a href="{{route('dashboard')}}" class="nav-link">
+                <li class="nav-item {{ Request::is('student/dashboard') ? 'active' : null }}">
+                    <a href="{{route('student.dashboard')}}" class="nav-link">
                         <i class="material-icons">dashboard</i>
                         <span class="title">Dashboard</span>
                         <span class="selected"></span>
@@ -33,18 +33,11 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{ Request::is('exam/*') ? 'start active open' : null }}">
-                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                        <span class="title">Class</span><span class="arrow"></span></a>
-                    <ul class="sub-menu">
-
-                        <li class="nav-item {{ Request::is('') ? 'active' : null }}">
-                            <a href="" class="nav-link ">
-                                <span class="title">Class routine</span>
-                            </a>
-                        </li>
-                    </ul>
+                <li class="nav-item {{ Request::is('student/id-card') ? 'active' : null }}">
+                    <a href="{{route('student.id.card')}}" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">ID Card</span></a>
                 </li>
+
                 <li class="nav-item {{ Request::is('exam/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Exam</span><span class="arrow"></span></a>

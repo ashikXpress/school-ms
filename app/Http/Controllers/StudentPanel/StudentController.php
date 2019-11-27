@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\StudentPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -25,5 +26,12 @@ class StudentController extends Controller
       return redirect()->route('student.login.form');
 
 
+  }
+
+  public function studentIdCard(){
+
+        $student_id=Auth::guard('student')->user()->id;
+        $data['idcard']=Student::where('id',$student_id)->first();
+        return view('student_panel.student_idcard_generate',$data);
   }
 }
