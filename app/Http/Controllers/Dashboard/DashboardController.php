@@ -16,9 +16,7 @@ public function __construct()
 
 }
 
-    public function home(){
-        return redirect()->route('dashboard');
-    }
+
     public function dashboard(){
 //        Artisan::call('backup:run');
 //

@@ -1,0 +1,43 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 26/12/2018 08:24
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon1.eot");
+  src: url("../fonts/Flaticon1d41d.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon1.woff") format("woff"),
+       url("../fonts/Flaticon1.ttf") format("truetype"),
+       url("../fonts/Flaticon1.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("Flaticon.html#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+font-style: normal;
+}
+
+.flaticon-handshake:before { content: "\f100"; }
+.flaticon-doctor:before { content: "\f101"; }
+.flaticon-stethoscope:before { content: "\f102"; }
+.flaticon-multiple-users-silhouette:before { content: "\f103"; }
+.flaticon-hospital:before { content: "\f104"; }
+.flaticon-ribbon:before { content: "\f105"; }
+.flaticon-ribbon-1:before { content: "\f106"; }
+.flaticon-dna:before { content: "\f107"; }
+.flaticon-dna-1:before { content: "\f108"; }
+.flaticon-microscope:before { content: "\f109"; }
+.flaticon-surgery:before { content: "\f10a"; }
+.flaticon-iv-pole:before { content: "\f10b"; }
+.flaticon-blood-drop:before { content: "\f10c"; }
+.flaticon-hospital-1:before { content: "\f10d"; }

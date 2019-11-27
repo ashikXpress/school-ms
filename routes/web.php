@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace('Dashboard')->group(function (){
-    Route::get('/','DashboardController@home')->name('home');
     Route::get('dashboard','DashboardController@dashboard')->name('dashboard');
 });
 
@@ -136,4 +135,10 @@ Route::namespace('Teacher')->group(function (){
 });
 Route::namespace('staff')->group(function (){
     Route::get('staff/dashboard','staffController@staffDashboard')->name('staff.dashboard');
+});
+
+
+
+Route::namespace('Fontend')->group(function (){
+    Route::get('/','HomeController@home')->name('home');
 });
