@@ -148,6 +148,11 @@
                                 <span class="title">Manage Exam Term</span>
                             </a>
                         </li>
+                        <li class="nav-item {{ Request::is('exam/create-exam-routine') ? 'active' : null }}">
+                            <a href="{{route('create.exam.routine.form')}}" class="nav-link ">
+                                <span class="title">Create Exam Routine</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item {{ Request::is('syllabus/*') ? 'start active open' : null }}">

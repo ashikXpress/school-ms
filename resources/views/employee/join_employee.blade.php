@@ -60,11 +60,12 @@
 
                             <div class="form-group col-md-6 col-sm-6">
                                 <label for="dp1">Date of birth (*Required)</label>
-                                <div class="input-append date" id="dp1">
-                                    <input class="form-control formDatePicker" name="date_of_birth" value="{{old('date_of_birth')}}"  placeholder="Enter date of birth" size="44" type="text" aria-invalid="false">
-                                    <span class="add-on"><i class="fa fa-calendar"></i></span>
+
+                                    <input id="dpicker1" readonly class="form-control" name="date_of_birth" value="{{old('date_of_birth')}}"  placeholder="Enter date of birth" size="44" type="text" aria-invalid="false">
+
                                     <span class="text text-danger">{{$errors->first('date_of_birth')}}</span>
-                                </div>
+
+
 
                             </div>
                             <div class="form-group col-md-6 col-sm-6">
@@ -147,11 +148,10 @@
 
 
                             <div class="form-group col-md-6 col-sm-6">
-                                <label for="dp2">Joining date (*Required)</label>
-                                <div class="input-append date" id="dp2">
-                                    <input class="form-control formDatePicker" name="joining_date" value="{{old('joining_date')}}"  placeholder="Enter joining date" size="44" type="text"   aria-invalid="false">
-                                    <span class="add-on"><i class="fa fa-calendar"></i></span>
-                                </div>
+                                <label for="dpicker2">Joining date (*Required)</label>
+
+                                    <input id="dpicker2" readonly class="form-control" name="joining_date" value="{{old('joining_date')}}"  placeholder="Enter joining date" size="44" type="text"   aria-invalid="false">
+
                                 <span class="text text-danger">{{$errors->first('joining_date')}}</span>
 
                             </div>

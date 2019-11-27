@@ -32,6 +32,7 @@
 <link href="{{asset('admin/assets/css/yearpicker.css')}}" rel="stylesheet">
 <link href="{{asset('admin/assets/css/timepicker.min.css')}}" rel="stylesheet">
 <link href="{{asset('admin/assets/css/jquery-ui.css')}}" rel="stylesheet">
+<link href="{{asset('admin/assets/custom_date/datepicker.min.css')}}" rel="stylesheet">
 <style>
     .btn-group>a>i {
         color: #ffffff;

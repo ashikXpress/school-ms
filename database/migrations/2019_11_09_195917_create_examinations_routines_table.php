@@ -15,19 +15,18 @@ class CreateExaminationsRoutinesTable extends Migration
     {
         Schema::create('examinations_routines', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date');
-            $table->unsignedBigInteger('exam_name_id')->nullable();
-            $table->unsignedBigInteger('subject_id')->nullable();
-            $table->unsignedBigInteger('class_id');
-            $table->string('shift')->nullable();
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->string('exam_date');
+            $table->unsignedBigInteger('exam_term_name_id')->nullable();
+            $table->string('subject');
+            $table->string('class');
+            $table->string('shift');
+            $table->string('section');
+            $table->string('start_time');
+            $table->string('end_time');
             $table->string('academic_year');
-            $table->unsignedBigInteger('authorized_id')->nullable();
-            $table->foreign('exam_name_id')->references('id')->on('examinations');
-            $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->foreign('class_id')->references('id')->on('classes');
-            $table->foreign('authorized_id')->references('id')->on('employees');
+            $table->unsignedBigInteger('examinations_guards_id')->nullable();
+            $table->foreign('exam_term_name_id')->references('id')->on('examination_term');
+            $table->foreign('examinations_guards_id')->references('id')->on('examinations_guards');
             $table->timestamps();
         });
     }

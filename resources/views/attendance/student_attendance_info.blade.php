@@ -15,22 +15,14 @@
                 <div class="card-body " >
                     <form class="row" action="">
                         <div class="form-group col-md-2 col-sm-2">
-                            <label for="dp1">From date</label>
-                            <div class="input-append date" id="dp1">
-                                <input class="form-control formDatePicker" name="from_date"  placeholder="From date" size="44" type="text" >
-                                <span class="add-on"><i class="fa fa-calendar"></i></span>
+                            <label for="dpicker1">From date</label>
 
-                            </div>
-
+                                <input id="dpicker1" readonly class="form-control formDatePicker" name="from_date"  placeholder="From date" size="44" type="text" >
                         </div>
                         <div class="form-group col-md-2 col-sm-2">
-                            <label for="dp2">To date</label>
-                            <div class="input-append date" id="dp2">
-                                <input class="form-control formDatePicker" name="to_date"   placeholder="To date" size="44" type="text">
-                                <span class="add-on"><i class="fa fa-calendar"></i></span>
+                            <label for="dpicker2">To date</label>
 
-                            </div>
-
+                                <input id="dpicker2" readonly class="form-control formDatePicker" name="to_date"   placeholder="To date" size="44" type="text">
                         </div>
 
                         <div class="form-group col-md-2 col-sm-2">

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Exam;
 
 use App\Http\Controllers\Controller;
+use App\Models\ClassName;
+use App\Models\Employee;
 use App\Models\ExaminationTerm;
+use App\Models\Section;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class ExaminationController extends Controller
@@ -21,5 +25,15 @@ class ExaminationController extends Controller
         ExaminationTerm::create($data);
         $request->session()->flash('success','Create exam term name successfully');
         return redirect()->route('create.exam.term.form');
+    }
+
+    public function createExamRoutineForm(){
+        $data['classes']=ClassName::get();
+        $data['subjects']=Subject::get();
+        $data['sections']=Section::get();
+        $data['all_teacher']=Employee::get();
+        $data['terms']=ExaminationTerm::get();
+
+        return view('exam.create_exam_routine',$data);
     }
 }

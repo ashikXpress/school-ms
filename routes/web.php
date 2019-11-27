@@ -61,6 +61,8 @@ Route::namespace('Syllabus')->group(function (){
 Route::namespace('Exam')->group(function (){
     Route::get('exam/create-exam-term','ExaminationController@createExamTermForm')->name('create.exam.term.form');
     Route::post('exam/create-exam-term','ExaminationController@createExamTerm')->name('create.exam.term');
+    Route::get('exam/create-exam-routine','ExaminationController@createExamRoutineForm')->name('create.exam.routine.form');
+    Route::post('exam/create-exam-routine','ExaminationController@createExamRoutine')->name('create.exam.routine');
 });
 
 Route::namespace('Notice')->group(function (){

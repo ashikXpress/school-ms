@@ -24,9 +24,7 @@
 <!-- material -->
 <script src="{{asset('admin/assets/plugins/material/material.min.js')}}"></script>
 <!-- chart js -->
-<script src="{{asset('admin/assets/plugins/chart-js/Chart.bundle.js')}}"></script>
-<script src="{{asset('admin/assets/plugins/chart-js/utils.js')}}"></script>
-<script src="{{asset('admin/assets/js/pages/chart/chartjs/home-data.js')}}"></script>
+
 <!-- summernote -->
 <script src="{{asset('admin/assets/plugins/summernote/summernote.js')}}"></script>
 <script src="{{asset('admin/assets/js/pages/summernote/summernote-data.js')}}"></script>
@@ -40,7 +38,8 @@
 <script src="{{asset('admin/assets/plugins/dropzone/dropzone.js')}}"></script>
 <script src="{{asset('admin/assets/sweet2/sweetalert2.js')}}"></script>
 <script src="{{asset('admin/assets/js/yearpicker.js')}}"></script>
-<script src="{{asset('admin/assets/js/timepicker.min.js')}}"></script>
+<script src="{{asset('admin/assets/custom_date/datepicker.min.js')}}"></script>
+
 
 
 
@@ -48,9 +47,6 @@
     $(document).ready(function() {
         $("#classseleted,#bloodgroupselected,#employeeusertype,#designation,#studentattendanceselected,#teacherattendanceselected").select2();
         $("#section,#shift,#group,#class").select2();
-
-
-
 
     });
 </script>
@@ -84,6 +80,24 @@
 <script>
     $('.yearpicker').yearpicker();
 
+    $( "#dpicker1" ).datepicker({
+        format: 'dd-mm-yyyy',
+        autoHide:true,
+        date:'Date',
+    });
+    $( "#dpicker2" ).datepicker({
+        format: 'dd-mm-yyyy',
+        autoHide:true,
+        date:'Date',
+    });
+    $( "#dpicker3" ).datepicker({
+        format: 'dd-mm-yyyy',
+        autoHide:true,
+    });
+    $( "#dpicker4" ).datepicker({
+        format: 'dd-mm-yyyy',
+        autoHide:true,
+    });
 
 
 </script>
