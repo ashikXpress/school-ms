@@ -126,7 +126,7 @@
 
             <div id="navbar" class="navbar-nav-wrapper pull-right">
                 <ul class="nav navbar-nav navbar-right" id="responsive-menu">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="{{route('home')}}">Home</a></li>
                     <li class="active"><a href="#">Academic <i class="fa fa-angle-down"></i></a>
 
                         <ul>

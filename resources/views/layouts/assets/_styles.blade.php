@@ -66,9 +66,144 @@
         margin-bottom: 20px;
     }
     .user-panel .image {
-        width: 20%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+
+    }
+
+    img.thumb-lg.custom-card {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+    }
+
+
+
+    .white-box.border-gray {
+        background: #9675ce;
+    }
+
+    .user-bg .overlay-box {
+        background: #9675ce;
+        opacity: 1;
+
+    }
+    .user-bg {
+        margin: 0px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .white-box {
+       color:#fff;
+        padding: 10px 8px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .user-bg .overlay-box .user-content {
+        padding: 0;
+    }
+
+    .user-btm-box {
+        padding: 0;
 
     }
 
 
+
+    .user-btm-box {
+        text-align: left;
+        padding: 0 0 0 14px;
+    }
+
+    .user-btm-box p span {
+        padding: 0 0 0 8px;
+        font-size: 11px;
+    }
+    h5.school-text {
+        text-align: left;
+        padding-left: 8px;
+        font-size: 13px !important;
+    }
+    .user-btm-box p {
+        margin: 0;
+    }
+
+    .user-btm-footer p {
+        font-size: 10px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        margin-left: -28px;
+        color: #af1e1e;
+    }
+
+    .sign-head-master {
+        font-size: 11px;
+        position: relative;
+    }
+
+    .sign-head-master span {
+        position: absolute;
+        top: -3px;
+        left: 50px;
+        font-style: italic;
+        color: #000;
+    }
+
+    .sign-head-master {
+        font-size: 11px;
+        position: relative;
+        margin: 0 0 0 85px;
+        padding: 10px 0 0 0;
+    }
+    @media print {
+        .border-gray{
+            background-color: #9675ce !important;
+            -webkit-print-color-adjust: exact;
+            color:white !important;
+        }
+        #idcard{
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: auto;
+            height: auto;
+        }
+        .school-text{
+            -webkit-print-color-adjust: exact;
+            color:white !important;
+        }
+        .user-btm-box p{
+            -webkit-print-color-adjust: exact;
+            color:white !important;
+        }
+        .user-btm-box p span{
+            color:white !important;
+        }
+        .user-btm-footer p{
+            color: #af1e1e !important;
+        }
+
+        .sign-head-master{
+            color: #fff !important;
+        }
+
+        .white-box .border-gray{
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 420px !important;
+            height: auto;
+        }
+    }
+
+    @media print {
+        .vendorListHeading th {
+            color: white !important;
+        }
+    }
 </style>

@@ -577,7 +577,7 @@
                     <div class="watch_content">
                         <h2 class="white">GET STARTED TODAY</h2>
                         <p class="white">Lorem ipsums dolors sit amet consectetur adipiselo elit sed do eiused tempor the incididunt ut labore et. Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit.</p>
-                        <a href="#" class="mt_btn_yellow">PURCAHSE THEME</a>
+                        <a href="{{route('admission')}}" class="mt_btn_yellow">Apply Admission</a>
                     </div>
                 </div>
                 <div class="get_stt_img">
@@ -596,10 +596,11 @@
                 <h2>Meet our expert teachers</h2>
             </div>
             <div class="row edu_team_slider slider-educteam">
+                @foreach($teachers as $teacher)
                 <div class="col-md-4 col-sm-6 col-xs-12 item">
                     <div class="team_member">
                         <figure class="effect-julia">
-                            <img src="{{asset('fontend/assets/images/team/rmember-1.jpg')}}" alt="team">
+                            <img src="{{asset($teacher->photo)}}" alt="team">
                             <div class="team-overlay">
                                 <div class="about-tech">
                                     <p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.</p>
@@ -613,77 +614,12 @@
                             </div>
                         </figure>
                         <div class="member_name">
-                            <h3>Adam Smith</h3>
+                            <h3>{{$teacher->first_name.' '.$teacher->last_name}}</h3>
                             <span>Language Teacher</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 item">
-                    <div class="team_member">
-                        <figure class="effect-julia">
-                            <img src="{{asset('fontend/assets/images/team/rmember-2.jpg')}}" alt="team">
-                            <div class="team-overlay">
-                                <div class="about-tech">
-                                    <p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.</p>
-                                    <ul class="socialicons">
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </figure>
-                        <div class="member_name">
-                            <h3>Adam Smith</h3>
-                            <span>Language Teacher</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 item">
-                    <div class="team_member">
-                        <figure class="effect-julia">
-                            <img src="{{asset('fontend/assets/images/team/rmember-3.jpg')}}" alt="team">
-                            <div class="team-overlay">
-                                <div class="about-tech">
-                                    <p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.</p>
-                                    <ul class="socialicons">
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </figure>
-                        <div class="member_name">
-                            <h3>Adam Smith</h3>
-                            <span>Language Teacher</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 item">
-                    <div class="team_member">
-                        <figure class="effect-julia">
-                            <img src="{{asset('fontend/assets/images/team/rmember-4.jpg')}}" alt="team">
-                            <div class="team-overlay">
-                                <div class="about-tech">
-                                    <p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.</p>
-                                    <ul class="socialicons">
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </figure>
-                        <div class="member_name">
-                            <h3>Adam Smith</h3>
-                            <span>Language Teacher</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

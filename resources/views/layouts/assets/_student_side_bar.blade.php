@@ -37,6 +37,10 @@
                     <a href="{{route('student.id.card')}}" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">ID Card</span></a>
                 </li>
+                <li class="nav-item {{ Request::is('student/attendance-report') ? 'active' : null }}">
+                    <a href="{{route('student.attendance.report')}}" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Attendance Report</span></a>
+                </li>
 
                 <li class="nav-item {{ Request::is('exam/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
@@ -51,8 +55,8 @@
                     </ul>
                 </li>
 
-                <li class="nav-item {{ Request::is('') ? 'active' : null }}">
-                    <a href="{{route('dashboard')}}" class="nav-link">
+                <li class="nav-item {{ Request::is('student/syllabus') ? 'active' : null }}">
+                    <a href="{{route('student.syllabus')}}" class="nav-link">
                         <i class="material-icons">dashboard</i>
                         <span class="title">Syllabus</span>
                         <span class="selected"></span>

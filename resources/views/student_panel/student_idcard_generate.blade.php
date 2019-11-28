@@ -1,41 +1,38 @@
 @extends('layouts.student_layout')
 @section('content')
 
-    <div class="col-lg-4 col-md-12 col-sm-12 col-12">
-        <a class="btn btn-sm" href="javascript:window.print()">print</a>
-        <div class="white-box border-gray">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <a class="btn btn-sm" href="javascript:window.print('idcard')">print</a>
+        <div class="white-box border-gray" id="idcard">
+            <h5 class="school-text">Ideal Model High School, Dhaka</h5>
             <div class="user-bg">
+
                 <div class="overlay-box">
                     <div class="user-content">
-                        <a href="javascript:void(0)"><img alt="img" class="thumb-lg img-circle" src="{{asset('uploads/'.$idcard->photo)}}"></a>
+
+                        <a href="javascript:void(0)">
+
+                            <img alt="img" class="thumb-lg custom-card img-thumbnail" src="{{asset('uploads/'.$idcard->photo)}}">
+                        </a>
                         <h4 class="text-white">{{$idcard->first_name.' '.$idcard->last_name}}</h4>
-                        <h5 class="text-white">{{$idcard->email}}</h5>
+
                     </div>
                 </div>
             </div>
             <div class="user-btm-box">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 text-center">
-                        <p class="text-purple"><i class="fa fa-facebook"></i></p>
-                        <h1>467</h1>
-                    </div>
-                    <div class="col-md-4 col-sm-4 text-center">
-                        <p class="text-success"><i class="fa fa-twitter"></i></p>
-                        <h1>234</h1>
-                    </div>
-                    <div class="col-md-4 col-sm-4 text-center">
-                        <p class="text-danger"><i class="fa fa-instagram"></i></p>
-                        <h1>686</h1>
-                    </div>
-                </div>
-                <div class="col-md-12  m-b-0 text-center">
-                    <div class="stat-item">
-                        <h6>Contact info</h6> <b><i class="ti-mobile"></i> 123-456-7890</b>
-                    </div>
-                </div>
+              <p>Class: <span>{{$idcard->class}}</span></p>
+              <p>Roll: <span>{{$idcard->roll}}</span></p>
+              <p>Blood Group: <span>{{$idcard->blood_group}}</span></p>
+              <p>Contact: <span>{{$idcard->contact_number}}</span></p>
+            </div>
+            <div class="user-btm-footer">
+                <p>Validate up to 31 December-{{date('y')}}</p>
+                <div class="sign-head-master">Head master<span>Ashik</span></div>
+            </div>
+
             </div>
         </div>
-    </div>
+
 
 
 @endsection
