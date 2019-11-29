@@ -160,6 +160,100 @@
         margin: 0 0 0 85px;
         padding: 10px 0 0 0;
     }
+    .form-control:disabled, .form-control[readonly] {
+        background-color: #ffffff;
+        opacity: 1;
+    }
+    .select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+        background-color: #6673fc;
+        color: #fff;
+    }
+
+    /*side bar css change*/
+
+    .white-sidebar-color .sidemenu-container {
+        background-color: #1a2226;
+    }
+    .white-sidebar-color .user-panel, .white-sidebar-color .txtOnline, .white-sidebar-color .sidemenu-container .sidemenu>li>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li>a {
+        color: #fff;
+    }
+
+
+
+    .white-sidebar-color .sidemenu-container .sidemenu>li.active.open>a, .white-sidebar-color .sidemenu-container .sidemenu>li.active>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li.active.open>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li.active>a {
+        background-color: #1e282c;
+        border-top-color: transparent;
+        color: #4680ff;
+    }
+    .white-sidebar-color .sidemenu-container .sidemenu .sub-menu, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu .sub-menu {
+        background-color: #2c3b41;
+
+    }
+
+    .white-sidebar-color .sidemenu-container .sidemenu>li.open>a, .white-sidebar-color .sidemenu-container .sidemenu>li:hover>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li.open>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li:hover>a {
+        background-color: #1e282c;
+        border-top-color: transparent;
+        color: #ffffff;
+    }
+
+    .white-sidebar-color .user-panel, .white-sidebar-color .txtOnline, .white-sidebar-color .sidemenu-container .sidemenu>li>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li>a {
+        color: #b8c7ce;
+    }
+
+
+    .white-sidebar-color .user-panel, .white-sidebar-color .txtOnline, .white-sidebar-color .sidemenu-container .sidemenu>li>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li>a {
+        color: #fff;
+    }
+
+    .white-sidebar-color .sidemenu-container .sidemenu>li.active.open>a, .white-sidebar-color .sidemenu-container .sidemenu>li.active>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li.active.open>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li.active>a {
+        background-color: #1e282c;
+        border-top-color: transparent;
+        color: #ffffff;
+    }
+    .white-sidebar-color .user-panel, .white-sidebar-color .txtOnline, .white-sidebar-color .sidemenu-container .sidemenu>li>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu>li>a {
+        color: #8aa4af;
+    }
+    .white-sidebar-color .sidemenu-container .sidemenu .sub-menu>li>a, .white-sidebar-color .sidemenu-closed.sidemenu-container-fixed .sidemenu-container:hover .sidemenu .sub-menu>li>a {
+        color: #8aa4af;
+    }
+
+    .user-panel .info p {
+        margin: 5px 0;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    span.txtOnline {
+        color: #fff !important;
+    }
+    .btn-info {
+        background-color: #6673fc !important;
+        border: 1px solid #6673fc !important;
+        color: #fff !important;
+    }
+    .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open > .dropdown-toggle.btn-info {
+        background-color: #6673fc !important;
+        border: 1px solid #6673fc !important;
+        color: #fff !important;
+    }
+    .datepicker-panel>ul>li.picked, .datepicker-panel>ul>li.picked:hover {
+        color: #fff;
+    }
+
+
+    .datepicker-panel>ul>li.highlighted {
+        background-color: #6673fc;
+        color: #fff;
+    }
+    .datepicker-panel>ul>li.highlighted:hover {
+        background-color: #6673fc;
+    }
+    .datepicker-panel>ul>li:hover {
+        background-color: #6673fc;
+        color: #fff;
+    }
+
+
     @media print {
         .border-gray{
             background-color: #9675ce !important;

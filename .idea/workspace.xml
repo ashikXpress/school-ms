@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_teacher_side_bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +223,7 @@
       <workItem from="1574869935202" duration="14061000" />
       <workItem from="1574915815491" duration="13707000" />
       <workItem from="1574960702840" duration="418000" />
-      <workItem from="1574986131853" duration="2371000" />
+      <workItem from="1574986131853" duration="6190000" />
     </task>
     <servers />
   </component>
