@@ -15,7 +15,7 @@
                                  alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>{{optional(Auth::guard('student')->user())->first_name}}</p>
+                            <p>{{optional(Auth::guard('student')->user())->first_name.' '.optional(Auth::guard('student')->user())->last_name}}</p>
                             <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
 												Online</span></a>
                         </div>

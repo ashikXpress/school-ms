@@ -24,7 +24,7 @@ class StudentController extends Controller
   }
 
   public function studentLogout(){
-      Session::flush ();
+
       Auth::guard('student')->logout();
       return redirect()->route('student.login.form');
 

@@ -21,6 +21,6 @@ class Teacher
         {
             return $next($request);
         }
-        return new Response(view('unauthorized')->with('role', 'teacher'));
+        return redirect()->route('login.form');
     }
 }

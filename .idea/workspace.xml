@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/student_panel/student_attendance_report.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/student_panel/student_syllabus.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_teacher_side_bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/fontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/fontend/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Teacher/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_side_bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_side_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student_panel/student_idcard_generate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_panel/student_idcard_generate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_layout.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,23 +145,23 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/student_panel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts/assets" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
-      <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\staff" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Notice" />
       <recent name="C:\xampp\htdocs\school-ms\app\Models" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\ClassRoutine" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
+      <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\staff" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -230,7 +228,9 @@
       <workItem from="1574822735059" duration="4616000" />
       <workItem from="1574831219417" duration="12333000" />
       <workItem from="1574869935202" duration="14061000" />
-      <workItem from="1574915815491" duration="12380000" />
+      <workItem from="1574915815491" duration="13707000" />
+      <workItem from="1574960702840" duration="418000" />
+      <workItem from="1574986131853" duration="2371000" />
     </task>
     <servers />
   </component>

@@ -60,7 +60,7 @@ class AuthController extends Controller
     }
 
     public function logoutProcess(){
-            Session::flush ();
+
             Auth::guard('employee')->logout();
             return redirect()->route('login.form');
 

@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
-   public function teacherDashboard(){
+    public function __construct()
+    {
+        $this->middleware('teacher');
+    }
+
+    public function teacherDashboard(){
        return view('teacher.teacher_dashboard');
    }
 }
