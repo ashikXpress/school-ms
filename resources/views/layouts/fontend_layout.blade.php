@@ -80,6 +80,20 @@
        .text-danger{
            color: #ffac00;
        }
+
+       section#the-gallery {
+           padding-top: 80px;
+           padding-bottom: 80px;
+       }
+       #mt_footer {
+
+           padding-top: 40px;
+
+       }
+
+       a.active {
+           color: #ffac00 !important;
+       }
    </style>
 
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')}}"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script><![endif]-->
@@ -97,6 +111,17 @@
     <div class="topbar-section">
         <div class="container">
             <div class="topbar-inner">
+                @if(isset($notices))
+                <h4 class="text text-danger">
+                    <marquee behavior="" direction="">
+                        @foreach($notices as $notice)
+                            <a class="active" href=""><span> {{$notice->title.'... | '}} </span></a>
+                            @endforeach
+
+
+                    </marquee>
+                </h4>
+                @endif
                 <div class="top-bar-left pull-left">
                     <ul>
                         <li><i class="fa fa-phone"></i> Phone: +01-123456789</li>
@@ -106,7 +131,7 @@
 
                 <div class="top-bar-right pull-right">
                     <ul>
-                        <li><a href="faq.html"><i class="fa fa-question-circle"></i> Ask a Question</a> </li>
+                        <li><a href="#"><i class="fa fa-question-circle"></i> Ask a Question</a> </li>
                         <li><a href="{{route('student.login.form')}}">Log In</a></li>
 
                     </ul>
@@ -126,8 +151,8 @@
 
             <div id="navbar" class="navbar-nav-wrapper pull-right">
                 <ul class="nav navbar-nav navbar-right" id="responsive-menu">
-                    <li class="active"><a href="{{route('home')}}">Home</a></li>
-                    <li class="active"><a href="#">Academic <i class="fa fa-angle-down"></i></a>
+                    <li class="{{ Request::is('/') ? 'active' : null }}"><a href="{{route('home')}}">Home</a></li>
+                    <li class=""><a href="#">Academic <i class="fa fa-angle-down"></i></a>
 
                         <ul>
                             <li><a href="{{route('admission.form')}}">Admission</a></li>
@@ -136,11 +161,12 @@
                             <li><a href="">Notice</a></li>
                         </ul>
                     </li>
-                    <li class="active"><a href="#">About</a></li>
-                    <li class="active"><a href="#">Teacher</a></li>
-                    <li class="active"><a href="#">Gallery</a></li>
-                    <li class="active"><a href="#">Blog</a></li>
-                    <li class="active"><a href="#">Contact</a></li>
+                    <li class="{{ Request::is('about-us') ? 'active' : null }}"><a href="{{route('about.us')}}">About</a></li>
+                    <li class="{{ Request::is('teacher-slider') ? 'active' : null }}"><a href="{{route('teacher.slider')}}">Teacher</a></li>
+                    <li class="{{ Request::is('events') ? 'active' : null }}"><a href="{{route('events')}}">Events</a></li>
+                    <li class="{{ Request::is('gallery') ? 'active' : null }}"><a href="{{route('gallery')}}">Gallery</a></li>
+                    <li class="{{ Request::is('blog') ? 'active' : null }}"><a href="{{route('blog')}}">Blog</a></li>
+                    <li class="{{ Request::is('contact-us') ? 'active' : null }}"><a href="{{route('contact.us')}}">Contact</a></li>
 
 
 
@@ -323,6 +349,10 @@
 <!-- custom Popup video Jquery --><script src="{{asset('fontend/assets/js/custom-modalvideo.js')}}"></script>
 
 <!-- main default Jquery --><script src="{{asset('fontend/assets/js/main.js')}}"></script>
+<!-- map Jquery --><script src="{{asset('fontend/assets/js/custom-map.js')}}"></script>
+
+<!-- google map Jquery -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4JwWo5VPt9WyNp3Ne2uc2FMGEePHpqJ8&amp;callback=initMap" async defer></script>
 
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
 <script src="{{asset('admin/assets/custom_date/datepicker.min.js')}}"></script>

@@ -22,7 +22,7 @@ jQuery(document).ready(function () {
         $("#preloader").delay(350).fadeOut("slow");
         $("body").delay(350).css({ "overflow": "visible" });
 
-        
+
         /* Init Wow Js */
         new WOW().init();
 
@@ -38,7 +38,7 @@ jQuery(document).ready(function () {
         /*========== End Masonry Grid ==========*/
 
         /* Preloader */
-        
+
         $("#status").fadeOut();
         $("#preloader").delay(350).fadeOut("slow");
 
@@ -97,7 +97,7 @@ jQuery(document).ready(function () {
             }, 800);
             return false;
         });
-        
+
         $('#back-to-top').tooltip('show');
 
 });
@@ -151,7 +151,7 @@ jQuery(document).ready(function () {
 
 
     /*======== Fancy Box Init ========*/
-    
+
     $(".various").fancybox({
         maxWidth: 800,
         maxHeight: 600,
@@ -164,8 +164,8 @@ jQuery(document).ready(function () {
         closeEffect: "none"
     });
 
-    
- 
+
+
     // Range sliders activation
     $(".range-slider-ui").each(function () {
         var minRangeValue = $(this).attr('data-min');
@@ -191,8 +191,8 @@ jQuery(document).ready(function () {
         });
     });
 
-    
-    
+
+
     /*======== Fancy Box Gallery Init ========*/
 
     var FancYB = $('.fancybox');
@@ -212,7 +212,7 @@ jQuery(document).ready(function () {
         }
     });
     FancYB.attr('rel','gallery');
-    
+
     /*======== Contact Form ========*/
 
     $('#submit-btn').on('click',function (event){
@@ -281,7 +281,7 @@ $('.slider-items').slick({
       }
     }
   ]
-}); 
+});
 
 /*======== Slick Slider =========*/
 
@@ -310,7 +310,7 @@ $('.slider-insta').slick({
       }
     }
   ]
-}); 
+});
 
 $('.slider-insta1').slick({
   infinite: true,
@@ -337,7 +337,7 @@ $('.slider-insta1').slick({
       }
     }
   ]
-});  
+});
 
 /*======== Slick Slider =========*/
 
@@ -367,7 +367,7 @@ $('.slider-partner').slick({
       }
     }
   ]
-});  
+});
 
 /*======== Slick Slider =========*/
 
@@ -396,7 +396,7 @@ $('.edu_team_slider').slick({
       }
     }
   ]
-}); 
+});
 
 
 $('.chef_team').slick({
@@ -406,7 +406,7 @@ $('.chef_team').slick({
   dots: false,
   slidesToShow: 1,
   slidesToScroll: 1
-}); 
+});
 
 /*======== Slick Slider =========*/
 
@@ -444,7 +444,7 @@ $('.edu_team_slider3').slick({
       }
     }
   ]
-}); 
+});
 
 /*======== Slick Slider =========*/
 
@@ -701,7 +701,7 @@ function initMap() {
     // Create a map object and specify the DOM element for display.
     var latlng = new google.maps.LatLng(27.7172, 85.3240);// Change a map coordinate here!
     var map = new google.maps.Map(document.getElementById("map"), {
-        center: latlng, 
+        center: latlng,
         scrollwheel: false,
         // Apply the map style array to the map.
         styles: styleArray,
@@ -711,9 +711,9 @@ function initMap() {
 
 // Apps Screenshot Slider
 jQuery(document).on('ready', function() {
-   
+
      screenshotSlider();
- 
+
 });
 
 function screenshotSlider () {
@@ -757,16 +757,16 @@ function screenshotSlider () {
             Self.find('.accrodion.active').find('.accrodion-content').show();
             accordion.each(function() {
                 $(this).find('.accrodion-title').on('click', function () {
-                    if ($(this).parent().hasClass('active') === false ) {                   
+                    if ($(this).parent().hasClass('active') === false ) {
                         $('.accrodion-grp.'+accrodionName).find('.accrodion').removeClass('active');
                         $('.accrodion-grp.'+accrodionName).find('.accrodion').find('.accrodion-content').slideUp();
-                        $(this).parent().addClass('active');                    
-                        $(this).parent().find('.accrodion-content').slideDown();        
+                        $(this).parent().addClass('active');
+                        $(this).parent().find('.accrodion-content').slideDown();
                     };
-                    
+
 
                 });
             });
         });
-        
+
     };

@@ -171,6 +171,13 @@ Route::namespace('Fontend')->group(function (){
     Route::get('admission','AdmissionController@admissionForm')->name('admission.form');
     Route::post('admission','AdmissionController@admission')->name('admission');
 
+    Route::get('teacher-slider','HomeController@teacherSlider')->name('teacher.slider');
+    Route::get('gallery','HomeController@gallery')->name('gallery');
+    Route::get('blog','HomeController@blog')->name('blog');
+    Route::get('contact-us','HomeController@contactUs')->name('contact.us');
+    Route::get('about-us','HomeController@aboutUs')->name('about.us');
+    Route::get('events','HomeController@events')->name('events');
+
 
 
 });

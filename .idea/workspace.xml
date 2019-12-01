@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Notifications/StudentPasswordResetEmail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/recover_password/student_new_password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/recover_password/student_recovery_password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/recover_password/student_recovery_password_system.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/student_panel/student_change_password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/school-ms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/school-ms.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Notice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/NoticeFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_124140_create_notices_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/about_us.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/blog.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/contact_us.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/events.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/gallery.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/teacher_slider.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Fontend/StudentAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/StudentAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/fontend/student_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/fontend/student_login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fontend/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/fontend/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,19 +164,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\app\Models" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Notice" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\ClassRoutine" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\school-ms\resources\views\fontend\recover_password" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
       <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
       <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Notice" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Models" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\ClassRoutine" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.join_employee.blade.php">
@@ -244,6 +250,7 @@
       <workItem from="1575050114797" duration="742000" />
       <workItem from="1575073450176" duration="770000" />
       <workItem from="1575075712568" duration="17924000" />
+      <workItem from="1575173019397" duration="9138000" />
     </task>
     <servers />
   </component>
@@ -271,13 +278,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575100863149" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1575102408217">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1575181757522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1575102408217" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1575097076713">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1575181757522" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1575181485515">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1575097076713" />
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1575181485515" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1575176947131">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1575176947131" />
   </component>
 </project>
