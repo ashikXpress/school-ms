@@ -105,7 +105,7 @@
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('student.change.password.form')}}">
                                 <i class="icon-settings"></i> Change password
                             </a>
                         </li>

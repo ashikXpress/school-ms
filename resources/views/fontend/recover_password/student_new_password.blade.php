@@ -34,27 +34,31 @@
                     <div class="account-inner">
                         <!-- section title -->
                         <div class="inner-heading">
-                            <h3>Sign In</h3>
+                            <h3>Password Reset</h3>
+                            @if(session()->has('success'))
+                                <h4 class="alert alert-success">{{session()->get('success')}}</h4>
+                            @elseif(session()->has('error'))
+                                <h4 class="alert alert-danger">{{session()->get('error')}}</h4>
+                            @endif
                         </div>
-                        <form action="{{route('student.login')}}" method="post">
+                        <form action="{{route('student.password.reset',$token)}}" method="post">
                             @csrf
+
                             <div class="form-group">
-                                <label for="email">Username/Email Address:</label>
-                                <input type="email" class="form-control" placeholder="Enter your emil/ID number" name="email" id="email">
-                                <span class="text text-danger">{{$errors->first('email')}}</span>
+                                <label for="password">New Password:</label>
+                                <input type="Password" class="form-control" placeholder="Enter your new password" name="new_password" id="new_password">
+                                <span class="text text-danger">{{$errors->first('new_password')}}</span>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password:</label>
-                                <input type="Password" class="form-control" placeholder="Enter your password" name="password" id="password">
-                                <span class="text text-danger">{{$errors->first('password')}}</span>
+                                <label for="confirm_password">Confirm Password:</label>
+                                <input type="Password" class="form-control" placeholder="Enter your confirm password" name="confirm_password" id="confirm_password">
+                                <span class="text text-danger">{{$errors->first('confirm_password')}}</span>
                             </div>
                             <div class="form-group">
-                                <button class="mt_btn_yellow">Login</button>
-                                <input class="checkbox" type="checkbox"> <span>Remember me</span>
+                                <button class="mt_btn_yellow">Reset password</button>
+
                             </div>
-                            <p class="lost_password">
-                                <a href="{{route('student.password.recovery.form')}}">Lost your password?</a>
-                            </p>
+
                         </form>
                     </div>
                 </div>
@@ -65,3 +69,4 @@
     <!-- End store -->
 
 @endsection
+

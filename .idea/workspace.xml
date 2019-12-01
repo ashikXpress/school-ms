@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Notifications/StudentPasswordResetEmail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/recover_password/student_new_password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/recover_password/student_recovery_password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/recover_password/student_recovery_password_system.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/student_panel/student_change_password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/school-ms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/school-ms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Fontend/StudentAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/StudentAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentPanel/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/fontend/student_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/fontend/student_login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_student_top_bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,14 +144,27 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts/assets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/fontend/recover_password" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\fontend\recover_password" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
+      <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Notice" />
       <recent name="C:\xampp\htdocs\school-ms\app\Models" />
@@ -149,25 +172,6 @@
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
-      <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\staff" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.join_employee.blade.php">
     <configuration name="join_employee.blade.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/school-ms/resources/views/employee/join_employee.blade.php" useBuiltInWebServerPort="true">
@@ -182,6 +186,18 @@
         <item itemvalue="JavaScript Debug.join_employee.blade.php" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -223,7 +239,11 @@
       <workItem from="1574869935202" duration="14061000" />
       <workItem from="1574915815491" duration="13707000" />
       <workItem from="1574960702840" duration="418000" />
-      <workItem from="1574986131853" duration="6190000" />
+      <workItem from="1574986131853" duration="7505000" />
+      <workItem from="1575049679031" duration="130000" />
+      <workItem from="1575050114797" duration="742000" />
+      <workItem from="1575073450176" duration="770000" />
+      <workItem from="1575075712568" duration="17924000" />
     </task>
     <servers />
   </component>
@@ -245,5 +265,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575100863149">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575100863149" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1575102408217">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1575102408217" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1575097076713">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1575097076713" />
   </component>
 </project>

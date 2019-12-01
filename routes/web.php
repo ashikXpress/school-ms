@@ -146,6 +146,10 @@ Route::namespace('StudentPanel')->group(function (){
     Route::get('student/syllabus','StudentController@studentSyllabus')->name('student.syllabus');
     Route::get('student/attendance-report','StudentController@studentAttendanceReport')->name('student.attendance.report');
 
+    Route::get('student/change-password','StudentController@changePasswordFrom')->name('student.change.password.form');
+    Route::post('student/change-password','StudentController@changePassword')->name('student.change.password');
+
+
 });
 
 
@@ -154,10 +158,19 @@ Route::namespace('Fontend')->group(function (){
     Route::get('/','HomeController@home')->name('home');
     Route::get('student/student-login','StudentAuthController@studentLoginForm')->name('student.login.form');
     Route::post('student/student-login','StudentAuthController@studentLogin')->name('student.login');
+    Route::get('student-password-recovery','StudentAuthController@studentPasswordRecoveryForm')->name('student.password.recovery.form');
+    Route::post('student-password-recovery','StudentAuthController@studentPasswordRecovery')->name('student.password.recovery');
+
+    Route::get('student-password-recovery-system/{id}','StudentAuthController@studentPasswordRecoverySystemForm')->name('student.password.recovery.system.form');
+    Route::post('student-password-recovery-system/{id}','StudentAuthController@studentPasswordRecoverySystem')->name('student.password.recovery.system');
+
+    Route::get('student-password-reset/{token}','StudentAuthController@studentPasswordResetForm')->name('student.password.reset.form');
+    Route::post('student-password-reset/{token}','StudentAuthController@studentPasswordReset')->name('student.password.reset');
 
 
     Route::get('admission','AdmissionController@admissionForm')->name('admission.form');
     Route::post('admission','AdmissionController@admission')->name('admission');
+
 
 
 });

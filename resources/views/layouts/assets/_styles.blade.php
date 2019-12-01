@@ -253,7 +253,18 @@
         color: #fff;
     }
 
-
+    span.title {
+        font-size: 13px;
+    }
+    button.btn.btn-info.btn-lg.m-r-20 {
+        margin-left: -13px;
+        padding: 12px 12px;
+        font-size: 11px;
+    }
+    a.btn.btn-default.btn-lg {
+        padding: 12px 12px;
+        font-size: 11px;
+    }
     @media print {
         .border-gray{
             background-color: #9675ce !important;

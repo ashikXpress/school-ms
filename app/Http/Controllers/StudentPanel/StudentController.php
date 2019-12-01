@@ -9,6 +9,7 @@ use App\Models\StudentAttendance;
 use App\Models\Syllabus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
@@ -63,4 +64,43 @@ class StudentController extends Controller
 
       return view('student_panel.student_attendance_report',$data);
   }
+
+
+    public function changePasswordFrom(){
+        return view('student_panel.student_change_password');
+    }
+    public function changePassword(Request $request){
+        $this->validate($request,[
+            'old_password'=>'required|min:6|max:20',
+            'new_password'=>'required|min:6|max:20',
+            'confirm_password'=>'required|same:new_password|min:6|max:20',
+        ]);
+
+        $auth_login_id=Auth::guard('student')->user()->id;
+
+        $studentObj=Student::find($auth_login_id);
+
+        $hashedPassword=$studentObj->password;
+        $oldPassword=$request->old_password;
+
+        if(Hash::check($oldPassword, $hashedPassword))
+        {
+            Student::find($auth_login_id)->update([
+                'password'=>bcrypt($request->new_password),
+            ]);
+            $request->session()->flash('success','Password change successfully');
+            return redirect()->back();
+        }else{
+            $request->session()->flash('error','Your old password is incorrect !!');
+            return redirect()->back();
+        }
+    }
+
+
+
+
+
+
+
+
 }
