@@ -2,23 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ba86237-7789-4482-8c3b-794b6601651a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Notice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/NoticeFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_01_124140_create_notices_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/about_us.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/blog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/contact_us.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/events.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/gallery.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/fontend/teacher_slider.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Gallery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/EventFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/GalleryFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_102122_create_events_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_02_113715_create_galleries_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/027b270879b2d829813e45d5d9556ff6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/02a5b2584247a8aba9f39a6e9161f536.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/0536a4382cf326cc5967bea112b3dc40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/1108e06eb083566f3b1b946aedd2670f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/19f251c748d77fa7d86fc7a62952cbbe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/1b4eca2b74dfb6e6993f94588ff8c519.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/1d979d29602f2a6b633d6f6a0a522605.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/1e6124947cd82c5af58547d046e654cc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/20c2dd2e18c9aee1106eb3cfa120c18e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/296f00c6fbfbc6f224166fe80b4df4cc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/2c565748baab5967df03da1be27ffae5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/2c87814849d241d72b7567ebe60eb471.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/2f8d5206c3687f778e51983b6ff06e94.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/30296f957e4d6b89dc4c8dd2ff748204.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/344fb2a4e7535b5c53d1c78fdac2e573.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/377b73204d2b6f933e6f33592a613149.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/3a073d097603848ee07fa15c520f4df0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/3d84bdb38da4ea956c26ee13cf286900.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/3ecddaa5e1db7e6877ef9f2caae769c7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/471aaee81d2f5c684255452002242fe0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/494d22b297c17966488ab34176f04b26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/4eee65630d06db3ccf66efc4901daa6a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/5151e34e200edb61804e49212fd44a78.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/51c1dce61aa3faca2b53aa5f74f0d610.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/5b2eeb431f18525b8b2d5676c6fa5d72.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/60d2454cb7bbaa3be854872e79813ede.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/612af111951bbeeef94081c4e1e9dd30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/6e1149234c7480549f4d9969b26115b1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/72985d8627437b5a24b6c2896321a939.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/7408c4d822345e0e22b5d08649e8ea50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/7942f54118f7a0cebae086535379d65b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/7a5cd6300933cf725fab3cb963d7b9c5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/7ff4394d855551bd456718385c381202.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/803598df2ebf00f1463320215fe3dbe0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/836964806bba38c15e9c53ecf389ad99.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/8577fcc8aa6387e956a9ba164012427b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/861ebddba0b4b0dd0655a1b9e340564f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/881d4dbd2d1ca17a6604037cf8b98965.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/9b3733b2281e43bcb79e6fd8c20b79eb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/9c5b934bf4e17a62a0d006bde757d07d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/a39650345fe231b8d315d6f0c214f152.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/a4d6fc271d9aebbcf66c4b6f28f00719.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/a755600455c02d9ae0bbe57f55613351.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/b2a5844e5c83769ce91d1192e06e0c55.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/b9ac90bee4ad01ab77f87d6a9669c632.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/b9edc68b5b14b26def7c123d9173f61d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/beaf5d01a694b8ecc98ceb3be2c32a79.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/bfd168abd99b919a6f3761017a2e0bab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/c000f95adddbc804fe44814faf60382c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/c2d9249801bfe34284e563de28ad78af.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/c97922f07f530d8def068a4a17b1ac33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/ca31748343129702f8d10cd0889ecb80.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/cda6493aab95057082a3f49557b92b57.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/cfafbea9dab51a31d2b5acfba7f3f21d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/d219b1d372c5b13d37443e71096696dd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/d3be73837329fecf3fb6b2b9040bed42.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/d8df53022d7706c4df16a463c0197179.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/e1ed0d6f56decd3d660149a03c7761f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/e3111356e47e2bf7cfdab8fe5d271bc7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/e5624707d3abe9c447b2836ad5f71df4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/e6b4e52668161683c6133cc015c66811.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/e8079e4cee0afc93259ea6bb11d26261.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/e91c9f1247837b41493f8dbccb8d3e2a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/f22e21617b9f240c6f1ca94eeb46be17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/f3e24886b0c706215b295463acfd27d9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/f44174e5d3118ddd98a920b73d2e30dc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/gallery/f88f141197417dfa103203d1da7ee5c7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/fontend/event_details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Fontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fontend/assets/fonts/fontawesome-webfont5b62.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fontend/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/fontend/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/fontend/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/fontend/events.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/fontend/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/fontend/gallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/assets/_styles.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/fontend_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -160,23 +222,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/fontend/recover_password" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/fontend" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\fontend" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\fontend\recover_password" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
+      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
+      <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\school-ms\app\Models" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Notice" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\ClassRoutine" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers" />
       <recent name="C:\xampp\htdocs\school-ms\app\Http\Controllers\Class" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\fontend\recover_password" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\student_panel" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\layouts\assets" />
-      <recent name="C:\xampp\htdocs\school-ms\database\migrations" />
-      <recent name="C:\xampp\htdocs\school-ms\resources\views\academic" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.join_employee.blade.php">
@@ -250,7 +312,8 @@
       <workItem from="1575050114797" duration="742000" />
       <workItem from="1575073450176" duration="770000" />
       <workItem from="1575075712568" duration="17924000" />
-      <workItem from="1575173019397" duration="9138000" />
+      <workItem from="1575173019397" duration="10143000" />
+      <workItem from="1575260043482" duration="7256000" />
     </task>
     <servers />
   </component>

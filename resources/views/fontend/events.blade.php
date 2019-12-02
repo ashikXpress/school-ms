@@ -31,115 +31,28 @@
                 <h2>Reserve your seats now</h2>
             </div>
             <div class="row">
+                @foreach($events as $event)
                 <div class="col-md-6 col-sm-12">
                     <div class="event-item">
                         <div class="event-date text-center text-uppercase">
                             <h4 class="mar-0">10 <span>Jan</span></h4>
                         </div>
                         <div class="event-details">
-                            <h3 class="mar-bottom-10"><a href="#">Reunion Event : Padhai’s Alumni Golf Tour</a></h3>
+                            <h3 class="mar-bottom-10"><a href="{{route('event.details',$event->id)}}">{{$event->title}}</a></h3>
                             <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>11:00 AM - 3:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>Royal National Park, Sydney</li>
+                                <li><i class="fa fa-clock-o"></i>{{$event->start_time}} - {{$event->end_time}}</li>
+                                <li><i class="fa fa-map-marker"></i>{{$event->location}}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="event-item">
-                        <div class="event-date text-center text-uppercase">
-                            <h4 class="mar-0">14 <span>Feb</span></h4>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="mar-bottom-10"><a href="#">Padhai’s Alumni Hot Air Ballon Trip in Turkey</a></h3>
-                            <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>11:00 AM - 3:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>Royal National Park, Sydney</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="event-item">
-                        <div class="event-date text-center text-uppercase">
-                            <h4 class="mar-0">10 <span>Jan</span></h4>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="mar-bottom-10"><a href="#">Reunion Event : Padhai’s Alumni Golf Tour</a></h3>
-                            <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>11:00 AM - 3:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>Royal National Park, Sydney</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="event-item">
-                        <div class="event-date text-center text-uppercase">
-                            <h4 class="mar-0">21 <span>Mar</span></h4>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="mar-bottom-10"><a href="#">Fintech & Key Investment Conference</a></h3>
-                            <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>11:00 AM - 3:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>Royal National Park, Sydney</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="event-item">
-                        <div class="event-date text-center text-uppercase">
-                            <h4 class="mar-0">14 <span>Feb</span></h4>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="mar-bottom-10"><a href="#">Padhai’s Alumni Hot Air Ballon Trip in Turkey</a></h3>
-                            <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>11:00 AM - 3:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>Royal National Park, Sydney</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <div class="event-item">
-                        <div class="event-date text-center text-uppercase">
-                            <h4 class="mar-0">21 <span>Mar</span></h4>
-                        </div>
-                        <div class="event-details">
-                            <h3 class="mar-bottom-10"><a href="#">Fintech & Key Investment Conference</a></h3>
-                            <ul class="event-time">
-                                <li><i class="fa fa-clock-o"></i>11:00 AM - 3:00 PM</li>
-                                <li><i class="fa fa-map-marker"></i>Royal National Park, Sydney</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
                 <div class="col-xs-12">
                     <div class="pagination-div pg-services text-center">
-                        <ul class="pagination">
-                            <li class="prev">
-                                <a href="#"> &lt;&lt; </a>
-                            </li>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">...</a>
-                            </li>
-                            <li>
-                                <a href="#">10</a>
-                            </li>
-                            <li class="next">
-                                <a href="#"> &gt;&gt; </a>
-                            </li>
-                        </ul>
+                        {{$events->links()}}
+
                     </div>
                 </div>
             </div><!-- /.row -->

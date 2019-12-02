@@ -177,6 +177,7 @@ Route::namespace('Fontend')->group(function (){
     Route::get('contact-us','HomeController@contactUs')->name('contact.us');
     Route::get('about-us','HomeController@aboutUs')->name('about.us');
     Route::get('events','HomeController@events')->name('events');
+    Route::get('event-details/{id}','HomeController@eventDetails')->name('event.details');
 
 
 

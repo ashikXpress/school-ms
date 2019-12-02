@@ -94,6 +94,26 @@
        a.active {
            color: #ffac00 !important;
        }
+
+       .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+           z-index: 3;
+           color: #fff;
+           cursor: default;
+           background-color: #333a65;
+           border-color: #333a65;
+           margin: 0 9px 0 0;
+           border-radius: 50%;
+           width: 40px;
+           line-height: 39px;
+           height: 40px;
+           text-align: center;
+           font-size: 12px;
+       }
+
+       .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+
+           line-height: 25px;
+       }
    </style>
 
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')}}"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script><![endif]-->

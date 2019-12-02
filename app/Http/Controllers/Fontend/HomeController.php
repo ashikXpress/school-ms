@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
+use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Notice;
 use Illuminate\Http\Request;
 
@@ -20,8 +22,9 @@ class HomeController extends Controller
         return view('fontend.teacher_slider',$data);
     }
     public function gallery(){
+        $data['galleries']=Gallery::paginate(9);
 
-        return view('fontend.gallery');
+        return view('fontend.gallery',$data);
     }
 
     public function blog(){
@@ -36,6 +39,11 @@ class HomeController extends Controller
     }
 
     public function events(){
-        return view('fontend.events');
+        $data['events']=Event::paginate(6);
+        return view('fontend.events',$data);
+    }
+    public function eventDetails($id){
+        $data['event']=Event::find($id);
+        return view('fontend.event_details',$data);
     }
 }

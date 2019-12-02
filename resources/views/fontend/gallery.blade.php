@@ -33,78 +33,18 @@
                 <h2>See and feel it</h2>
             </div>
             <div class="row ge_second">
+                @foreach($galleries as $gallery)
                 <div class="col-sm-4 mix">
                     <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-02.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-02.jpg')}}" alt="">
+                        <a href="{{asset('uploads/gallery/'.$gallery->photo)}}" title="">
+                            <img src="{{asset('uploads/gallery/'.$gallery->photo)}}" alt="">
                             <i class="fa fa-search"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-01.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-01.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-03.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-03.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-04.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-04.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-02.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-02.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-01.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-01.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-03.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-03.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-04.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-04.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4 mix">
-                    <div class="item port-popup">
-                        <a href="{{asset('fontend/assets/images/gallery/gl-05.jpg')}}" title="">
-                            <img src="{{asset('fontend/assets/images/gallery/gl-05.jpg')}}" alt="">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
+                {{$galleries->links()}}
+
             </div>
         </div>
     </section>
