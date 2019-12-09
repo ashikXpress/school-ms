@@ -16,7 +16,7 @@
     <div class="breadcrumb-main">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a class="active" href="#">Gallery</a></li>
 
             </ul>

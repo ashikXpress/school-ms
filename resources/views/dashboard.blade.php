@@ -1,4 +1,4 @@
-@extends('layouts.master_layout')
+@extends('layouts.master_layout',['title'=>'Dashboard'])
 @section('content')
 
     <!-- start widget -->
@@ -9,7 +9,7 @@
                     <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Total Students</span>
-                        <span class="info-box-number">450</span>
+                        <span class="info-box-number">{{$student}}</span>
                         <div class="progress">
                             <div class="progress-bar" style="width: 45%"></div>
                         </div>
@@ -26,8 +26,8 @@
                 <div class="info-box bg-b-yellow">
                     <span class="info-box-icon push-bottom"><i class="material-icons">person</i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">New Students</span>
-                        <span class="info-box-number">155</span>
+                        <span class="info-box-text">Employee</span>
+                        <span class="info-box-number">{{$employee}}</span>
                         <div class="progress">
                             <div class="progress-bar" style="width: 40%"></div>
                         </div>

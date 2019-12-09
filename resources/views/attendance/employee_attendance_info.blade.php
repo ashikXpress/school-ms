@@ -33,7 +33,7 @@
                             <label for="class">Employee name</label>
                             <select class="form-control" name="employee_id" id="class">
                                 <option disabled selected>Select teacher</option>
-                                @foreach($all_employee as $employee)
+                                @foreach($employees as $employee)
                                     <option value="{{$employee->id}}">{{$employee->first_name.' '.$employee->last_name}}</option>
                                 @endforeach
                             </select>
@@ -83,7 +83,11 @@
 
                                                     </td>
                                                     <td class="left">
-                                                        ....
+                                                        @if($attendance_info->status==1)
+                                                            <a href="{{route('employee.attendance.change',$attendance_info->id)}}" class="label label-sm label-danger">undo</a>
+                                                        @else
+                                                            <a href="{{route('employee.attendance.change',$attendance_info->id)}}" class="label label-sm label-success">undo</a>
+                                                        @endif
                                                     </td>
 
                                                 </tr>

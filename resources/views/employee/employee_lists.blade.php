@@ -76,7 +76,7 @@
                                                 <td class="patient-img">
                                                     <img src="{{$employee_list->photo}}" alt="">
                                                 </td>
-                                                <td class="left"><a href="{{route('employee.profile',$employee_list->id)}}">{{$employee_list->first_name.' '.$employee_list->last_name}}</a></td>
+                                                <td class="left"><a href="{{route('employee.details',$employee_list->id)}}">{{$employee_list->first_name.' '.$employee_list->last_name}}</a></td>
                                                 <td class="left">{{$employee_list->designation}}</td>
                                                 <td class="left">{{$employee_list->contact_number}}</td>
 

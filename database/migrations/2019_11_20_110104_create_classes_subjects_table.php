@@ -17,6 +17,8 @@ class CreateClassesSubjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('class_name');
             $table->string('subject_name');
+            $table->string('subject_code')->nullable();
+            $table->string('academic_year');
             $table->string('group_name')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();

@@ -15,11 +15,7 @@ use phpDocumentor\Reflection\Types\Integer;
 class StudentAttendanceController extends Controller
 {
     public function studentAttendanceForm(Request $request){
-
-
-
-        $data['classes']=ClassName::get();
-        $data['sections']=Section::get();
+        $data=[];
         $class=$request->class;
         $shift=$request->shift;
         $section=$request->section;
@@ -91,19 +87,14 @@ class StudentAttendanceController extends Controller
                     ]);
         }
 
-        if ($result){
+
             $request->session()->flash('success','Student attendance successful');
             return redirect()->route('student.attendance.form');
-        }else{
-            $request->session()->flash('success','Student attendance failed');
-            return redirect()->route('student.attendance.form');
-        }
     }
 
     public function studentAttendanceInfo(Request $request){
-        $data['classes']=ClassName::get();
-        $data['sections']=Section::get();
 
+        $data=[];
         $from=$request->from_date;
         $to=$request->to_date;
         $class=$request->class;
@@ -127,5 +118,26 @@ class StudentAttendanceController extends Controller
 
 
         return view('attendance.student_attendance_info',$data);
+    }
+
+    public function studentAttendanceChange($id,Request $request){
+
+        $attendance=StudentAttendance::find($id);
+
+        if ($attendance->status==1){
+            StudentAttendance::where('student_id',$attendance->student_id)->update([
+                'status'=>0
+            ]);
+            $request->session()->flash('success','Present Successfully Changed');
+        }else{
+            StudentAttendance::where('student_id',$attendance->student_id)->update([
+                'status'=>1
+            ]);
+            $request->session()->flash('success','Absent Successfully Changed');
+        }
+
+
+        return redirect()->back();
+
     }
 }

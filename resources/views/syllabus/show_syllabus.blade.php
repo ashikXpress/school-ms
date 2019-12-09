@@ -13,13 +13,14 @@
                     </div>
                 </div>
                 <div class="card-body ">
+
                     <form class="row">
                         <div class="form-group col-md-2 col-sm-2">
                             <label for="class">Class name</label>
                             <select class="form-control" name="class" id="class">
                                 <option disabled selected>Select class</option>
                                 @foreach($classes as $class)
-                                    <option value="{{$class->id}}">{{$class->class_name}}</option>
+                                    <option value="{{$class->class_name}}">{{$class->class_name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -28,7 +29,7 @@
                             <select class="form-control" name="subject" id="class">
                                 <option disabled selected>Select class</option>
                                 @foreach($subjects as $subject)
-                                    <option value="{{$subject->id}}">{{$subject->subject_name}}</option>
+                                    <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>
                                 @endforeach
                             </select>
 
@@ -37,8 +38,8 @@
                             <label for="subject">Exam term name</label>
                             <select class="form-control" name="exam_term_name" id="class">
                                 <option disabled selected>Select class</option>
-                                @foreach($terms as $term)
-                                    <option value="{{$term->id}}">{{$term->exam_term_name}}</option>
+                                @foreach($exam_terms as $term)
+                                    <option value="{{$term->exam_term_name}}">{{$term->exam_term_name}}</option>
                                 @endforeach
                             </select>
 
@@ -55,13 +56,19 @@
                         </div>
                     </form>
 
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-6">
+                            <div class="btn-group">
+                                <a href="{{route('create.syllabus.form')}}" id="addRow" class="btn btn-info">
+                                    Add Syllabus <i class="fa fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="table-scrollable">
                         <div id="example4_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 search-form-left-less">
 
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table class="table table-striped table-bordered table-hover table-checkable order-column valign-middle dataTable no-footer" id="example4" role="grid" aria-describedby="example4_info">
@@ -81,9 +88,9 @@
                                         @foreach($syllabus_lists as $syllabus_list)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="left">{{$loop->iteration}}</td>
-                                                <td class="left">{{$syllabus_list->className->class_name}}</td>
-                                                <td class="left">{{$syllabus_list->subject->subject_name}}</td>
-                                                <td class="left">{{$syllabus_list->examTerm->exam_term_name}}</td>
+                                                <td class="left">{{$syllabus_list->class}}</td>
+                                                <td class="left">{{$syllabus_list->subject}}</td>
+                                                <td class="left">{{$syllabus_list->examination_term}}</td>
                                                 <td class="left">{{$syllabus_list->academic_year}}</td>
 
 {{--                                                <td class="left">{!! Illuminate\Support\Str::words(html_entity_decode($syllabus_list->description),5) !!}</td>--}}
@@ -94,7 +101,7 @@
                                                         <i class="fa fa-eye-slash"></i>
                                                         view
                                                     </a>
-                                                    <a href="{{route('student.edit.form',$syllabus_list->id)}}" class="btn btn-primary btn-xs">
+                                                    <a href="{{route('edit.syllabus',$syllabus_list->id)}}" class="btn btn-primary btn-xs">
                                                         <i class="fa fa-pencil"></i>
                                                         Edit
                                                     </a>

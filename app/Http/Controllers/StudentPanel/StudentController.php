@@ -41,12 +41,12 @@ class StudentController extends Controller
 
   public function studentSyllabus(){
 
-      $student_class=Auth::guard('student')->user()->class;
+      $std_class=Auth::guard('student')->user()->class;
 
-      $class_id=ClassName::where('class_name',$student_class)->first();
+      $data['syllabus_lists']=Syllabus::where('class',$std_class)->paginate(10);
 
-      $data['syllabus_lists']=Syllabus::where('class_id',$class_id->id)->paginate(10);
-      $data['counts']=Syllabus::where('class_id',$class_id->id)->count();
+      $data['counts']=Syllabus::where('class',$std_class)->count();
+
         return view('student_panel.student_syllabus',$data);
   }
 
@@ -96,11 +96,14 @@ class StudentController extends Controller
         }
     }
 
+public function studentProfile(){
 
+        $id=Auth::guard('student')->user()->id;
 
+        $data['student']=Student::find($id);
 
+        return view('student_panel.student_profile',$data);
 
-
-
+}
 
 }

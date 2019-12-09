@@ -18,31 +18,37 @@ class HomeController extends Controller
     }
 
     public function teacherSlider(){
-        $data['teachers']=Employee::get();
+        $data['notices']=Notice::select('title')->get();
+        $data['teachers']=Employee::paginate(8);
         return view('fontend.teacher_slider',$data);
     }
     public function gallery(){
         $data['galleries']=Gallery::paginate(9);
-
+        $data['notices']=Notice::select('title')->get();
         return view('fontend.gallery',$data);
     }
 
     public function blog(){
-        return view('fontend.blog');
+        $data['notices']=Notice::select('title')->get();
+        return view('fontend.blog',$data);
     }
 
     public function contactUs(){
-        return view('fontend.contact_us');
+        $data['notices']=Notice::select('title')->get();
+        return view('fontend.contact_us',$data);
     }
     public function aboutUs(){
-        return view('fontend.about_us');
+        $data['notices']=Notice::select('title')->get();
+        return view('fontend.about_us',$data);
     }
 
     public function events(){
+        $data['notices']=Notice::select('title')->get();
         $data['events']=Event::paginate(6);
         return view('fontend.events',$data);
     }
     public function eventDetails($id){
+        $data['notices']=Notice::select('title')->get();
         $data['event']=Event::find($id);
         return view('fontend.event_details',$data);
     }

@@ -312,9 +312,43 @@
         }
     }
 
+    li.select2-selection__choice {
+        background-color: #6673fc !important;
+        border: 1px solid #6673fc !important;
+        color: #fff !important;
+    }
 
+    .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove {
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 3px;
+    }
+    .subject {
+        margin: 0 19px 0 0;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .subject_code {
+        font-size: 12px;
+        margin-left: 15px;
+        display: inline-block;
+    }
+    .mdl-data-table td{
+        text-align: left;
+    }
 
-
-
-
+    .profile-userpic img {
+        margin: 0px auto;
+        width: 99px;
+        padding: 3px;
+        border: 3px solid rgb(210, 214, 222);
+        border-radius: 0;
+        height: 110px;
+        object-fit: cover;
+    }
+    .profile-userpic.student-profile.col-md-4 {
+        margin: 0 0 12px -22px;
+    }
 </style>

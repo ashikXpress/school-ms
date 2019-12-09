@@ -33,15 +33,30 @@ Route::namespace('Academic')->group(function (){
 //        Route::get('academic/create-subject', 'AcademicController@createSubjectForm')->name('create.subject.form');
 //    });
 
-   Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
+    Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
     Route::post('academic/create-subject','AcademicController@createSubject')->name('create.subject');
+    Route::get('academic/subject-list','AcademicController@subjectList')->name('subject.list');
+    Route::get('academic/edit-subject/{id}','AcademicController@editSubject')->name('edit.subject');
+    Route::post('academic/update-subject/{id}','AcademicController@updateSubject')->name('update.subject');
 
     Route::get('academic/create-section','AcademicController@createSectionForm')->name('create.section.form');
     Route::post('academic/create-section','AcademicController@createSection')->name('create.section');
+    Route::get('academic/section-list','AcademicController@sectionList')->name('section.list');
+    Route::get('academic/edit-section/{id}','AcademicController@editSection')->name('edit.section');
+    Route::post('academic/update-section/{id}','AcademicController@updateSection')->name('update.section');
+
 
     Route::get('academic/create-class','AcademicController@createClassForm')->name('create.class.form');
     Route::post('academic/create-class','AcademicController@createClass')->name('create.class');
+    Route::get('academic/class-edit/{id}','AcademicController@editClass')->name('edit.class');
+    Route::post('academic/class-update/{id}','AcademicController@updateClass')->name('update.class');
     Route::get('academic/delete-class/{id}','AcademicController@deleteClass')->name('delete.class');
+    Route::get('academic/class-list','AcademicController@classList')->name('class.list');
+
+
+    Route::get('academic/create-class-subject','AcademicController@createClassSubjectForm')->name('create.class.subject.form');
+    Route::post('academic/create-class-subject','AcademicController@createClassSubject')->name('create.class.subject');
+
 
 });
 Route::namespace('ClassRoutine')->group(function (){
@@ -53,15 +68,40 @@ Route::namespace('ClassRoutine')->group(function (){
 Route::namespace('Syllabus')->group(function (){
     Route::get('syllabus/create-syllabus','SyllabusController@createSyllabusForm')->name('create.syllabus.form');
     Route::post('syllabus/create-syllabus','SyllabusController@createSyllabus')->name('create.syllabus');
-    Route::get('syllabus/syllabus-lists','SyllabusController@syllabusList')->name('syllabus.list');
+    Route::get('syllabus/edit-syllabus/{id}','SyllabusController@editSyllabus')->name('edit.syllabus');
+    Route::post('syllabus/update-syllabus/{id}','SyllabusController@updateSyllabus')->name('update.syllabus');
+
+    Route::get('syllabus/syllabus-list','SyllabusController@syllabusList')->name('syllabus.list');
     Route::get('syllabus/details-syllabus/{id}','SyllabusController@detailsSyllabus')->name('details.syllabus');
 });
 
+
+
+
 Route::namespace('Exam')->group(function (){
+    Route::get('exam/exam-term-list','ExaminationController@examTermList')->name('exam.term.list');
     Route::get('exam/create-exam-term','ExaminationController@createExamTermForm')->name('create.exam.term.form');
     Route::post('exam/create-exam-term','ExaminationController@createExamTerm')->name('create.exam.term');
+
+    Route::get('exam/edit-exam-term/{id}','ExaminationController@editExamTerm')->name('edit.exam.term');
+    Route::post('exam/update-exam-term/{id}','ExaminationController@updateExamTerm')->name('update.exam.term');
+
     Route::get('exam/create-exam-routine','ExaminationController@createExamRoutineForm')->name('create.exam.routine.form');
     Route::post('exam/create-exam-routine','ExaminationController@createExamRoutine')->name('create.exam.routine');
+});
+
+
+Route::namespace('Question')->group(function (){
+    Route::get('exam/create-creative-question','QuestionController@createCreativeQuestionForm')->name('create.creative.question.form');
+    Route::post('exam/create-creative-question','QuestionController@createCreativeQuestion')->name('create.creative.question');
+    Route::get('exam/creative-question-list','QuestionController@creativeQuestionList')->name('creative.question.list');
+    Route::get('exam/creative-question-details/{id}','QuestionController@creativeQuestionDetails')->name('creative.question.details');
+});
+
+Route::namespace('Result')->group(function(){
+    Route::get('result/insert-student-marks','ResultController@insertStudentMarksForm')->name('insert.student.marks.form');
+    Route::post('result/insert-student-marks','ResultController@insertStudentMarks')->name('insert.student.marks');
+    Route::get('result/result-show','ResultController@resultShow')->name('result.show');
 });
 
 Route::namespace('Notice')->group(function (){
@@ -72,6 +112,9 @@ Route::namespace('Notice')->group(function (){
 Route::namespace('Employee')->group(function (){
     Route::get('employee/create-designation','EmployeeController@createDesignationForm')->name('create.designation.form');
     Route::post('employee/create-designation','EmployeeController@createDesignation')->name('create.designation');
+    Route::get('employee/designation-list','EmployeeController@designationList')->name('designation.list');
+    Route::get('employee/edit-designation/{id}','EmployeeController@editDesignation')->name('edit.designation');
+    Route::post('employee/update-designation/{id}','EmployeeController@updateDesignation')->name('update.designation');
 
 
     Route::get('employee/employee-join','EmployeeController@joinEmployeeForm')->name('employee.join.form');
@@ -84,7 +127,10 @@ Route::namespace('Employee')->group(function (){
 
 
     Route::get('employee/employee-lists','EmployeeController@employeeList')->name('employee.lists');
-    Route::get('employee/profile/{id}','EmployeeController@employeeProfile')->name('employee.profile');
+
+    Route::get('employee/employee-details/{id}','EmployeeController@employeeDetails')->name('employee.details');
+
+    Route::get('employee-profile','EmployeeController@employeeProfile')->name('employee.profile');
 
 
 });
@@ -97,7 +143,7 @@ Route::namespace('Student')->group(function (){
     Route::get('student/student-lists','StudentController@studentList')->name('student.lists');
 
 
-    Route::get('student/profile/{id}','StudentController@studentProfile')->name('student.profile');
+    Route::get('student/student-details/{id}','StudentController@studentDetails')->name('student.details');
 
 
 
@@ -107,9 +153,13 @@ Route::namespace('Attendance')->group(function (){
     Route::post('attendance/student-attendance','StudentAttendanceController@studentAttendance')->name('student.attendance');
     Route::get('attendance/student-attendance-info','StudentAttendanceController@studentAttendanceInfo')->name('student.attendance.info');
 
+    Route::get('attendance/student-attendance-change/{id}','StudentAttendanceController@studentAttendanceChange')->name('student.attendance.change');
+
     Route::get('attendance/employee-attendance','EmployeeAttendanceController@attendanceEmployeeForm')->name('employee.attendance.form');
     Route::post('attendance/employee-attendance','EmployeeAttendanceController@attendanceEmployee')->name('employee.attendance');
     Route::get('attendance/employee-attendance-info','EmployeeAttendanceController@attendanceEmployeeInfo')->name('employee.attendance.info');
+
+    Route::get('attendance/employee-attendance-change/{id}','EmployeeAttendanceController@employeeAttendanceChange')->name('employee.attendance.change');
 
 });
 
@@ -123,7 +173,17 @@ Route::namespace('Password')->group(function (){
 
 });
 
+Route::namespace('Payment')->group(function (){
 
+    Route::get('payment/employee-payment','PaymentController@employeePaymentForm')->name('employee.payment.form');
+    Route::post('payment/employee-payment','PaymentController@employeePayment')->name('employee.payment');
+
+    Route::get('payment/employee-payment-edit/{id}','PaymentController@employeePaymentEdit')->name('employee.payment.edit');
+    Route::post('payment/employee-payment-update/{id}','PaymentController@employeePaymentUpdate')->name('employee.payment.update');
+
+    Route::get('payment/employee-payment-list','PaymentController@employeePaymentList')->name('employee.payment.list');
+
+});
 
 
 
@@ -148,6 +208,8 @@ Route::namespace('StudentPanel')->group(function (){
 
     Route::get('student/change-password','StudentController@changePasswordFrom')->name('student.change.password.form');
     Route::post('student/change-password','StudentController@changePassword')->name('student.change.password');
+
+    Route::get('student/student-profile','StudentController@studentProfile')->name('student.profile');
 
 
 });

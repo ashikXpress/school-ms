@@ -101,7 +101,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="user_profile.html">
+                            <a href="{{route('student.profile')}}">
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                         <li>

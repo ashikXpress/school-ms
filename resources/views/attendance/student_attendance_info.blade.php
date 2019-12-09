@@ -105,7 +105,11 @@
 
                                                     </td>
                                                     <td class="left">
-                                                        ....
+                                                        @if($attendance_info->status==1)
+                                                        <a href="{{route('student.attendance.change',$attendance_info->id)}}" class="label label-sm label-danger">undo</a>
+                                                        @else
+                                                            <a href="{{route('student.attendance.change',$attendance_info->id)}}" class="label label-sm label-success">undo</a>
+                                                        @endif
                                                     </td>
 
                                                 </tr>

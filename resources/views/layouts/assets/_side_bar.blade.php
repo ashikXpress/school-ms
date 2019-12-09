@@ -32,14 +32,45 @@
 
                             </a>
                         </li>
+                <li class="nav-item {{ Request::is('academic/*') ? 'start active open' : null }}">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Academic & Classes</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+                        <li class="nav-item {{ Request::is('academic/create-list') ? 'active' : null }}">
+                            <a href="{{route('class.list')}}" class="nav-link ">
+                                <span class="title">Manage Class</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('academic/section-list') ? 'active' : null }}">
+                            <a href="{{route('section.list')}}" class="nav-link ">
+                                <span class="title">Manage Section</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item {{ Request::is('academic/subject-list') ? 'active' : null }}">
+                            <a href="{{route('subject.list')}}" class="nav-link ">
+                                <span class="title">Manage Subject</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('academic/create-class-subject') ? 'active' : null }}">
+                            <a href="{{route('create.class.subject.form')}}" class="nav-link ">
+                                <span class="title">Manage Class Subject</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+
 
                 <li class="nav-item {{ Request::is('employee/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Manage Employee</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
-                        <li class="nav-item {{ Request::is('employee/create-designation') ? 'active' : null }}">
-                            <a href="{{route('create.designation.form')}}" class="nav-link ">
+                        <li class="nav-item {{ Request::is('employee/designation-list') ? 'active' : null }}">
+                            <a href="{{route('designation.list')}}" class="nav-link ">
                                 <span class="title">Manage Designation</span>
                             </a>
                         </li>
@@ -107,31 +138,6 @@
                 </li>
 
 
-                <li class="nav-item {{ Request::is('academic/*') ? 'start active open' : null }}">
-                            <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                                <span class="title">Academic & Classes</span><span class="arrow"></span></a>
-                            <ul class="sub-menu">
-                                <li class="nav-item {{ Request::is('academic/create-class') ? 'active' : null }}">
-                                    <a href="{{route('create.class.form')}}" class="nav-link ">
-                                        <span class="title">Manage Class</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item {{ Request::is('academic/create-section') ? 'active' : null }}">
-                                    <a href="{{route('create.section.form')}}" class="nav-link ">
-                                        <span class="title">Manage Section</span>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item {{ Request::is('academic/create-subject') ? 'active' : null }}">
-                                    <a href="{{route('create.subject.form')}}" class="nav-link ">
-                                        <span class="title">Manage Subject</span>
-                                    </a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
 
 
                 <li class="nav-item {{ Request::is('class-routine/*') ? 'active' : null }}">
@@ -156,8 +162,8 @@
                         <span class="title">Exam</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
-                        <li class="nav-item {{ Request::is('exam/create-exam-term') ? 'active' : null }}">
-                            <a href="{{route('create.exam.term.form')}}" class="nav-link ">
+                        <li class="nav-item {{ Request::is('exam/exam-term-list') ? 'active' : null }}">
+                            <a href="{{route('exam.term.list')}}" class="nav-link ">
                                 <span class="title">Manage Exam Term</span>
                             </a>
                         </li>
@@ -166,6 +172,30 @@
                                 <span class="title">Create Exam Routine</span>
                             </a>
                         </li>
+
+                        <li class="nav-item {{ Request::is('exam/creative-question-list') ? 'active' : null }}">
+                            <a href="{{route('creative.question.list')}}" class="nav-link ">
+                                <span class="title">Manage Creative Question</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item {{ Request::is('result/*') ? 'start active open' : null }}">
+                    <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
+                        <span class="title">Result</span><span class="arrow"></span></a>
+                    <ul class="sub-menu">
+
+                        <li class="nav-item {{ Request::is('result/insert-student-marks') ? 'active' : null }}">
+                            <a href="{{route('insert.student.marks.form')}}" class="nav-link ">
+                                <span class="title">Insert Marks </span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ Request::is('result/result-show') ? 'active' : null }}">
+                            <a href="{{route('result.show')}}" class="nav-link ">
+                                <span class="title">Result Report </span>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -174,16 +204,12 @@
                         <span class="title">Syllabus</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
-                        <li class="nav-item {{ Request::is('syllabus/create-syllabus') ? 'active' : null }}">
-                            <a href="{{route('create.syllabus.form')}}" class="nav-link ">
-                                <span class="title">Create Syllabus</span>
-                            </a>
-                        </li>
-                        <li class="nav-item {{ Request::is('syllabus/syllabus-lists') ? 'active' : null }}">
+                        <li class="nav-item {{ Request::is('syllabus/syllabus-list') ? 'active' : null }}">
                             <a href="{{route('syllabus.list')}}" class="nav-link ">
-                                <span class="title">Syllabus list</span>
+                                <span class="title">Manage Syllabus</span>
                             </a>
                         </li>
+
                     </ul>
                 </li>
 
@@ -199,14 +225,14 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ Request::is('subject/*') ? 'start active open' : null }}">
+                <li class="nav-item {{ Request::is('payment/*') ? 'start active open' : null }}">
                     <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
                         <span class="title">Accounting</span><span class="arrow"></span></a>
                     <ul class="sub-menu">
 
-                        <li class="nav-item {{ Request::is('employee/employee-lists') ? 'active' : null }}">
-                            <a href="{{route('employee.lists')}}" class="nav-link ">
-                                <span class="title">All employee</span>
+                        <li class="nav-item {{ Request::is('payment/employee-payment-list') ? 'start active open' : null }}">
+                            <a href="{{route('employee.payment.list')}}" class="nav-link ">
+                                <span class="title">Employee Payments</span>
                             </a>
                         </li>
                     </ul>

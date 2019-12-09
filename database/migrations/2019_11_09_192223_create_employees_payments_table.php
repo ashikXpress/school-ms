@@ -16,18 +16,15 @@ class CreateEmployeesPaymentsTable extends Migration
         Schema::create('employees_payments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('employee_id');
-            $table->smallInteger('status');
-            $table->date('payment_date');
+            $table->string('payment_date');
             $table->string('payment_type');
-            $table->decimal('amount');
-            $table->string('payment_category');
+            $table->string('receipt_no');
+            $table->decimal('basic_salary');
+            $table->decimal('others_honorarium')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('payment_by')->nullable();
-            $table->unsignedBigInteger('authorized_by')->nullable();
-            $table->text('description');
             $table->foreign('employee_id')->references('id')->on('employees');
             $table->foreign('payment_by')->references('id')->on('employees');
-            $table->foreign('authorized_by')->references('id')->on('employees');
-
             $table->timestamps();
         });
     }

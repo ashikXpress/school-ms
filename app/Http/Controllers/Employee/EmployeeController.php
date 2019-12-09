@@ -20,32 +20,47 @@ class EmployeeController extends Controller
 
 
     }
-
-
+    public function designationList(){
+        $data['designations']=Designation::get();
+        return view('academic.designation_list',$data);
+    }
     public function createDesignationForm(){
-        $data['designation_lists']=Designation::orderBy('id','desc')->paginate(4);
-        return view('academic.create_designation',$data);
+
+        return view('academic.create_designation');
     }
     public function createDesignation(Request $request){
         $this->validate($request,[
             'designation_name'=>'required|unique:designations|min:1|max:50',
             'description'=>'nullable|min:5|max:300',
         ]);
-        $result=Designation::create([
+        Designation::create([
             'designation_name'=>$request->designation_name,
             'description'=>$request->description,
         ]);
-        if ($result){
+
             $request->session()->flash('success','Designations created successfully');
             return redirect()->route('create.designation.form');
-        }else{
-            $request->session()->flash('success','Designations create failed');
-            return redirect()->route('create.designation.form');
-        }
+
     }
+public function editDesignation($id){
 
+        $data['designation']=Designation::find($id);
+    return view('academic.edit_designation',$data);
+}
 
+public function updateDesignation($id,Request $request){
+    $this->validate($request,[
+        'designation_name'=>'required|min:1|max:50',
+        'description'=>'nullable|min:5|max:300',
+    ]);
+    Designation::find($id)->update([
+        'designation_name'=>$request->designation_name,
+        'description'=>$request->description,
+    ]);
 
+    $request->session()->flash('success','Designations Update successfully');
+    return redirect()->back();
+}
 
     public function joinEmployeeForm(){
 
@@ -116,13 +131,9 @@ public function joinEmployee(Request $request){
             'password'=>bcrypt($request->password),
         ]);
 
-    if ($result){
         $request->session()->flash('success','Employee join successfully');
         return redirect()->route('employee.join.form');
-    }else{
-        $request->session()->flash('success','Employee join failed');
-        return redirect()->route('employee.join.form');
-    }
+
 }
 
 public function employeeEditForm($id){
@@ -162,15 +173,11 @@ public function employeeUpdate($id,Request $request){
             'photo'=>'nullable',
             'email'=>'required',
         ]);
-        $result=Employee::find($id)->update($data);
+     Employee::find($id)->update($data);
 
-    if ($result){
         $request->session()->flash('success','Employee data updated successfully');
         return redirect()->back();
-    }else{
-        $request->session()->flash('success','Employee data update failed');
-        return redirect()->back();
-    }
+
 }
 
 
@@ -195,11 +202,18 @@ public function employeeList(Request $request){
         return view('employee.employee_lists',$data);
 }
 
-public function employeeProfile($id){
-    $data['employee_profile']=Employee::find($id);
-        return view('employee.employee_profile',$data);
-}
+public function employeeDetails($id){
 
+    $data['employee']=Employee::find($id);
+        return view('employee.employee_details',$data);
+}
+public function employeeProfile(){
+
+        $id=Auth::guard('employee')->user()->id;
+        $data['employee']=Employee::find($id);
+
+   return view('employee.employee_profile',$data);
+}
 public function changePasswordFrom(){
         return view('password.employee_change_password');
 }

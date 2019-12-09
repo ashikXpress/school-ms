@@ -5,20 +5,7 @@
             <div class="card card-box">
                 <div class="card-head">
                     <header>Create syllabus</header>
-                    <button id="panel-button3"
-                            class="mdl-button mdl-js-button mdl-button--icon pull-right"
-                            data-upgraded=",MaterialButton">
-                        <i class="material-icons">more_vert</i>
-                    </button>
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                        data-mdl-for="panel-button3">
-                        <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-                        </li>
-                        <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-                        </li>
-                        <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-                            here</li>
-                    </ul>
+
                 </div>
                 <div class="card-body " id="bar-parent2">
                     <form action="{{route('create.syllabus')}}" method="post">
@@ -29,7 +16,7 @@
                                 <select class="form-control" name="class" id="class">
                                 <option disabled selected>Select class</option>
                                 @foreach($classes as $class)
-                                    <option value="{{$class->id}}" @if(old('class') == $class->id)selected @endif>{{$class->class_name}}</option>
+                                    <option value="{{$class->class_name}}" @if(old('class') == $class->class_name)selected @endif>{{$class->class_name}}</option>
                                 @endforeach
                                 </select>
                                 <span class="text text-danger">{{$errors->first('class')}}</span>
@@ -39,7 +26,7 @@
                                 <select class="form-control" name="subject" id="class">
                                     <option disabled selected>Select class</option>
                                     @foreach($subjects as $subject)
-                                        <option value="{{$subject->id}}" @if(old('subject') == $subject->id)selected @endif>{{$subject->subject_name}}</option>
+                                        <option value="{{$subject->subject_name}}" @if(old('subject') == $subject->subject_name)selected @endif>{{$subject->subject_name}}</option>
                                     @endforeach
                                 </select>
                                 <span class="text text-danger">{{$errors->first('subject')}}</span>
@@ -48,8 +35,8 @@
                                 <label for="subject">Exam term name</label>
                                 <select class="form-control" name="exam_term_name" id="class">
                                     <option disabled selected>Select class</option>
-                                    @foreach($terms as $term)
-                                        <option value="{{$term->id}}" @if(old('exam_term_name') == $term->id)selected @endif>{{$term->exam_term_name}}</option>
+                                    @foreach($exam_terms as $term)
+                                        <option value="{{$term->exam_term_name}}" @if(old('exam_term_name') == $term->exam_term_name)selected @endif>{{$term->exam_term_name}}</option>
                                     @endforeach
                                 </select>
                                 <span class="text text-danger">{{$errors->first('exam_term_name')}}</span>
@@ -75,7 +62,7 @@
                             <div class="form-group col-md-12">
                                 <div class="col-md-9">
                                     <button type="submit" class="btn btn-info btn-lg m-r-20">Create syllabus</button>
-                                    <a class="btn btn-default btn-lg">Cancel</a>
+                                    <a href="{{route('syllabus.list')}}" class="btn btn-default btn-lg">Cancel</a>
                                 </div>
                             </div>
                         </div>

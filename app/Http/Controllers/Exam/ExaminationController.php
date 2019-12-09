@@ -12,10 +12,13 @@ use Illuminate\Http\Request;
 
 class ExaminationController extends Controller
 {
+
+    public function examTermList(){
+        return view('exam.exam_term_name_list');
+    }
     public function createExamTermForm(){
-            $data['exam_terms']=ExaminationTerm::paginate(10);
-            $data['counts']=ExaminationTerm::count();
-        return view('exam.exam_term_name',$data);
+
+        return view('exam.create_exam_term_name');
     }
     public function createExamTerm(Request $request){
         $data=$this->validate($request,[
@@ -27,6 +30,20 @@ class ExaminationController extends Controller
         return redirect()->route('create.exam.term.form');
     }
 
+    public function editExamTerm($id){
+        $data['exam_term']=ExaminationTerm::find($id);
+        return view('exam.edit_exam_term',$data);
+    }
+
+public function updateExamTerm($id,Request $request){
+    $data=$this->validate($request,[
+        'exam_term_name'=>'required|max:20'
+    ]);
+        ExaminationTerm::find($id)->update($data);
+    $request->session()->flash('success','Update exam term name successfully');
+    return redirect()->back();
+}
+
     public function createExamRoutineForm(){
         $data['classes']=ClassName::get();
         $data['subjects']=Subject::get();
@@ -36,4 +53,9 @@ class ExaminationController extends Controller
 
         return view('exam.create_exam_routine',$data);
     }
+
+
+
+
+
 }

@@ -63,8 +63,8 @@
 
                     </a>
                 </li>
-                <li class="nav-item {{ Request::is('') ? 'active' : null }}">
-                    <a href="{{route('dashboard')}}" class="nav-link">
+                <li class="nav-item ">
+                    <a href="" class="nav-link">
                         <i class="material-icons">dashboard</i>
                         <span class="title">Assignment</span>
                         <span class="selected"></span>

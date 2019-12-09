@@ -37,12 +37,13 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+
                                         @foreach($syllabus_lists as $syllabus_list)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="left">{{$loop->iteration}}</td>
-                                                <td class="left">{{$syllabus_list->className->class_name}}</td>
-                                                <td class="left">{{$syllabus_list->subject->subject_name}}</td>
-                                                <td class="left">{{$syllabus_list->examTerm->exam_term_name}}</td>
+                                                <td class="left">{{$syllabus_list->class}}</td>
+                                                <td class="left">{{$syllabus_list->subject}}</td>
+                                                <td class="left">{{$syllabus_list->examination_term}}</td>
                                                 <td class="left">{{$syllabus_list->academic_year}}</td>
 
                                                 {{--                                                <td class="left">{!! Illuminate\Support\Str::words(html_entity_decode($syllabus_list->description),5) !!}</td>--}}
@@ -63,6 +64,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+
 
                                         </tbody>
                                     </table>

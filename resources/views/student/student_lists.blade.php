@@ -79,7 +79,7 @@
                                                 </td>
                                                 <td class="left">{{$student_list->class}}</td>
                                                 <td class="left">{{$student_list->roll}}</td>
-                                                <td><a href="{{route('student.profile',$student_list->id)}}">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>
+                                                <td><a href="{{route('student.details',$student_list->id)}}">{{$student_list->first_name.' '.$student_list->last_name}}</a></td>
                                                 <td>{{$student_list->contact_number}}</td>
 
                                                 <td>

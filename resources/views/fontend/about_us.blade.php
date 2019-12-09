@@ -16,7 +16,7 @@
     <div class="breadcrumb-main">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li class="active">About Us</li>
             </ul>
         </div>
@@ -31,8 +31,8 @@
                     <div class="col-sm-6">
                         <div class="about-items">
                             <div class="inner-heading">
-                                <h3>About Eduie</h3>
-                                <h2 class="mar-0">Know more about eduie</h2>
+                                <h3>About Our School</h3>
+                                <h2 class="mar-0">Know more about</h2>
                             </div>
                             <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh  id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt  mauris. <br><br>Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt  mauris.
                             </p>
@@ -49,7 +49,7 @@
                             <div class="col-sm-9">
                                 <div class="about-sch-form">
                                     <div class="event-title">
-                                        <h2>Apply for Scholarship</h2>
+                                        <h2>Apply for Admission</h2>
                                         <h3 class="white">Fall 2019 applications are now open</h3>
                                         <p>We don’t just give students an education and experiences that set them up for success in a career. We help them succeed in their career—to discover a field they’re passionate about and dare to lead it.</p>
                                     </div> <!-- event title -->
@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-sm-3">
                                 <div class="smt-items mar-top-70">
-                                    <a class="mt_btn_yellow" href="#">Apply Here</a>
+                                    <a class="mt_btn_yellow" href="{{route('admission')}}">Apply Here</a>
                                 </div>
                             </div>
                         </div>

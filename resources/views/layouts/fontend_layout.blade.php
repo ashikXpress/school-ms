@@ -114,6 +114,19 @@
 
            line-height: 25px;
        }
+
+       .wide-gallery .ge_second .mix {
+           padding: 0;
+       }
+       .team_member .team-overlay {
+
+           bottom: 55px !important;
+
+       }
+       .pagination>li>a, .pagination>li>span {
+           padding: 7px 18px;
+           border-radius: 50% !important;
+       }
    </style>
 
     <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')}}"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script><![endif]-->
@@ -166,7 +179,7 @@
         <div class="container">
 
             <div class="logo pull-left">
-                <h2><a href="index.html"><!-- <img  class="logo-img" src="{{asset('fontend/assets/images/w-logo.png')}}" alt=""> -->Padhai</a></h2>
+                <h2><a href="{{route('home')}}">Amader School</a></h2>
             </div>
 
             <div id="navbar" class="navbar-nav-wrapper pull-right">
@@ -219,97 +232,14 @@
 
 <!--*Footer*-->
 <footer id="mt_footer">
-    <div class="container">
 
-
-
-        <div class="footer-main">
-            <div class="row">
-                <div class="col-md-5 col-sm-12 col-xs-12">
-                    <div class="follow_us">
-
-                        <h2><a href="index.html">Padhai</a></h2>
-
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br><br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="textwidget">
-                            <p class="white">PO Box 16122 Grasswood Street West<br>
-                                Sydney 5217 Australia</p>
-                            <p class="white">Mon-Thu: 9:00 – 21:00<br>
-                                Fri: 8:00 – 21:00<br>
-                                Sat: 10:00 – 15:00</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-7 col-sm-6 col-xs-12">
-                    <div class="footer-right">
-                        <div class="row">
-                            <div class="col-md-6 col-xs-12">
-                                <div class="mt_contact_ftr">
-                                    <h3>Quick Links</h3>
-                                    <ul class="footer-quick-links-4">
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Aliquam porttitor vestibulum</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Placerat bibendum</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Lobortis enim nec nisi</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i> Ullamcorper odio nec turpis</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-xs-12">
-                                <div class="mt_post_ftr">
-                                    <h3>Instagram</h3>
-                                    <div class="insta-list">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_01.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_02.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_03.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_04.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_05.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_06.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_07.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_08.jpg')}}" alt="insta">
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <img src="{{asset('fontend/assets/images/insta/insta_09.jpg')}}" alt="insta">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt_footer_copy">
+    <div class="">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="copy_txt">
+                <div class="col-sm-12">
+                    <div class="copy_txt pull-left">
                         <p class="mar-0 white">&copy; Copyright 2018 - Padhai All rights Reserved</p>
                     </div>
-                </div>
-                <div class="col-sm-6">
                     <div class="follow_us pull-right">
                         <ul class="social_icons">
                             <li><a href="#"> <i class="fa fa-facebook"></i></a></li>

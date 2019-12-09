@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Fontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\ClassName;
+use App\Models\Notice;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
 class AdmissionController extends Controller
 {
     public function admissionForm(){
-
+        $data['notices']=Notice::select('title')->get();
         $data['classes']=ClassName::select('class_name')->get();
         return view('fontend.admission.admission_form',$data);
     }

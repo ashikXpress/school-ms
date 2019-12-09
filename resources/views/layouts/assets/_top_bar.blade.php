@@ -2,7 +2,7 @@
     <div class="page-header-inner ">
         <!-- logo start -->
         <div class="page-logo">
-            <a href="index.html">
+            <a href="{{route('dashboard')}}">
                 <span class="logo-icon material-icons fa-rotate-45">school</span>
                 <span class="logo-default">School</span> </a>
         </div>
@@ -101,7 +101,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="user_profile.html">
+                            <a href="{{route('employee.profile')}}">
                                 <i class="icon-user"></i> Profile </a>
                         </li>
                         <li>

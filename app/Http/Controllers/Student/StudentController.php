@@ -207,9 +207,9 @@ public function studentUpdate($id,Request $request){
     }
 
 
-    public function studentProfile($id){
-        $data['student_profile']=Student::find($id);
-        return view('student.student_profile',$data);
+    public function studentDetails($id){
+        $data['student']=Student::find($id);
+        return view('student.student_details',$data);
     }
 
 

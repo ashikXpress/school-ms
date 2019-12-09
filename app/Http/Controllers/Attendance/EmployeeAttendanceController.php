@@ -41,29 +41,20 @@ class EmployeeAttendanceController extends Controller
 
         foreach($all_employee as $key=>$employee_id){
 
-            $result=EmployeeAttendance::create([
+            EmployeeAttendance::create([
                 'employee_id'=>$employee_id,
                 'attend_date'=>Carbon::now()->format('d-m-Y'),
                 'status'=>$request->status[$key],
             ]);
         }
 
-
-
-        if ($result){
             $request->session()->flash('success','Employee attendance successful');
             return redirect()->route('employee.attendance.form');
-        }else{
-            $request->session()->flash('success','Employee attendance create failed');
-            return redirect()->route('employee.attendance.form');
-        }
-
 
 
     }
 public function attendanceEmployeeInfo(Request $request){
-        $data['all_employee']=Employee::get();
-
+        $data=[];
         $from=$request->from_date;
         $to=$request->to_date;
         $employee_id=$request->employee_id;
@@ -79,4 +70,22 @@ public function attendanceEmployeeInfo(Request $request){
     return view('attendance.employee_attendance_info',$data);
 }
 
+
+public function employeeAttendanceChange($id,Request $request){
+    $attendance=EmployeeAttendance::find($id);
+
+    if ($attendance->status==1){
+        EmployeeAttendance::where('employee_id',$attendance->employee_id)->update([
+            'status'=>0
+        ]);
+        $request->session()->flash('success','Present Successfully Changed');
+    }else{
+        EmployeeAttendance::where('employee_id',$attendance->employee_id)->update([
+            'status'=>1
+        ]);
+        $request->session()->flash('success','Absent Successfully Changed');
+    }
+
+    return redirect()->back();
+}
 }

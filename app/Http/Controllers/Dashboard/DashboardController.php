@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,10 @@ public function __construct()
     public function dashboard(){
 //        Artisan::call('backup:run');
 //
-        return view('dashboard');
+        $data['student']=Student::count();
+        $data['employee']=Employee::count();
+
+
+        return view('dashboard',$data);
     }
 }
