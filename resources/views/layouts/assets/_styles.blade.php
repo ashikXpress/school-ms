@@ -351,4 +351,8 @@
     .profile-userpic.student-profile.col-md-4 {
         margin: 0 0 12px -22px;
     }
+
+    .col-md-3.form-group.margin-left {
+        margin-left: -15px;
+    }
 </style>

@@ -178,6 +178,11 @@
                                 <span class="title">Manage Creative Question</span>
                             </a>
                         </li>
+                        <li class="nav-item {{ Request::is('exam/objective-question-list') ? 'active' : null }}">
+                            <a href="{{route('objective.question.list')}}" class="nav-link ">
+                                <span class="title">Manage Objective Question</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item {{ Request::is('result/*') ? 'start active open' : null }}">

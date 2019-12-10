@@ -96,6 +96,10 @@ Route::namespace('Question')->group(function (){
     Route::post('exam/create-creative-question','QuestionController@createCreativeQuestion')->name('create.creative.question');
     Route::get('exam/creative-question-list','QuestionController@creativeQuestionList')->name('creative.question.list');
     Route::get('exam/creative-question-details/{id}','QuestionController@creativeQuestionDetails')->name('creative.question.details');
+
+    Route::get('exam/create-objective-question','QuestionController@createObjectiveQuestionForm')->name('create.objective.question.form');
+    Route::post('exam/create-objective-question','QuestionController@createObjectiveQuestion')->name('create.objective.question');
+    Route::get('exam/objective-question-list','QuestionController@objectiveQuestionList')->name('objective.question.list');
 });
 
 Route::namespace('Result')->group(function(){
