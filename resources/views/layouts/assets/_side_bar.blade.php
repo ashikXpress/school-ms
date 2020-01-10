@@ -11,11 +11,11 @@
                 <li class="sidebar-user-panel">
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{asset(optional(Auth::guard('employee')->user())->photo)}}" class="img-circle user-img-circle"
+                            <img src="{{asset('uploads/'.optional(Auth::user())->photo)}}" class="img-circle user-img-circle"
                                  alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>{{optional(Auth::guard('employee')->user())->first_name.' '.optional(Auth::guard('employee')->user())->last_name}}</p>
+                            <p>{{optional(Auth::user())->name}}</p>
                             <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
 												Online</span></a>
                         </div>

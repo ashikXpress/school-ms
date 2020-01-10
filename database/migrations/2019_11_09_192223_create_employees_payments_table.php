@@ -23,8 +23,8 @@ class CreateEmployeesPaymentsTable extends Migration
             $table->decimal('others_honorarium')->nullable();
             $table->text('description')->nullable();
             $table->unsignedBigInteger('payment_by')->nullable();
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('payment_by')->references('id')->on('employees');
+            $table->foreign('employee_id')->references('id')->on('users');
+            $table->foreign('payment_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

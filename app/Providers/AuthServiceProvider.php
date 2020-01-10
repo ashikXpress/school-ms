@@ -22,12 +22,12 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(GateContract $gate)
     {
-        $this->registerPolicies();
+        $this->registerPolicies($gate);
 
-        Gate::define('isAdmin',function ($user,$employee){
-            return $employee->user_type =='admin';
+        $gate->define('isAdmin', function ($user) {
+            return $user->role =='admin';
         });
     }
 }

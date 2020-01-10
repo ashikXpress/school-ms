@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Password;
 use App\Http\Controllers\Controller;
 use App\Mail\EmployeePasswordReset;
 use App\Models\Employee;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -20,7 +21,7 @@ class PasswordController extends Controller
             'email'=>'required|min:5|max:50'
         ]);
         $email=$request->email;
-        $result=Employee::where('email',$email)->first();
+        $result=User::where('email',$email)->first();
 
 
         if ($result!=null){
@@ -28,7 +29,7 @@ class PasswordController extends Controller
             $time=md5(microtime());
             $token=Str::random(40).$time;
 
-            Employee::where('email',$email)->update([
+            User::where('email',$email)->update([
                 'password_token'=>$token
             ]);
 
@@ -56,10 +57,11 @@ class PasswordController extends Controller
             'new_password'=>'required',
             'confirm_password'=>'required|same:new_password',
         ]);
-        $result=Employee::where('password_token',$token)->first();
+        $result=User::where('password_token',$token)->first();
+
 
         if ($result !=null){
-            Employee::where('password_token',$token)->update([
+            User::where('password_token',$token)->update([
                 'password'=>bcrypt($request->new_password),
                 'password_token'=>''
             ]);

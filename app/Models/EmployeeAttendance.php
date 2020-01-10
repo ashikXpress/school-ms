@@ -10,6 +10,6 @@ class EmployeeAttendance extends Model
     protected $table='employees_attendances';
 
     public function employee(){
-        return $this->belongsTo(Employee::class,'employee_id');
+        return $this->belongsTo(User::class,'employee_id');
     }
 }

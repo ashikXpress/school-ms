@@ -31,7 +31,7 @@ class AuthController extends Controller
         }
 
 
-        return view('admin.auth.login');
+        return view('admin.auth.e_login');
     }
     public function loginProcess(Request $request){
         $this->validate($request,[
@@ -55,14 +55,14 @@ class AuthController extends Controller
 
         }else{
             $request->session()->flash('error','Invalid Email/Password');
-            return redirect()->route('login.form');
+            return redirect()->route('e.login.form');
         }
     }
 
     public function logoutProcess(){
 
             Auth::guard('employee')->logout();
-            return redirect()->route('login.form');
+            return redirect()->route('e.login.form');
 
     }
 }

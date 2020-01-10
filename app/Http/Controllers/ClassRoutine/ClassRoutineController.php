@@ -8,6 +8,7 @@ use App\Models\Employee;
 use App\Models\Routine;
 use App\Models\Section;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ClassRoutineController extends Controller
@@ -16,7 +17,7 @@ class ClassRoutineController extends Controller
 
         $data['class_names']=ClassName::get();
         $data['all_subjects']=Subject::get();
-        $data['all_teacher']=Employee::get();
+        $data['all_teacher']=User::get();
         $data['all_section']=Section::get();
         return view('academic.create_class_routine',$data);
     }

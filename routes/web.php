@@ -18,21 +18,16 @@ Route::namespace('Dashboard')->group(function (){
     Route::get('dashboard','DashboardController@dashboard')->name('dashboard');
 });
 
-Route::namespace('Auth')->group(function (){
-    Route::get('login','AuthController@loginForm')->name('login.form');
-    Route::post('login','AuthController@loginProcess')->name('login');
-    Route::get('logout','AuthController@logoutProcess')->name('logout');
-
-});
+//Route::namespace('Auth')->group(function (){
+//    Route::get('e-login','AuthController@loginForm')->name('e.login.form');
+//    Route::post('e-login','AuthController@loginProcess')->name('e.login');
+//    Route::get('e-logout','AuthController@logoutProcess')->name('e.logout');
+//
+//});
 Route::namespace('Admin')->group(function (){
 
 });
 Route::namespace('Academic')->group(function (){
-
-//    Route::group(['middleware' => ['admin' or 'teacher']], function(){
-//        Route::get('academic/create-subject', 'AcademicController@createSubjectForm')->name('create.subject.form');
-//    });
-
     Route::get('academic/create-subject','AcademicController@createSubjectForm')->name('create.subject.form');
     Route::post('academic/create-subject','AcademicController@createSubject')->name('create.subject');
     Route::get('academic/subject-list','AcademicController@subjectList')->name('subject.list');
@@ -248,3 +243,8 @@ Route::namespace('Fontend')->group(function (){
 
 
 });
+
+
+Auth::routes(['register' => false,'reset'=>false]);
+//
+//Route::get('/home', 'HomeController@index')->name('home');

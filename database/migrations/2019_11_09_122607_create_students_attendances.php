@@ -24,7 +24,7 @@ class CreateStudentsAttendances extends Migration
             $table->smallInteger('status');
             $table->text('description')->nullable();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreign('teacher_id')->references('id')->on('employees');
+            $table->foreign('teacher_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

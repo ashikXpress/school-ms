@@ -21,6 +21,6 @@ class Teacher
         {
             return $next($request);
         }
-        return redirect()->route('login.form');
+        return redirect()->route('e.login.form');
     }
 }

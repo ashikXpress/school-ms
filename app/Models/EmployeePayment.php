@@ -10,9 +10,9 @@ class EmployeePayment extends Model
     protected $table='employees_payments';
 
     public function employee(){
-        return $this->belongsTo(Employee::class,'employee_id');
+        return $this->belongsTo(User::class,'employee_id');
     }
     public function paymentBy(){
-        return $this->belongsTo(Employee::class,'payment_by');
+        return $this->belongsTo(User::class,'payment_by');
     }
 }

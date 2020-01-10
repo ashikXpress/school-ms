@@ -7,19 +7,20 @@ use App\Models\Employee;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Notice;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function home(){
         $data['notices']=Notice::select('title')->get();
-        $data['teachers']=Employee::paginate(4);
+        $data['teachers']=User::paginate(4);
         return view('fontend.home',$data);
     }
 
     public function teacherSlider(){
         $data['notices']=Notice::select('title')->get();
-        $data['teachers']=Employee::paginate(8);
+        $data['teachers']=User::paginate(8);
         return view('fontend.teacher_slider',$data);
     }
     public function gallery(){

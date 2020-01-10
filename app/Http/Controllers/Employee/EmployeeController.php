@@ -7,6 +7,7 @@ use App\Models\Designation;
 use App\Models\Employee;
 use App\Models\EmployeeAttendance;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,9 +16,6 @@ class EmployeeController extends Controller
 {
     public function __construct()
     {
-
-
-
 
     }
     public function designationList(){
@@ -71,9 +69,16 @@ public function updateDesignation($id,Request $request){
 
 public function joinEmployee(Request $request){
         $this->validate($request,[
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'user_type'=>'required',
+            'first_name'=>'required|max:50',
+            'last_name'=>'required|max:50',
+            'role'=>'required|max:20',
+            'photo'=>'required|image',
+            'email'=>'required|unique:users',
+            'password'=>'required|min:6|max:20',
+            'confirm_password'=>'required|same:password|min:6|max:20',
+
+
+
             'gender_name'=>'required',
             'date_of_birth'=>'required',
             'blood_group'=>'nullable',
@@ -97,17 +102,18 @@ public function joinEmployee(Request $request){
             'subject_speciality'=>'nullable',
             'others_honorarium'=>'nullable',
 
-            'photo'=>'nullable',
-            'email'=>'required|unique:employees',
-            'password'=>'required|min:6|max:20',
-            'confirm_password'=>'required|same:password|min:6|max:20',
         ]);
-    $photo_path= $request->photo->store('gallery');
 
-        $result=Employee::create([
-            'first_name'=>$request->first_name,
-            'last_name'=>$request->last_name,
-            'user_type'=>$request->user_type,
+
+
+        $result=User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'role' => $request->role,
+            'photo' =>$request->photo->store('gallery'),
+            'password' => Hash::make($request->password),
+
             'designation'=>$request->designation,
             'gender_name'=>$request->gender_name,
             'date_of_birth'=>$request->date_of_birth,
@@ -126,9 +132,6 @@ public function joinEmployee(Request $request){
             'basic_salary'=>$request->basic_salary,
             'subject_speciality'=>$request->subject_speciality,
             'others_honorarium'=>$request->others_honorarium,
-            'photo'=>$photo_path,
-            'email'=>$request->email,
-            'password'=>bcrypt($request->password),
         ]);
 
         $request->session()->flash('success','Employee join successfully');
@@ -138,15 +141,19 @@ public function joinEmployee(Request $request){
 
 public function employeeEditForm($id){
         $data['designations']=Designation::get();
-        $data['employee']=Employee::find($id);
+        $data['employee']=User::find($id);
         return view('employee.edit_employee',$data);
 }
 
 public function employeeUpdate($id,Request $request){
         $data=$this->validate($request,[
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'user_type'=>'required',
+            'first_name'=>'required|max:50',
+            'last_name'=>'required|max:50',
+            'role'=>'required',
+            'photo'=>'nullable|image',
+            'email'=>'required',
+
+
             'gender_name'=>'required',
             'date_of_birth'=>'required',
             'blood_group'=>'nullable',
@@ -170,10 +177,13 @@ public function employeeUpdate($id,Request $request){
             'subject_speciality'=>'nullable',
             'others_honorarium'=>'nullable',
 
-            'photo'=>'nullable',
-            'email'=>'required',
+
         ]);
-     Employee::find($id)->update($data);
+
+
+
+
+     User::find($id)->update($data);
 
         $request->session()->flash('success','Employee data updated successfully');
         return redirect()->back();
@@ -187,11 +197,11 @@ public function employeeList(Request $request){
     $token=$request->_token;
     if($search=='' && $token==''){
 
-        $data['employee_lists']=Employee::orderBy('user_type')->paginate(20);
-        $data['counts']=Employee::count();
+        $data['employee_lists']=User::paginate(20);
+        $data['counts']=User::count();
     }else{
-        $data['counts']=Employee::count();
-        $data['employee_lists']=Employee::orWhere('designation', 'LIKE', '%'.$search.'%')
+        $data['counts']=User::count();
+        $data['employee_lists']=User::orWhere('designation', 'LIKE', '%'.$search.'%')
             ->orWhere('first_name', 'LIKE', '%'.$search.'%')
             ->orWhere('last_name', 'LIKE', '%'.$search.'%')
             ->orWhere('contact_number', 'LIKE', '%'.$search.'%')
@@ -204,13 +214,14 @@ public function employeeList(Request $request){
 
 public function employeeDetails($id){
 
-    $data['employee']=Employee::find($id);
+    $data['employee']=User::find($id);
         return view('employee.employee_details',$data);
 }
 public function employeeProfile(){
 
-        $id=Auth::guard('employee')->user()->id;
-        $data['employee']=Employee::find($id);
+
+        $id=Auth::id();
+        $data['employee']=User::find($id);
 
    return view('employee.employee_profile',$data);
 }
@@ -224,16 +235,16 @@ public function changePassword(Request $request){
             'confirm_password'=>'required|same:new_password|min:6|max:20',
         ]);
 
-        $auth_login_id=Auth::guard('employee')->user()->id;
+        $auth_login_id=Auth::id();
 
-    $employeeObj=Employee::find($auth_login_id);
+    $employeeObj=User::find($auth_login_id);
 
     $hashedPassword=$employeeObj->password;
     $oldPassword=$request->old_password;
 
     if(Hash::check($oldPassword, $hashedPassword))
     {
-        Employee::find($auth_login_id)->update([
+        User::find($auth_login_id)->update([
             'password'=>bcrypt($request->new_password),
         ]);
         $request->session()->flash('success','Password change successfully');

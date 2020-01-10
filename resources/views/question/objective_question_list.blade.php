@@ -69,6 +69,18 @@
 
                     <div class="table-scrollable">
                         <div id="example4_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                            @if(isset($question))
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                        Class name: <strong>{{$question->class}} </strong> Subject name: {{$question->subject}} Exam term name: <strong> {{$question->exam_term}}</strong> Academic year: <strong> {{$question->academic_year}}</strong>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
 
                             <div class="row">
                                 <div class="col-sm-12">

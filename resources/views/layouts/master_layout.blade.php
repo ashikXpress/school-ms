@@ -36,14 +36,7 @@
     <div class="page-container">
         <!-- start sidebar menu -->
 
-            @if(Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type=='admin')
-                @include('layouts.assets._side_bar')
-            @elseif(Auth::guard('employee')->check() && Auth::guard('employee')->user()->user_type=='teacher')
-                @include('layouts.assets._teacher_side_bar')
-            @endif
-
-
-
+              @include('layouts.assets._side_bar')
 
 
         <!-- end sidebar menu -->

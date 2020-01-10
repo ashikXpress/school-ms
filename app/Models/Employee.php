@@ -10,4 +10,6 @@ class Employee extends Authenticatable
     protected $guard='employee';
     protected $guarded=[];
 
+
+
 }

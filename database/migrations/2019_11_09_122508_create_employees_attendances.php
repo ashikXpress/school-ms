@@ -19,7 +19,7 @@ class CreateEmployeesAttendances extends Migration
             $table->string('attend_date');
             $table->smallInteger('status');
             $table->text('description')->nullable();
-            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

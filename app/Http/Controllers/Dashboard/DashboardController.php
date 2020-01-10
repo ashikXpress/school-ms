@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class DashboardController extends Controller
 {
 public function __construct()
 {
-    $this->middleware('admin');
+    $this->middleware('auth');
 
 }
 
@@ -22,8 +23,7 @@ public function __construct()
 //        Artisan::call('backup:run');
 //
         $data['student']=Student::count();
-        $data['employee']=Employee::count();
-
+        $data['employee']=User::count();
 
         return view('dashboard',$data);
     }

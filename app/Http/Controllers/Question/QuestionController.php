@@ -72,32 +72,42 @@ public function createObjectiveQuestion(Request $request){
 
 
 
+    $data['check']=ObjectiveQuestion::where('class',$request->class)
+        ->where('subject',$request->subject)
+        ->where('exam_term',$request->exam_term)
+        ->where('academic_year',$request->academic_year)
+        ->first();
+    if ($data['check']==null){
+        for ($i=1; $i<=$question_qty; $i++){
+            $question_name=$request->objective_question_name_1++;
+            $result=ObjectiveQuestion::create([
+                'objective_question_name'=>$question_name,
+                'class'=>$request->class,
+                'subject'=>$request->subject,
+                'exam_term'=>$request->exam_term,
+                'academic_year'=>$request->academic_year,
+            ]);
+            $a=$request->option_a_1++;
+            $b=$request->option_b_1++;
+            $c=$request->option_c_1++;
+            $d=$request->option_d_1++;
+            ObjectiveQuestionOption::create([
+                'objective_question_id'=>$result->id,
+                'option_a'=>$a,
+                'option_b'=>$b,
+                'option_c'=>$c,
+                'option_d'=>$d,
+            ]);
 
-    for ($i=1; $i<=$question_qty; $i++){
-        $question_name=$request->objective_question_name_1++;
-        $result=ObjectiveQuestion::create([
-            'objective_question_name'=>$question_name,
-            'class'=>$request->class,
-            'subject'=>$request->subject,
-            'exam_term'=>$request->exam_term,
-            'academic_year'=>$request->academic_year,
-        ]);
-        $a=$request->option_a_1++;
-        $b=$request->option_b_1++;
-        $c=$request->option_c_1++;
-        $d=$request->option_d_1++;
-        ObjectiveQuestionOption::create([
-            'objective_question_id'=>$result->id,
-            'option_a'=>$a,
-            'option_b'=>$b,
-            'option_c'=>$c,
-            'option_d'=>$d,
-        ]);
 
+        }
+        $request->session()->flash('success','Objective question created successfully');
+
+    }else{
+        $request->session()->flash('error','This session objective question already created !');
 
     }
 
-    $request->session()->flash('success','Objective question created successfully');
     return redirect()->back();
 
 }
@@ -114,6 +124,11 @@ public function objectiveQuestionList(Request $request){
                 ->where('exam_term',$exam_term)
                 ->where('academic_year',$academic_year)
                 ->get();
+            $data['question']=ObjectiveQuestion::where('class',$class)
+                ->where('subject',$subject)
+                ->where('exam_term',$exam_term)
+                ->where('academic_year',$academic_year)
+                ->first();
         }
 
 

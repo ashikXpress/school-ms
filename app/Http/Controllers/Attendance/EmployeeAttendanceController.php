@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Attendance;
 use App\Models\Designation;
 use App\Models\Employee;
 use App\Models\EmployeeAttendance;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -24,7 +25,7 @@ class EmployeeAttendanceController extends Controller
 
             if ($designation == 'all') {
                 if ($check_attendance==null){
-                    $data['employee_search_lists'] = Employee::get();
+                    $data['employee_search_lists'] = User::get();
                 }else{
                     $data['attendance_check']='Sorry, Already today attendance is taken. if you change any data then check employee attendance report';
 

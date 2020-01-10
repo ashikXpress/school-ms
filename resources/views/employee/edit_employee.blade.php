@@ -6,20 +6,6 @@
             <div class="card card-box">
                 <div class="card-head">
                     <header>Employee join Form</header>
-                    <button id="panel-button3"
-                            class="mdl-button mdl-js-button mdl-button--icon pull-right"
-                            data-upgraded=",MaterialButton">
-                        <i class="material-icons">more_vert</i>
-                    </button>
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                        data-mdl-for="panel-button3">
-                        <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-                        </li>
-                        <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-                        </li>
-                        <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-                            here</li>
-                    </ul>
                 </div>
                 <div class="card-body " id="bar-parent2">
                     <form action="{{route('employee.update',$employee->id)}}" method="post" enctype="multipart/form-data">
@@ -40,18 +26,18 @@
 
 
                             <div class="form-group col-md-6 col-sm-6">
-                                <label>User type (*Required)</label>
-                                <select class="form-control" name="user_type" id="employeeusertype">
-                                    @if(isset($employee->user_type))
-                                        <option value="{{$employee->user_type}}">{{$employee->user_type}}</option>
+                                <label>User ROle (*Required)</label>
+                                <select class="form-control" name="role" id="employeeusertype">
+                                    @if(isset($employee->role))
+                                        <option value="{{$employee->role}}">{{$employee->role}}</option>
                                     @endif
 
-                                    <option value="superadmin" @if(old('user_type') == 'superadmin')selected @endif>Super Admin</option>
-                                    <option value="admin" @if(old('user_type') == 'admin')selected @endif>Admin</option>
-                                    <option value="teacher" @if(old('user_type') == 'teacher')selected @endif>Teacher</option>
-                                    <option value="staff" @if(old('user_type') == 'staff')selected @endif>Staff</option>
+                                    <option value="super_admin" @if(old('role') == 'super_admin')selected @endif>Super Admin</option>
+                                    <option value="admin" @if(old('role') == 'admin')selected @endif>Admin</option>
+                                    <option value="teacher" @if(old('role') == 'teacher')selected @endif>Teacher</option>
+                                    <option value="staff" @if(old('role') == 'staff')selected @endif>Staff</option>
                                 </select>
-                                <span class="text text-danger">{{$errors->first('user_type')}}</span>
+                                <span class="text text-danger">{{$errors->first('role')}}</span>
                             </div>
 
                             <div class="form-group col-md-6 col-sm-6">

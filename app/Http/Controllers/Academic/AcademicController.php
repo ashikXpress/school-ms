@@ -14,12 +14,13 @@ use App\Models\Shift;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Gate;
 
 class AcademicController extends Controller
 {
     public function __construct()
     {
-
+        $this->middleware('auth');
     }
 
     public function subjectList(){

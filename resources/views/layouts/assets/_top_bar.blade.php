@@ -95,8 +95,8 @@
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                        data-close-others="true">
-                        <img alt="" class="img-circle " src="{{asset(optional(Auth::guard('employee')->user())->photo)}}" />
-                        <span class="username username-hide-on-mobile"> {{optional(Auth::guard('employee')->user())->first_name}} </span>
+                        <img alt="" class="img-circle " src="{{asset('uploads/'.optional(Auth::user())->photo)}}" />
+                        <span class="username username-hide-on-mobile"> {{optional(Auth::user())->name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
@@ -111,8 +111,17 @@
                         </li>
 
                         <li>
-                            <a href="{{route('logout')}}">
-                                <i class="icon-logout"></i> Log Out </a>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="icon-logout"></i> {{ __('Logout') }}
+                            </a>
+
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
                         </li>
                     </ul>
                 </li>

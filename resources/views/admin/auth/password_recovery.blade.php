@@ -35,7 +35,7 @@
                         <div class="col-xs-6 col-sm-6 col-md-offset-6">
                             <p class="forgotPwd">
 
-                                <a  href="{{route('login.form')}}">Login to your account?</a>
+                                <a  href="{{route('login')}}">Login to your account?</a>
 
                             </p>
                         </div>
@@ -48,11 +48,4 @@
             </div>
         </div>
     </div> <!-- ./panel-login -->
-
-
-
-
-
-
-
 @endsection

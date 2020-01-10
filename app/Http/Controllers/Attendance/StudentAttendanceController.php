@@ -9,6 +9,7 @@ use App\Models\StudentAttendance;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Integer;
 
 
@@ -81,7 +82,7 @@ class StudentAttendanceController extends Controller
                         'class'=>$chect_student->class,
                         'section'=>$chect_student->section,
                         'shift'=>$chect_student->shift,
-                        'teacher_id'=>auth()->guard('employee')->user()->id,
+                        'teacher_id'=>Auth::id(),
                         'attend_date'=>Carbon::now()->format('d-m-Y'),
 
                     ]);

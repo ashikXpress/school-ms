@@ -74,7 +74,7 @@
                                         @foreach($employee_lists as $employee_list)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="patient-img">
-                                                    <img src="{{$employee_list->photo}}" alt="">
+                                                    <img src="{{asset('uploads/'.$employee_list->photo)}}" alt="">
                                                 </td>
                                                 <td class="left"><a href="{{route('employee.details',$employee_list->id)}}">{{$employee_list->first_name.' '.$employee_list->last_name}}</a></td>
                                                 <td class="left">{{$employee_list->designation}}</td>

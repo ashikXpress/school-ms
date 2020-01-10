@@ -19,7 +19,7 @@ class CreateExaminationsTable extends Migration
             $table->date('exam_start_date');
             $table->date('exam_end_date');
             $table->unsignedBigInteger('authorized_id')->nullable();
-            $table->foreign('authorized_id')->references('id')->on('employees');
+            $table->foreign('authorized_id')->references('id')->on('users');
 
             $table->timestamps();
         });

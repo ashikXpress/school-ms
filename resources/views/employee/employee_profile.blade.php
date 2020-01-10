@@ -6,7 +6,8 @@
                 <div class="card-body no-padding height-9">
                     <div class="row">
                         <div class="profile-userpic student-profile col-md-4">
-                            <img src="{{asset($employee->photo)}}" class="img-responsive" alt="">
+                            <img src="{{asset('uploads/'.$employee->photo)}}" class="img-responsive" alt="">
+
                         </div>
                     </div>
                     <div class="row">
@@ -15,12 +16,14 @@
                         <ul class="list-group col-md-10">
                             <li class="list-group-item">
                                 <b>Name: </b>{{$employee->first_name.' '.$employee->last_name}}</li>
+
                             <li class="list-group-item"><b>Designation: </b>{{$employee->designation}} </li>
                             <li class="list-group-item"><b>Date of Join: </b>{{$employee->joining_date}} </li>
                             <li class="list-group-item"><b>Subject Speciality: </b>{{$employee->subject_speciality}} </li>
                             <li class="list-group-item"><b>Basic Salary: </b>{{$employee->basic_salary}} </li>
                             <li class="list-group-item"><b>Education Qualification: </b>{{$employee->education_qualification}} </li>
-                            <li class="list-group-item"><b>User Type: </b>{{$employee->user_type}} </li>
+                            <li class="list-group-item"><b>User Role: </b>{{$employee->role}} </li>
+
                             <li class="list-group-item"><b>Date of Birth: </b>{{$employee->date_of_birth}} </li>
                             <li class="list-group-item"><b>National ID Number: </b>{{$employee->nid}} </li>
                             <li class="list-group-item"><b>Blood Group: </b>{{$employee->blood_group}} </li>

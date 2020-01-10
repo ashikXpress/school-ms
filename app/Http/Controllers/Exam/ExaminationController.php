@@ -8,6 +8,7 @@ use App\Models\Employee;
 use App\Models\ExaminationTerm;
 use App\Models\Section;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ExaminationController extends Controller
@@ -48,7 +49,7 @@ public function updateExamTerm($id,Request $request){
         $data['classes']=ClassName::get();
         $data['subjects']=Subject::get();
         $data['sections']=Section::get();
-        $data['all_teacher']=Employee::get();
+        $data['all_teacher']=User::get();
         $data['terms']=ExaminationTerm::get();
 
         return view('exam.create_exam_routine',$data);
