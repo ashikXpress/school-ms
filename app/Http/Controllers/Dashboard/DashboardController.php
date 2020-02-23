@@ -25,6 +25,7 @@ public function __construct()
         $data['student']=Student::count();
         $data['employee']=User::count();
 
+
         return view('dashboard',$data);
     }
 }

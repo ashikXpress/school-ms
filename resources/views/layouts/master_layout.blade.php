@@ -34,6 +34,7 @@
     <!-- end color quick setting -->
     <!-- start page container -->
     <div class="page-container">
+
         <!-- start sidebar menu -->
 
               @include('layouts.assets._side_bar')
@@ -44,6 +45,7 @@
         <div class="page-content-wrapper">
             <div class="page-content">
                 @include('layouts.assets._header_msg')
+                @include('flash::message')
               @yield('content')
             </div>
         </div>
@@ -60,5 +62,8 @@
 <!-- start js include path -->
 @include('layouts.assets._scripts')
 <!-- end js include path -->
+<script>
+    $('#flash-overlay-modal').modal();
+</script>
 </body>
 </html>

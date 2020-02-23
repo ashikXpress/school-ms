@@ -130,7 +130,8 @@ Route::namespace('Employee')->group(function (){
     Route::get('employee/employee-details/{id}','EmployeeController@employeeDetails')->name('employee.details');
 
     Route::get('employee-profile','EmployeeController@employeeProfile')->name('employee.profile');
-
+    Route::get('table-view','EmployeeController@employeeTableView')->name('employee.table.view');
+    Route::get('table','EmployeeController@employeeTable')->name('employee.table');
 
 });
 Route::namespace('Student')->group(function (){

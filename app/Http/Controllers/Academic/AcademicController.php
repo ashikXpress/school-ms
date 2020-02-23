@@ -65,9 +65,12 @@ public function updateSubject($id,Request $request){
 
 public function sectionList(){
 
+
         return view('academic.section_list');
 }
     public function createSectionForm(){
+
+
         $data['section_lists']=Section::orderBy('id','desc')->paginate(4);
         return view('academic.create_section',$data);
     }
@@ -82,6 +85,7 @@ public function sectionList(){
         ]);
 
             $request->session()->flash('success','Section created successfully');
+        flash('Section created successfully')->warning();
             return redirect()->route('create.section.form');
 
     }

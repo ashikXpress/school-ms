@@ -7,10 +7,12 @@ use App\Models\Designation;
 use App\Models\Employee;
 use App\Models\EmployeeAttendance;
 
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Yajra\DataTables\Facades\DataTables;
 
 class EmployeeController extends Controller
 {
@@ -254,7 +256,13 @@ public function changePassword(Request $request){
         return redirect()->back();
     }
 }
+public function employeeTableView(){
+        return view('employee.table');
+}
+public function employeeTable(){
+    return Datatables::of(Student::query())->make(true);
 
+}
 
 
 }

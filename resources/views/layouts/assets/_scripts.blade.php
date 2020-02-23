@@ -40,6 +40,7 @@
 <script src="{{asset('admin/assets/js/yearpicker.js')}}"></script>
 <script src="{{asset('admin/assets/custom_date/datepicker.min.js')}}"></script>
 
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 
 
